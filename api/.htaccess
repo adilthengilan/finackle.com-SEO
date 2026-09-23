@@ -1,5 +1,5 @@
-# Prevent direct web access to sensitive PHP config or env files
-<FilesMatch "^(config\.php|\.env|.*\.log|rate_limit_.*\.json)$">
+# Protect config and hidden files from direct browser download
+<FilesMatch "^(config\.php|\.env|.*\.log)$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>
@@ -9,5 +9,9 @@
     </IfModule>
 </FilesMatch>
 
-# Disable directory browsing
-Options -Indexes
+# Ensure PHP scripts are executed by the PHP handler
+<FilesMatch "\.php$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+</FilesMatch>
