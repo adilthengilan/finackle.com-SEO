@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CFO Advisory Services UAE for businesses seeking financial clarity, strategic planning, cash-flow management and practical business financial advisory support.">
+<title>CFO Advisory Services UAE | Business Financial Advisory | Finackle</title>
+<style>
+:root{
+  --navy:#071b4d;
+  --navy-2:#0b2a68;
+  --ink:#10224d;
+  --muted:#68738a;
+  --aqua:#6ce6dc;
+  --aqua-2:#c9fbf3;
+  --mint:#e9fffb;
+  --bg:#f7f9fc;
+  --white:#fff;
+  --line:#e7ebf2;
+  --shadow:0 18px 55px rgba(9,31,75,.08);
+  --radius:26px;
+  --radius-sm:18px;
+  --max:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.55;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(calc(100% - 40px),var(--max));margin:auto}
+.nav-wrap{position:fixed;z-index:50;top:18px;left:0;right:0}
+.nav{
+  width:min(calc(100% - 40px),1120px);margin:auto;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(18px);
+  border:1px solid rgba(10,34,78,.08);border-radius:999px;
+  box-shadow:0 10px 35px rgba(8,30,70,.07);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 10px 9px 20px;
+}
+.logo{font-weight:900;letter-spacing:-.05em;font-size:20px;color:var(--navy)}
+.logo span{color:#25cfc0}
+.nav-links{display:flex;gap:27px;align-items:center;font-size:12px;font-weight:650;color:#47536b}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--navy);color:#fff;border-radius:999px;padding:11px 18px;font-size:12px;font-weight:750}
+.menu{display:none;border:0;background:none;font-size:22px;color:var(--navy)}
+
+.hero{
+  min-height:760px;padding:160px 0 90px;position:relative;display:flex;align-items:center;text-align:center;
+  background:
+    radial-gradient(circle at 50% 40%, rgba(103,237,222,.34) 0, rgba(103,237,222,.18) 20%, rgba(103,237,222,0) 50%),
+    linear-gradient(180deg,#fbfcfe 0%,#f7f9fc 100%);
+}
+.hero:before{
+  content:"";position:absolute;width:600px;height:600px;border-radius:50%;left:50%;top:140px;transform:translateX(-50%);
+  background:radial-gradient(circle,rgba(111,239,225,.24),transparent 68%);filter:blur(10px);pointer-events:none
+}
+.hero-inner{position:relative;z-index:1;width:100%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;
+  background:#fff;border:1px solid #e8edf3;color:#526078;font-size:11px;font-weight:750;
+  box-shadow:0 8px 25px rgba(12,36,79,.05);margin-bottom:24px
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#36d3c5}
+.hero h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-.065em;color:var(--navy);font-weight:900;max-width:900px;margin:0 auto}
+.hero h1 em{font-style:normal;color:#21cabc}
+.hero p{max-width:650px;margin:26px auto 0;color:#68758c;font-size:16px}
+.actions{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:14px 21px;border-radius:999px;font-size:13px;font-weight:800;display:inline-flex;align-items:center;gap:8px;transition:.2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 10px 25px rgba(7,27,77,.18)}
+.btn-secondary{background:#fff;color:var(--navy);border:1px solid #e1e7ef}
+.pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:28px}
+.pill{font-size:10px;font-weight:750;color:#66728a;background:rgba(255,255,255,.75);border:1px solid #e5eaf0;border-radius:999px;padding:8px 11px}
+
+section{padding:100px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.kicker{font-size:11px;font-weight:850;text-transform:uppercase;letter-spacing:.12em;color:#28bfb2;margin-bottom:10px}
+h2{font-size:clamp(34px,4vw,55px);line-height:1.02;letter-spacing:-.055em;color:var(--navy)}
+.lead{color:var(--muted);max-width:510px;font-size:14px}
+
+.insights{background:#fff;border-top:1px solid #edf0f5;border-bottom:1px solid #edf0f5}
+.cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:24px;
+  box-shadow:0 12px 35px rgba(10,31,70,.045)
+}
+.challenge .card{min-height:205px;display:flex;flex-direction:column;justify-content:space-between}
+.num{width:31px;height:31px;border-radius:10px;background:var(--mint);color:#12a99c;display:grid;place-items:center;font-size:11px;font-weight:900;margin-bottom:25px}
+.card h3{font-size:17px;line-height:1.2;letter-spacing:-.025em;color:var(--navy);margin-bottom:8px}
+.card p{font-size:12px;color:#788399}
+
+.industry{background:#f8fafc}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.industry-card{height:190px;border-radius:22px;padding:22px;position:relative;overflow:hidden;background:#fff;border:1px solid var(--line)}
+.industry-card:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;right:-55px;bottom:-60px;background:var(--aqua-2)}
+.industry-icon{font-size:22px;margin-bottom:35px}
+.industry-card h3{font-size:16px;color:var(--navy);position:relative;z-index:1}
+.industry-card span{font-size:11px;color:#7a8598;position:relative;z-index:1}
+
+.dashboard-section{background:#fff}
+.dashboard{
+  background:#f7f9fc;border:1px solid var(--line);border-radius:30px;padding:25px;
+  box-shadow:var(--shadow)
+}
+.dash-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dash-title{font-size:18px;font-weight:850;color:var(--navy)}
+.dash-period{font-size:10px;color:#6c778b;background:#fff;border:1px solid var(--line);padding:8px 11px;border-radius:999px}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}
+.metric small{font-size:10px;color:#7b8699}
+.metric strong{display:block;font-size:22px;color:var(--navy);margin-top:5px;letter-spacing:-.04em}
+.metric .up{font-size:9px;color:#18ad9f;font-weight:800}
+.chart-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:10px;margin-top:10px}
+.chart-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;min-height:240px}
+.chart-title{font-size:11px;color:#657188;font-weight:800;margin-bottom:15px}
+.chart{height:170px;position:relative;border-bottom:1px solid #e8edf3;border-left:1px solid #e8edf3;background:repeating-linear-gradient(to bottom,transparent 0,transparent 41px,#edf1f5 42px)}
+svg{width:100%;height:100%}
+.aging-row{display:grid;grid-template-columns:62px 1fr 40px;align-items:center;gap:8px;margin:17px 0;font-size:9px;color:#727d91}
+.bar{height:8px;background:#edf1f5;border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:#55dcd0}
+
+.team{background:#f8fafc}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.team-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;min-height:220px}
+.team-card .icon{width:42px;height:42px;border-radius:13px;background:var(--mint);display:grid;place-items:center;color:#0b9d91;font-weight:900;margin-bottom:50px}
+.team-card h3{font-size:18px;color:var(--navy);margin-bottom:8px}
+.team-card p{font-size:12px;color:#788399}
+
+.insight-panel{
+  background:linear-gradient(135deg,#eafff9,#f7fffd);border:1px solid #d7f4ee;border-radius:30px;padding:60px;
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center
+}
+.quote-mark{font-size:75px;line-height:.6;color:#55dcd0;font-weight:900}
+.insight-panel h2{font-size:45px}
+.insight-panel p{font-size:14px;color:#657188;margin-top:15px;max-width:520px}
+.insight-list{display:grid;gap:12px}
+.insight-item{background:#fff;border:1px solid #e4f2ef;border-radius:17px;padding:15px;display:flex;gap:12px;align-items:center}
+.insight-item b{font-size:11px;color:var(--navy)}
+.insight-item span{font-size:10px;color:#788399}
+
+.cta-section{padding-top:20px}
+.cta{
+  background:var(--navy);border-radius:34px;padding:70px 65px;color:#fff;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;gap:35px
+}
+.cta:after{content:"";position:absolute;width:400px;height:400px;border-radius:50%;right:-100px;top:-220px;background:rgba(91,228,214,.13)}
+.cta h2{color:#fff;max-width:630px}
+.cta p{color:#b8c4da;font-size:14px;max-width:540px;margin-top:14px}
+.cta .actions{justify-content:flex-start;position:relative;z-index:1}
+.cta .btn-primary{background:var(--aqua);color:var(--navy)}
+.cta .btn-secondary{background:transparent;color:#fff;border-color:#334a76}
+
+footer{padding:60px 0 30px;background:#fff;border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px}
+.footer-brand p{font-size:12px;color:#788399;max-width:280px;margin-top:13px}
+.footer h4{font-size:11px;color:var(--navy);margin-bottom:15px}
+.footer a{display:block;color:#788399;font-size:11px;margin:8px 0}
+.footer-bottom{border-top:1px solid var(--line);margin-top:45px;padding-top:20px;display:flex;justify-content:space-between;color:#8992a3;font-size:10px}
+
+.reveal{opacity:0;transform:translateY(20px);transition:.7s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .nav-links{display:none}.menu{display:block}.nav-cta{margin-left:auto;margin-right:10px}
+  .cards-4,.industry-grid{grid-template-columns:repeat(2,1fr)}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .chart-grid{grid-template-columns:1fr}
+  .section-head{display:block}.section-head .lead{margin-top:15px}
+  .insight-panel{grid-template-columns:1fr;padding:40px}
+  .cta{display:block;padding:50px 35px}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr}
+}
+@media(max-width:600px){
+  .container{width:min(calc(100% - 28px),var(--max))}
+  .nav{width:calc(100% - 20px);padding-left:15px}.nav-cta{padding:9px 13px;font-size:10px}
+  .hero{min-height:700px;padding-top:135px}
+  .hero h1{font-size:47px}
+  .hero p{font-size:14px}
+  section{padding:70px 0}
+  .cards-4,.industry-grid,.team-grid{grid-template-columns:1fr}
+  .challenge .card{min-height:170px}
+  .industry-card{height:160px}
+  .dashboard{padding:15px}
+  .dash-top{align-items:flex-start;gap:10px}
+  .metrics{grid-template-columns:1fr 1fr}
+  .metric strong{font-size:18px}
+  .insight-panel h2{font-size:35px}
+  .cta{border-radius:25px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .footer-bottom{display:block}.footer-bottom span{display:block;margin-top:7px}
+}
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="logo" href="#">FINACKLE<span>.</span></a>
+    <div class="nav-links">
+      <a href="#why">Why CFO Advisory</a>
+      <a href="#industries">Industries</a>
+      <a href="#dashboard">What You Get</a>
+      <a href="#team">Our Approach</a>
+    </div>
+    <a class="nav-cta" href="#contact">Book a Consultation</a>
+    <button class="menu" aria-label="menu">☰</button>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="hero-inner container">
+    <div class="eyebrow"><i class="dot"></i> CFO Advisory Services UAE</div>
+    <h1>Practical finance support for growing UAE businesses.</h1>
+    <p>Get practical CFO advisory and business financial support to improve financial visibility, manage cash flow, plan growth and make confident business decisions in the UAE.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#contact">Book a CFO Consultation <span>↗</span></a>
+      <a class="btn btn-secondary" href="#dashboard">Explore Our Services</a>
+    </div>
+    <div class="pills">
+      <span class="pill">CFO Advisory Services UAE</span>
+      <span class="pill">Business Financial Advisory</span>
+      <span class="pill">Business Finance Support UAE</span>
+      <span class="pill">Cash Flow Planning</span>
+    </div>
+  </div>
+</header>
+
+<section class="insights" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">Business financial advisory</div><h2>Clear finance support<br>for better decisions.</h2></div>
+      <p class="lead">Your accounts may be maintained, but you still need clear financial insight to manage cash flow, plan growth and make informed business decisions.</p>
+    </div>
+    <div class="cards-4 challenge">
+      <article class="card reveal"><div><div class="num">01</div><h3>Cash flow needs regular attention.</h3></div><p>Track inflows, outflows and upcoming commitments.</p></article>
+<article class="card reveal"><div><div class="num">02</div><h3>Reports take too long to prepare.</h3></div><p>Create a consistent rhythm for management reporting.</p></article>
+<article class="card reveal"><div><div class="num">03</div><h3>Budgets are difficult to maintain.</h3></div><p>Build practical budgets and forecasts around business needs.</p></article>
+<article class="card reveal"><div><div class="num">04</div><h3>Financial tasks compete with daily operations.</h3></div><p>Get structured support for a more organised finance process.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="industry" id="industries">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">Business finance support UAE</div><h2>Financial support built<br>around your business.</h2></div>
+      <p class="lead">Our business finance support helps connect accounting data with planning, profitability, cash flow and day-to-day business decisions.</p>
+    </div>
+    <div class="industry-grid">
+      <article class="industry-card reveal"><div class="industry-icon">◫</div><h3>Cash Flow Support</h3><span>Tracking · planning · visibility</span></article>
+<article class="industry-card reveal"><div class="industry-icon">↗</div><h3>Financial Reporting</h3><span>Monthly reports · KPIs · insights</span></article>
+<article class="industry-card reveal"><div class="industry-icon">◎</div><h3>Budgeting & Forecasting</h3><span>Targets · estimates · planning</span></article>
+<article class="industry-card reveal"><div class="industry-icon">▦</div><h3>Finance Process Support</h3><span>Organisation · reviews · coordination</span></article>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard-section" id="dashboard">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">CFO advisory services UAE</div><h2>Understand revenue,<br>costs and profitability.</h2></div>
+      <p class="lead">CFO advisory connects your accounting data with business planning, helping you spot financial pressure early and plan with greater clarity.</p>
+    </div>
+    <div class="dashboard reveal">
+      <div class="dash-top"><div class="dash-title">Finance overview</div><div class="dash-period">Illustrative monthly view · AED</div></div>
+      <div class="metrics">
+        <div class="metric"><small>Cash balance</small><strong>AED 482k</strong><span class="up">↗ 8.4% vs last month</span></div>
+        <div class="metric"><small>Monthly revenue</small><strong>AED 216k</strong><span class="up">↗ 11.2% vs last month</span></div>
+        <div class="metric"><small>Operating costs</small><strong>AED 128k</strong><span class="up">↘ 3.1% vs last month</span></div>
+        <div class="metric"><small>Runway</small><strong>7.8 mo</strong><span class="up">Healthy visibility</span></div>
+      </div>
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-title">Cash movement · last 6 months</div>
+          <div class="chart">
+            <svg viewBox="0 0 700 170" preserveAspectRatio="none" aria-label="cash movement chart">
+              <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#62ddd2" stop-opacity=".28"/><stop offset="100%" stop-color="#62ddd2" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0,133 C65,128 90,102 145,111 C210,121 230,74 290,83 C350,92 375,53 430,64 C495,78 510,37 565,49 C620,62 645,28 700,35 L700,170 L0,170 Z" fill="url(#fill)"/>
+              <path d="M0,133 C65,128 90,102 145,111 C210,121 230,74 290,83 C350,92 375,53 430,64 C495,78 510,37 565,49 C620,62 645,28 700,35" fill="none" stroke="#1dbfb1" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Receivables ageing</div>
+          <div class="aging-row"><span>Current</span><div class="bar"><i style="width:84%"></i></div><b>84%</b></div>
+          <div class="aging-row"><span>1–30 days</span><div class="bar"><i style="width:58%"></i></div><b>58%</b></div>
+          <div class="aging-row"><span>31–60 days</span><div class="bar"><i style="width:31%"></i></div><b>31%</b></div>
+          <div class="aging-row"><span>60+ days</span><div class="bar"><i style="width:16%"></i></div><b>16%</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="kicker">More than bookkeeping</div><h2>A finance partner<br>for your bigger goals.</h2></div>
+      <p class="lead">Business financial advisory sits between accounting data and business decisions — helping you understand performance and act on reliable numbers.</p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card reveal"><div class="icon">01</div><h3>Finance Expertise</h3><p>Management reporting, cash-flow analysis, budgeting, forecasting and financial performance reviews.</p></article>
+      <article class="team-card reveal"><div class="icon">02</div><h3>UAE Business Understanding</h3><p>Business finance support shaped around the operating realities of companies working across UAE mainland and free-zone environments.</p></article>
+      <article class="team-card reveal"><div class="icon">03</div><h3>Decision Support</h3><p>Connect your financial records to dashboards, reporting rhythms and practical business decisions.</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="insight-panel reveal">
+      <div>
+        <div class="quote-mark">“</div>
+        <div class="kicker">Insight beyond numbers</div>
+        <h2>Know what the numbers are telling you.</h2>
+        <p>Good financial information should do more than describe what happened. It should help you understand why it happened, what may happen next and what deserves your attention now.</p>
+      </div>
+      <div class="insight-list">
+        <div class="insight-item"><b>01</b><div><b>Monthly decision dashboard</b><span> — focus on the numbers that matter.</span></div></div>
+        <div class="insight-item"><b>02</b><div><b>Cash-flow planning</b><span> — see pressure before it becomes urgent.</span></div></div>
+        <div class="insight-item"><b>03</b><div><b>Scenario planning</b><span> — compare growth, cost and investment decisions.</span></div></div>
+        <div class="insight-item"><b>04</b><div><b>Management conversations</b><span> — turn financial data into action.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta reveal">
+      <div>
+        <div class="kicker">Start with clarity</div>
+        <h2>Get the financial support your business needs.</h2>
+        <p>Let's understand your current finance setup, identify the gaps and map the right CFO advisory and business financial support for your business.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:hello@finackle.com">Book a Consultation ↗</a>
+          <a class="btn btn-secondary" href="mailto:hello@finackle.com">hello@finackle.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">FINACKLE<span>.</span></div>
+        <p>Practical finance support for ambitious businesses. CFO advisory, business financial advisory and financial clarity for businesses in the UAE.</p>
+      </div>
+      <div class="footer">
+        <h4>Explore</h4>
+        <a href="#why">Why CFO Advisory</a><a href="#industries">Industries</a><a href="#dashboard">What You Get</a>
+      </div>
+      <div class="footer">
+        <h4>Services</h4>
+        <a href="#contact">CFO Advisory Services</a><a href="#contact">Cash Flow Planning</a><a href="#contact">Management Reporting</a>
+      </div>
+      <div class="footer">
+        <h4>Contact</h4>
+        <a href="mailto:hello@finackle.com">hello@finackle.com</a><a href="#contact">UAE</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Finackle. All rights reserved.</span><span>CFO Advisory Services UAE</span></div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
