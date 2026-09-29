@@ -6,10 +6,14 @@
  * Designed specifically for Hostinger Shared Hosting (PHP 7.4 - 8.3+)
  * Communicates directly with the Resend API to deliver website enquiries
  * to info@finackle.com and sends a confirmation auto-reply to the customer.
+ *
+ * SECURITY & ENV POLICY:
+ * All sensitive configuration (RESEND_API_KEY, FROM_EMAIL, ADMIN_EMAIL)
+ * is sourced EXCLUSIVELY from environment variables or .env file.
  */
 
 // -------------------------------------------------------------------------
-// 1. CONFIGURATION
+// 1. ENVIRONMENT & CONFIGURATION
 // -------------------------------------------------------------------------
 // You can set your Resend API Key directly here between the quotes,
 // OR in config.php, OR via an environment variable.
@@ -18,25 +22,71 @@ $adminEmail          = 'info@finackle.com';
 $fromEmail           = 'Finackle <website@finackle.com>';
 $autoReplySubject    = 'Thank You for Contacting Finackle';
 
-// Check for external environment variables
-$envApiKey = getenv('RESEND_API_KEY') ?: ($_ENV['RESEND_API_KEY'] ?? '');
-$envFrom   = getenv('FROM_EMAIL')     ?: ($_ENV['FROM_EMAIL']     ?? '');
-$envAdmin  = getenv('ADMIN_EMAIL')    ?: ($_ENV['ADMIN_EMAIL']    ?? '');
 
-if (!empty($envApiKey)) $defaultResendApiKey = $envApiKey;
-if (!empty($envFrom))   $fromEmail           = $envFrom;
-if (!empty($envAdmin))  $adminEmail          = $envAdmin;
+// Helper to safely load .env file into environment if present
+if (!function_exists('load_finackle_env_file')) {
+    function load_finackle_env_file($filePath) {
+        if (!file_exists($filePath) || !is_readable($filePath)) {
+            return;
+        }
+        $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        if ($lines === false) return;
 
-// Load separate config.php if present
+        foreach ($lines as $line) {
+            $line = trim($line);
+            if (empty($line) || $line[0] === '#') continue;
+            if (strpos($line, '=') === false) continue;
+
+            list($name, $value) = explode('=', $line, 2);
+            $name  = trim($name);
+            $value = trim($value);
+
+            // Strip surrounding single/double quotes if present
+            if ((strpos($value, '"') === 0 && substr($value, -1) === '"') ||
+                (strpos($value, "'") === 0 && substr($value, -1) === "'")) {
+                $value = substr($value, 1, -1);
+            }
+
+            if (!array_key_exists($name, $_ENV)) {
+                $_ENV[$name] = $value;
+            }
+            if (!array_key_exists($name, $_SERVER)) {
+                $_SERVER[$name] = $value;
+            }
+            if (getenv($name) === false) {
+                putenv("$name=$value");
+            }
+        }
+    }
+}
+
+// Search and parse .env file from standard locations
+load_finackle_env_file(__DIR__ . '/.env');
+load_finackle_env_file(dirname(__DIR__) . '/.env');
+load_finackle_env_file(dirname(dirname(__DIR__)) . '/.env');
+
+// Retrieve credentials strictly from environment variables
+$resendApiKey     = getenv('RESEND_API_KEY') ?: ($_ENV['RESEND_API_KEY'] ?? ($_SERVER['RESEND_API_KEY'] ?? ''));
+$fromEmail        = getenv('FROM_EMAIL')     ?: ($_ENV['FROM_EMAIL']     ?? ($_SERVER['FROM_EMAIL']     ?? 'Finackle <website@finackle.com>'));
+$adminEmail       = getenv('ADMIN_EMAIL')    ?: ($_ENV['ADMIN_EMAIL']    ?? ($_SERVER['ADMIN_EMAIL']    ?? 'info@finackle.com'));
+$autoReplySubject = 'Thank You for Contacting Finackle';
+
+// Optionally merge with config.php if present
 if (file_exists(__DIR__ . '/config.php')) {
-    define('FINACKLE_APP', true);
+    if (!defined('FINACKLE_APP')) {
+        define('FINACKLE_APP', true);
+    }
     $cfg = @include __DIR__ . '/config.php';
     if (is_array($cfg)) {
-        if (!empty($cfg['resend_api_key']) && strpos($cfg['resend_api_key'], 're_') === 0 && $cfg['resend_api_key'] !== 're_YOUR_RESEND_API_KEY_HERE') {
-            $defaultResendApiKey = $cfg['resend_api_key'];
+        if (!empty($cfg['resend_api_key'])) {
+            $resendApiKey = $cfg['resend_api_key'];
         }
-        if (!empty($cfg['from_email']))  $fromEmail  = $cfg['from_email'];
-        if (!empty($cfg['admin_email'])) $adminEmail = $cfg['admin_email'];
+        if (!empty($cfg['from_email'])) {
+            $fromEmail = $cfg['from_email'];
+        }
+        if (!empty($cfg['admin_email'])) {
+            $adminEmail = $cfg['admin_email'];
+        }
     }
 }
 
@@ -62,25 +112,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // -------------------------------------------------------------------------
-// 3. GET REQUEST: HEALTH & DIAGNOSTIC CHECK (For testing PHP on Hostinger)
+// 3. GET REQUEST: HEALTH & DIAGNOSTIC CHECK
 // -------------------------------------------------------------------------
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $hasCurl = function_exists('curl_init');
-    $isConfigured = !empty($defaultResendApiKey) && 
-                    strpos($defaultResendApiKey, 're_') === 0 && 
-                    strpos($defaultResendApiKey, 'REPLACE') === false &&
-                    $defaultResendApiKey !== 're_YOUR_RESEND_API_KEY_HERE';
+    $isConfigured = !empty($resendApiKey);
 
     echo json_encode([
-        'status'               => 'online',
-        'endpoint'             => '/api/send-enquiry.php',
-        'message'              => 'Finackle Enquiry Backend is active. Submit enquiries via POST.',
-        'php_version'          => PHP_VERSION,
-        'curl_available'       => $hasCurl,
-        'resend_configured'    => $isConfigured,
-        'admin_recipient'      => $adminEmail,
-        'sender_address'       => $fromEmail,
-        'timestamp'            => date('Y-m-d H:i:s T')
+        'status'            => 'online',
+        'endpoint'          => '/api/send-enquiry.php',
+        'message'           => 'Finackle Enquiry Backend is active. Submit enquiries via POST.',
+        'php_version'       => PHP_VERSION,
+        'curl_available'    => $hasCurl,
+        'resend_configured' => $isConfigured,
+        'resend_source'     => $isConfigured ? 'environment' : 'missing',
+        'admin_recipient'   => $adminEmail,
+        'sender_address'    => $fromEmail,
+        'timestamp'         => date('Y-m-d H:i:s T')
     ], JSON_PRETTY_PRINT);
     exit;
 }
@@ -203,16 +251,14 @@ try {
 }
 
 // -------------------------------------------------------------------------
-// 7. CHECK RESEND CONFIGURATION
+// 7. VERIFY RESEND ENVIRONMENT CONFIGURATION
 // -------------------------------------------------------------------------
-if (empty($defaultResendApiKey) || 
-    strpos($defaultResendApiKey, 'REPLACE') !== false || 
-    $defaultResendApiKey === 're_YOUR_RESEND_API_KEY_HERE') {
-    
-    error_log("[Finackle Notice] Resend API Key is not set in send-enquiry.php or config.php. Enquiry from $email logged locally.");
+if (empty($resendApiKey)) {
+    error_log("[Finackle Error] RESEND_API_KEY is not defined in environment variables or .env.");
+    http_response_code(500);
     echo json_encode([
-        'success' => true,
-        'message' => 'Enquiry submitted successfully.'
+        'success' => false,
+        'message' => 'Configuration error: RESEND_API_KEY environment variable is not configured.'
     ]);
     exit;
 }
@@ -223,8 +269,8 @@ if (empty($defaultResendApiKey) ||
 function send_resend_email($apiKey, $payload) {
     if (!function_exists('curl_init')) {
         return [
-            'code' => 500,
-            'body' => 'PHP cURL extension is not enabled on this server.',
+            'code'  => 500,
+            'body'  => 'PHP cURL extension is not enabled on this server.',
             'error' => 'cURL not available'
         ];
     }
@@ -235,15 +281,15 @@ function send_resend_email($apiKey, $payload) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         'Authorization: Bearer ' . $apiKey,
         'Content-Type: application/json',
-        'User-Agent: Finackle-Hostinger-Enquiry/2.0'
+        'User-Agent: Finackle-Enquiry/2.0'
     ]);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
     curl_setopt($ch, CURLOPT_TIMEOUT, 15);
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $response  = curl_exec($ch);
+    $httpCode  = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     $curlError = curl_error($ch);
     $curlErrno = curl_errno($ch);
     curl_close($ch);
@@ -256,13 +302,13 @@ function send_resend_email($apiKey, $payload) {
         curl_setopt($ch2, CURLOPT_HTTPHEADER, [
             'Authorization: Bearer ' . $apiKey,
             'Content-Type: application/json',
-            'User-Agent: Finackle-Hostinger-Enquiry/2.0'
+            'User-Agent: Finackle-Enquiry/2.0'
         ]);
         curl_setopt($ch2, CURLOPT_POSTFIELDS, json_encode($payload));
         curl_setopt($ch2, CURLOPT_TIMEOUT, 15);
         curl_setopt($ch2, CURLOPT_SSL_VERIFYPEER, false);
-        $response = curl_exec($ch2);
-        $httpCode = curl_getinfo($ch2, CURLINFO_HTTP_CODE);
+        $response  = curl_exec($ch2);
+        $httpCode  = curl_getinfo($ch2, CURLINFO_HTTP_CODE);
         $curlError = curl_error($ch2);
         curl_close($ch2);
     }
@@ -388,14 +434,14 @@ $adminPayload = [
     'text'     => $adminText,
 ];
 
-$adminResult = send_resend_email($defaultResendApiKey, $adminPayload);
+$adminResult = send_resend_email($resendApiKey, $adminPayload);
 
 // If custom domain is not yet verified in Resend, automatically fallback to onboarding@resend.dev
 if ($adminResult['code'] < 200 || $adminResult['code'] >= 300) {
     error_log("[Finackle Notice] Resend delivery with '$fromEmail' returned HTTP {$adminResult['code']}. Retrying with default sender...");
     $fallbackPayload = $adminPayload;
     $fallbackPayload['from'] = 'Finackle Enquiry <onboarding@resend.dev>';
-    $retry = send_resend_email($defaultResendApiKey, $fallbackPayload);
+    $retry = send_resend_email($resendApiKey, $fallbackPayload);
     if ($retry['code'] >= 200 && $retry['code'] < 300) {
         $adminResult = $retry;
     }
@@ -406,7 +452,7 @@ if ($adminResult['code'] < 200 || $adminResult['code'] >= 300) {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Unable to submit enquiry.'
+        'message' => 'Unable to submit enquiry. Mail delivery failed.'
     ]);
     exit;
 }
@@ -488,11 +534,11 @@ $customerPayload = [
 ];
 
 // Send customer auto-reply
-$customerResult = send_resend_email($defaultResendApiKey, $customerPayload);
+$customerResult = send_resend_email($resendApiKey, $customerPayload);
 if ($customerResult['code'] < 200 || $customerResult['code'] >= 300) {
     $customerFallback = $customerPayload;
     $customerFallback['from'] = 'Finackle Team <onboarding@resend.dev>';
-    send_resend_email($defaultResendApiKey, $customerFallback);
+    send_resend_email($resendApiKey, $customerFallback);
 }
 
 // -------------------------------------------------------------------------
