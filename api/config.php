@@ -28,7 +28,7 @@ return [
      * Get your API key from https://resend.com/api-keys
      * Replace 're_YOUR_RESEND_API_KEY_HERE' with your real key.
      */
-    'resend_api_key' => $envApiKey ?: '',
+    'resend_api_key' => $envApiKey ?: 're_YOUR_RESEND_API_KEY_HERE',
 
     /**
      * Sender Email Address (From):
