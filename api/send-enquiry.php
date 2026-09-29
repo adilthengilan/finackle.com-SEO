@@ -5,7 +5,7 @@
  *
  * Designed specifically for Hostinger Shared Hosting (PHP 7.4 - 8.3+)
  * Communicates directly with the Resend API to deliver website enquiries
- * to sales@finackle.com and sends a confirmation auto-reply to the customer.
+ * to info@finackle.com and sends a confirmation auto-reply to the customer.
  */
 
 // -------------------------------------------------------------------------
@@ -13,8 +13,8 @@
 // -------------------------------------------------------------------------
 // You can set your Resend API Key directly here between the quotes,
 // OR in config.php, OR via an environment variable.
-$defaultResendApiKey = 're_123456789_REPLACE_WITH_YOUR_KEY';
-$adminEmail          = 'sales@finackle.com';
+$defaultResendApiKey = 're_R4ZgFZXf_DqDGxV6ZQGaQkLy91T1yiZJa';
+$adminEmail          = 'info@finackle.com';
 $fromEmail           = 'Finackle <website@finackle.com>';
 $autoReplySubject    = 'Thank You for Contacting Finackle';
 
