@@ -28,7 +28,7 @@ return [
      * Get your API key from https://resend.com/api-keys
      * Replace 're_YOUR_RESEND_API_KEY_HERE' with your real key.
      */
-    'resend_api_key' => $envApiKey ?: 're_R4ZgFZXf_DqDGxV6ZQGaQkLy91T1yiZJa',
+    'resend_api_key' => $envApiKey ?: 're_YOUR_RESEND_API_KEY_HERE',
 
     /**
      * Sender Email Address (From):
@@ -42,5 +42,5 @@ return [
      * Recipient Email Address (To):
      * Where customer enquiries are delivered.
      */
-    'admin_email' => $envAdmin ?: 'info@finackle.com',
+    'admin_email' => $envAdmin ?: 'sales@finackle.com',
 ];
