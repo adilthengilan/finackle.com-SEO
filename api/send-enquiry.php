@@ -90,6 +90,11 @@ if (file_exists(__DIR__ . '/config.php')) {
     }
 }
 
+// Fallback to manually configured key in file if not provided via environment
+if (empty($resendApiKey) && !empty($defaultResendApiKey) && strpos($defaultResendApiKey, 're_') === 0 && $defaultResendApiKey !== 're_YOUR_RESEND_API_KEY_HERE') {
+    $resendApiKey = $defaultResendApiKey;
+}
+
 // -------------------------------------------------------------------------
 // 2. HEADERS & CORS
 // -------------------------------------------------------------------------
