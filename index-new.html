@@ -1,0 +1,1757 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Finackle Clarity Homepage (Copy)</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: the prototype's calm teal world, rebuilt for contrast. Spine of the page = the tagline as a flow: Data → Clarity → Control → Decisions. */
+:root{
+  --bg:#F4F7F8; --paper:#FFFFFF; --soft:#E9F0F3; --line:#D3DDE3; --grid:rgba(20,47,85,.06);
+  --fg:#0F1F38; --muted:#3B4D66; --faint:#5D6E86;
+  --ink:#142F55; --ink-2:#0C1E3C; --on-ink:#F3F8F6; --on-ink-muted:#BACADF; --ink-line:rgba(243,248,246,.15); --ink-card:rgba(255,255,255,.06);
+  --green:#0B7F8A; --green-hi:#1FD6CB; --mint:#D6F3F2; --mint-fg:#08636D;
+  --sage:#E0F1F1; --sand:#F1ECE0; --mist:#E7E8F0; --blush:#F5E6DE; --amber:#9A5A12; --amber-soft:#FBEBD6;
+  --font:"Manrope","Segoe UI",system-ui,sans-serif;
+  --shadow:0 30px 60px -30px rgba(12,30,60,.35);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0A1628; --paper:#0F2036; --soft:#142942; --line:#223A57; --grid:rgba(243,248,246,.05);
+  --fg:#EAF0F7; --muted:#B2C1D4; --faint:#8C9DB4;
+  --ink:#10284A; --ink-2:#06111F; --green:#36D6CC; --mint:#0F3B44; --mint-fg:#86EAE2;
+  --sage:#12323A; --sand:#2C2719; --mist:#1D2233; --blush:#33221C; --amber:#F2B66B; --amber-soft:#35281A;
+  --shadow:0 30px 60px -30px rgba(0,0,0,.75); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0A1628; --paper:#0F2036; --soft:#142942; --line:#223A57; --grid:rgba(243,248,246,.05);
+  --fg:#EAF0F7; --muted:#B2C1D4; --faint:#8C9DB4;
+  --ink:#10284A; --ink-2:#06111F; --green:#36D6CC; --mint:#0F3B44; --mint-fg:#86EAE2;
+  --sage:#12323A; --sand:#2C2719; --mist:#1D2233; --blush:#33221C; --amber:#F2B66B; --amber-soft:#35281A;
+  --shadow:0 30px 60px -30px rgba(0,0,0,.75); color-scheme:dark}
+/* Base reset (matches the approved design preview) */
+html,body{margin:0;padding:0}
+body{-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
+button,input,select,textarea{font:inherit}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.62;overflow-x:hidden}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;letter-spacing:-.035em;text-wrap:balance;font-weight:700}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lbl{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.lbl::before{content:"";width:26px;height:2px;background:currentColor;border-radius:1px}
+.g{color:var(--green)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font:700 15px var(--font);text-decoration:none;border:0;cursor:pointer;transition:transform .2s ease,background-color .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{transition:transform .25s ease}.btn:hover svg{transform:translateX(4px)}
+.btn-ink{background:var(--ink);color:var(--on-ink);box-shadow:0 14px 28px -14px rgba(12,42,54,.6)}
+.btn-ink:hover{background:var(--green)}
+.btn-mint{background:var(--green-hi);color:#0C1E3C}
+.btn-line{border:1.5px solid var(--line);background:var(--paper);color:var(--fg)}
+.btn-line:hover{border-color:var(--green)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:21px;letter-spacing:-.03em}
+.brand .logo{width:25px;height:auto;display:block}
+.logo-tile{width:42px;height:42px;border-radius:11px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex:none}
+.logo-tile img{width:21px;height:auto;display:block}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .nav .brand .logo{background:#FFFFFF;border-radius:8px;padding:4px 6px;width:37px}}
+:root[data-theme="dark"] .nav .brand .logo{background:#FFFFFF;border-radius:8px;padding:4px 6px;width:37px}
+.links{display:flex;gap:26px;font-size:14.5px;font-weight:600}
+.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--fg)}
+.navr{display:flex;gap:8px;align-items:center}
+.icon-btn{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--line);color:#1C9E58;background:var(--paper);text-decoration:none}
+.nav .btn{min-height:44px;font-size:14px;padding:0 18px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-block:76px 84px}
+.pilltag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--mint);color:var(--mint-fg);font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.pilltag i{width:7px;height:7px;border-radius:50%;background:currentColor;animation:blink 1.8s ease-in-out infinite}
+@keyframes blink{50%{opacity:.3}}
+.hero h1{font-size:clamp(36px,4.6vw,60px);line-height:1.06;margin-top:14px;letter-spacing:-.04em}
+.hero h1 .g{color:var(--green)}
+.tagline{font-size:16px;font-weight:700;color:var(--green);letter-spacing:-.005em}
+.svcrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.svcrow a{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--fg);font-size:14px;font-weight:700;text-decoration:none;transition:border-color .2s ease,color .2s ease}
+.svcrow a:hover{border-color:var(--green);color:var(--green)}
+.svcrow-lbl{width:100%;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.hero h1 .w{color:var(--green);background:linear-gradient(var(--green-hi),var(--green-hi)) no-repeat 0 94%/0% .1em;animation:ul .8s cubic-bezier(.2,.8,.2,1) .5s forwards;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero h1 .w2{animation-delay:.85s}.hero h1 .w3{animation-delay:1.2s}
+.nw{white-space:nowrap}
+@keyframes ul{to{background-size:100% .1em}}
+.hero .lede{font-size:19px;color:var(--muted);margin-top:24px;max-width:34em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:28px;font-size:14px;font-weight:600;color:var(--muted)}
+.trust span{display:flex;gap:8px;align-items:center}
+.trust svg{color:var(--green)}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:22px;position:relative}
+.hero-card{}
+@keyframes float{50%{transform:translateY(-8px)}}
+.ch{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.tiny{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.ch b{display:block;font-size:19px;letter-spacing:-.02em;margin-top:2px}
+.tagp{font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:5px 10px;border-radius:999px;background:var(--mint);color:var(--mint-fg);white-space:nowrap}
+.kp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+.kp > div{background:var(--soft);border-radius:14px;padding:14px}
+.kp b{display:block;font-size:26px;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:2px}
+.kp small{font-size:12px;color:var(--faint)}
+.chart{display:block;width:100%;height:auto;margin-top:12px}
+.chart .gl{stroke:var(--line)}
+.chart .a{fill:none;stroke:var(--green);stroke-width:3;stroke-linecap:round;stroke-dasharray:640;stroke-dashoffset:640;animation:draw 2.2s ease-out .6s forwards}
+.chart .b{fill:none;stroke:var(--faint);stroke-width:2;stroke-dasharray:4 6;opacity:.6}
+.chart text{fill:var(--faint);font:600 10.5px var(--font)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cbar{margin-top:14px;background:var(--ink);color:var(--on-ink);border-radius:14px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;font-weight:600}
+
+/* decision strip */
+
+section.s{padding-block:112px}
+.sh{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px 64px;align-items:end}
+.sh h2{font-size:clamp(34px,4.4vw,52px);line-height:1.06;margin-top:16px}
+.sh p{color:var(--muted);font-size:18px}
+
+/* challenge */
+.probs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.prob{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:12px;transition:transform .3s ease,box-shadow .3s ease}
+.prob:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.prob .pi{width:48px;height:48px;border-radius:14px;background:var(--amber-soft);color:var(--amber);display:flex;align-items:center;justify-content:center}
+.prob h3{font-size:23px}
+.prob p{color:var(--muted);font-size:16px}
+.prob q{margin-top:auto;padding-top:8px;font-weight:700;font-size:15px;color:var(--amber)}
+
+/* flow */
+.flow-wrap{background:var(--ink);color:var(--on-ink)}
+.flow-wrap .lbl{color:var(--green-hi)}
+.flow-wrap .sh p{color:var(--on-ink-muted)}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:60px;position:relative}
+.flow::before{content:"";position:absolute;left:12%;right:12%;top:36px;height:2px;background:var(--ink-line)}
+.flow .fillbar{position:absolute;left:12%;top:36px;height:2px;background:var(--green-hi);width:0;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.node{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:0 10px;position:relative;z-index:1;min-height:44px}
+.node .ring{width:74px;height:74px;border-radius:50%;background:var(--ink);border:2px solid var(--ink-line);display:flex;align-items:center;justify-content:center;transition:all .35s ease;color:var(--on-ink-muted)}
+.node b{font-size:22px;letter-spacing:-.02em;color:var(--on-ink-muted);transition:color .3s ease}
+.node small{font-size:13.5px;color:var(--on-ink-muted);max-width:15em}
+.node:hover .ring{border-color:var(--green-hi)}
+.node[aria-selected="true"] .ring{background:var(--green-hi);border-color:var(--green-hi);color:#0C1E3C;transform:scale(1.08)}
+.node[aria-selected="true"] b{color:var(--on-ink)}
+.node.done .ring{border-color:var(--green-hi);color:var(--green-hi)}
+.node:focus-visible{outline:3px solid var(--green-hi);outline-offset:4px;border-radius:12px}
+.fpane{margin-top:48px;background:var(--ink-card);border:1px solid var(--ink-line);border-radius:26px;padding:36px;display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:40px;align-items:start;transition:opacity .25s ease}
+.fpane.sw{opacity:.15}
+.fpane h3{font-size:clamp(26px,3vw,34px);line-height:1.12}
+.fpane .fp{color:var(--on-ink-muted);margin-top:14px}
+.fpane ul{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:10px}
+.fpane li{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.fpane li svg{color:var(--green-hi);flex:none;margin-top:5px}
+.doc{background:var(--paper);color:var(--fg);border-radius:18px;padding:22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);font-size:14px}
+.doc-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.doc-h b{font-size:16px}
+.tbl{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:9px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.tbl .r{text-align:right}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .tot td{font-weight:800;border-top:2px solid var(--fg)}
+.up{color:var(--green)}.dn{color:var(--amber)}
+.st{display:inline-block;font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:999px;background:var(--mint);color:var(--mint-fg);white-space:nowrap}
+.st.w{background:var(--amber-soft);color:var(--amber)}
+.src{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.src div{background:var(--soft);border-radius:12px;padding:10px 12px;font-weight:700;font-size:13.5px;display:flex;justify-content:space-between;gap:8px}
+.src small{color:var(--amber);font-weight:700}
+
+/* questions */
+.qgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:56px;align-items:start}
+.qlist{display:flex;flex-direction:column;gap:10px}
+.qlist button{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:16px;background:var(--paper);border:1.5px solid var(--line);font-weight:700;font-size:16.5px;min-height:44px;transition:all .25s ease}
+.qlist button .n{font-size:12.5px;color:var(--faint);font-weight:800;width:22px}
+.qlist button svg{margin-left:auto;color:var(--faint);transition:transform .25s ease}
+.qlist button:hover{border-color:var(--green)}
+.qlist button[aria-selected="true"]{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.qlist button[aria-selected="true"] .n,.qlist button[aria-selected="true"] svg{color:var(--green-hi)}
+.qlist button[aria-selected="true"] svg{transform:translateX(4px)}
+.qlist button:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.qans{background:var(--mint);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px;min-height:100%;transition:opacity .25s ease}
+.qans.sw{opacity:.2}
+.qans .tiny{color:var(--mint-fg)}
+.qans h3{font-size:26px;line-height:1.15}
+.qans p{color:var(--fg)}
+.qans .rep{background:var(--paper);border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:var(--shadow)}
+.qans .rep .ri{width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--green-hi);display:flex;align-items:center;justify-content:center;flex:none}
+.qans .rep .rt{display:flex;flex-direction:column;min-width:0}
+.qans .rep b{display:block;font-size:16px;line-height:1.3}
+.qans .rep small{color:var(--faint);font-size:13px}
+
+/* services */
+.svcs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:56px}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}
+.svc:hover{transform:translateY(-2px);border-color:var(--green);box-shadow:var(--shadow)}
+.svc .si{width:46px;height:46px;border-radius:14px;background:var(--mint);color:var(--mint-fg);display:flex;align-items:center;justify-content:center;transition:transform .3s ease}
+
+.svc h3{font-size:19px;letter-spacing:-.02em;margin-top:8px}
+.svc p{font-size:15px;color:var(--muted)}
+.svc .go{margin-top:auto;padding-top:6px;font-size:14px;font-weight:700;color:var(--green);display:flex;gap:6px;align-items:center}
+.svc.hl{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.svc.hl p{color:var(--on-ink-muted)}
+.svc.hl .si{background:rgba(31,214,203,.15);color:var(--green-hi)}
+.svc.hl .go{color:var(--green-hi)}
+
+/* industries */
+.inds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:56px}
+.ind{border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:10px;min-height:270px;border:1px solid var(--line);transition:transform .3s ease}
+.ind:hover{transform:translateY(-2px)}
+.ind:nth-child(1){background:var(--sage)}.ind:nth-child(2){background:var(--sand)}.ind:nth-child(3){background:var(--mist)}.ind:nth-child(4){background:var(--blush)}
+.ind h3{font-size:21px}
+.ind p{font-size:15px;color:var(--muted)}
+.ind .q{margin-top:auto;background:var(--paper);border-radius:12px;padding:11px 13px;font-weight:700;font-size:14.5px}
+
+/* sample pack */
+.pack{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.pack h2{font-size:clamp(34px,4.4vw,50px);line-height:1.06;margin-top:16px}
+.pack > div > p{color:var(--muted);font-size:18px;margin-top:18px}
+.pack ul{list-style:none;padding:0;margin:22px 0 28px;display:flex;flex-direction:column;gap:10px}
+.pack li{display:flex;gap:10px;font-weight:600}
+.pack li svg{color:var(--green);flex:none;margin-top:5px}
+.pages{position:relative;height:440px}
+.pg{position:absolute;width:62%;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.pg .tiny{margin-bottom:8px}
+.pg h4{font-size:16px;margin-bottom:10px}
+.pg1{left:0;top:40px;transform:rotate(-5deg)}
+.pg2{left:19%;top:10px;transform:rotate(1deg);z-index:2}
+.pg3{right:0;top:60px;transform:rotate(6deg)}
+.pages:hover .pg1{transform:rotate(-9deg) translate(-16px,6px)}
+.pages:hover .pg3{transform:rotate(10deg) translate(16px,6px)}
+.pages:hover .pg2{transform:translateY(-10px)}
+.mini-b{display:flex;align-items:flex-end;gap:5px;height:90px;margin-top:8px}
+.mini-b i{flex:1;background:var(--green);border-radius:4px 4px 0 0;opacity:.85}
+.mini-b i.lo{background:var(--amber)}
+.note{margin-top:12px;background:var(--mint);color:var(--mint-fg);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:700}
+.line{display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+
+/* process */
+.proc{background:var(--soft);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.step .wk{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--mint);color:var(--mint-fg);padding:5px 10px;border-radius:999px}
+.step h3{font-size:24px}
+.step p{color:var(--muted);font-size:16px}
+.step.dark{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.step.dark p{color:var(--on-ink-muted)}
+.step.dark .wk{background:rgba(31,214,203,.16);color:var(--green-hi)}
+.need{margin-top:20px;background:var(--paper);border:1px dashed var(--line);border-radius:18px;padding:20px 24px;display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center}
+.need b{font-size:15px}
+.need span{display:flex;gap:8px;align-items:center;font-size:15px;color:var(--muted)}
+.need svg{color:var(--green)}
+
+/* engagements */
+.engs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.eng{border-radius:22px;padding:30px;border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;gap:12px}
+.eng .tiny{color:var(--green)}
+.eng h3{font-size:25px}
+.eng p{color:var(--muted);font-size:16px}
+.eng ul{list-style:none;padding:0;margin:4px 0 0;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.eng li{display:flex;gap:8px}
+.eng li svg{color:var(--green);flex:none;margin-top:5px}
+.eng .btn{margin-top:auto;align-self:flex-start}
+.eng.feat{background:var(--ink);color:var(--on-ink);border-color:var(--ink)}
+.eng.feat p,.eng.feat li{color:var(--on-ink-muted)}
+.eng.feat .tiny{color:var(--green-hi)}
+.eng.feat li svg{color:var(--green-hi)}
+
+/* trust */
+.trustgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:48px}
+.tc{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--paper);display:flex;flex-direction:column;gap:8px}
+.tc{padding:26px;gap:10px}
+.tc .ti{width:46px;height:46px;border-radius:13px;background:var(--mint);color:var(--mint-fg);display:flex;align-items:center;justify-content:center;margin-bottom:6px}
+.tc b{font-size:18px;line-height:1.3;letter-spacing:-.01em}
+.tc p{font-size:14.5px;color:var(--muted)}
+.ph{background:var(--amber-soft);color:var(--amber);font-weight:700;border-radius:6px;padding:0 5px}
+
+/* quiz */
+.quiz{background:var(--ink);color:var(--on-ink);border-radius:32px;padding:56px;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px}
+.quiz .lbl{color:var(--green-hi)}
+.quiz h2{font-size:clamp(32px,4vw,46px);line-height:1.06;margin-top:16px}
+.quiz > div > p{color:var(--on-ink-muted);margin-top:16px}
+.score{margin-top:28px;background:var(--ink-card);border:1px solid var(--ink-line);border-radius:20px;padding:22px}
+.score .big{font-size:56px;font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.score .big small{font-size:20px;color:var(--on-ink-muted);font-weight:700}
+.meter{height:10px;border-radius:5px;background:var(--ink-line);margin-top:14px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;border-radius:5px;background:var(--green-hi);transition:width .5s ease,background-color .4s ease}
+.score h4{font-size:20px;margin-top:16px}
+.score p{color:var(--on-ink-muted);font-size:15px;margin-top:6px}
+.qs{display:flex;flex-direction:column;gap:10px}
+.qrow{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 16px;border-radius:16px;background:var(--ink-card);border:1px solid var(--ink-line)}
+.qrow span{font-weight:600;font-size:15.5px}
+.yn{display:flex;gap:6px;flex:none}
+.yn button{min-width:58px;min-height:44px;border-radius:999px;border:1.5px solid var(--ink-line);background:transparent;color:var(--on-ink);font:700 14px var(--font);cursor:pointer;transition:all .2s ease}
+.yn button:hover{border-color:var(--on-ink)}
+.yn button[aria-pressed="true"].y{background:var(--green-hi);color:#0C1E3C;border-color:var(--green-hi)}
+.yn button[aria-pressed="true"].n{background:var(--on-ink);color:#0C1E3C;border-color:var(--on-ink)}
+
+/* faq */
+.fgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px}
+.faqs{display:flex;flex-direction:column;gap:10px}
+details{background:var(--paper);border:1px solid var(--line);border-radius:16px;transition:border-color .2s ease}
+details[open]{border-color:var(--green)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;font-weight:700;font-size:17px;min-height:62px}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:20px;flex:none;transition:transform .25s ease}
+details[open] .pm{transform:rotate(45deg);background:var(--ink);color:var(--on-ink)}
+details p{padding:0 22px 20px;color:var(--muted)}
+
+/* final cta */
+.final{background:var(--ink);color:var(--on-ink);position:relative;overflow:hidden}
+.final::after{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;border:1px solid var(--ink-line);box-shadow:0 0 0 60px rgba(255,255,255,.02),0 0 0 120px rgba(255,255,255,.015)}
+.fwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;position:relative;z-index:1}
+.final .lbl{color:var(--green-hi)}
+.final h2{font-size:clamp(34px,4.4vw,54px);line-height:1.04;margin-top:16px}
+.final .intro{color:var(--on-ink-muted);font-size:18px;margin-top:18px}
+.inc{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-direction:column;gap:10px}
+.inc li{display:flex;gap:10px;font-weight:600}
+.inc li svg{color:var(--green-hi);flex:none;margin-top:5px}
+.reach{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.reach div{background:var(--ink-card);border:1px solid var(--ink-line);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+.reach small{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--on-ink-muted);font-weight:700}
+.reach b{user-select:all}
+.reach button{border:1px solid var(--ink-line);background:transparent;color:var(--on-ink);border-radius:999px;min-height:36px;padding:0 12px;font:700 12.5px var(--font);cursor:pointer}
+.form{background:var(--ink-card);border:1px solid var(--ink-line);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.form h3{font-size:22px}
+.fl{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--on-ink-muted)}
+.fl input,.fl select{min-height:50px;border-radius:12px;border:1px solid var(--ink-line);background:rgba(255,255,255,.07);color:var(--on-ink);padding:0 14px;font:16px var(--font)}
+.fl select option{color:#0E2530}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.form .btn{justify-content:center}
+.fine{font-size:13px;color:var(--on-ink-muted);text-align:center}
+.ok{display:none;background:rgba(31,214,203,.14);color:var(--green-hi);border-radius:12px;padding:12px 14px;font-weight:700;font-size:14px}
+.ok.show{display:block}
+
+footer{background:var(--ink-2);color:var(--on-ink-muted)}
+footer .wrap{padding-block:56px 28px}
+.fg{display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px}
+.fg .brand{color:var(--on-ink)}
+.fc{display:flex;flex-wrap:wrap;gap:52px;font-size:15px}
+.fc div{display:flex;flex-direction:column;gap:9px}
+.fc b{color:var(--on-ink);font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.fc a{text-decoration:none}.fc a:hover{color:var(--on-ink)}
+.fb{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--ink-line);margin-top:40px;padding-top:20px;font-size:13px}
+
+.wa{position:fixed;z-index:50;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:10px;min-height:54px;padding:0 20px 0 16px;border-radius:999px;background:#25D366;color:#0C1E3C;text-decoration:none;font-weight:800;box-shadow:0 16px 34px -12px rgba(0,0,0,.4);transition:transform .2s ease}
+.wa:hover{transform:translateY(-3px)}
+
+.pre{opacity:0;transform:translateY(24px)}
+.rv{transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+
+@media (max-width:1000px){
+  .hero .wrap,.sh,.qgrid,.pack,.quiz,.fgrid,.fwrap,.fpane{grid-template-columns:minmax(0,1fr)}
+  .probs,.steps,.engs{grid-template-columns:minmax(0,1fr)}
+  .svcs,.inds,.trustgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}
+  .flow::before,.flow .fillbar{display:none}
+  .links{display:none}
+  .quiz{padding:36px}
+}
+@media (max-width:560px){
+  .svcs,.inds,.trustgrid,.two,.src{grid-template-columns:minmax(0,1fr)}
+  .fpane,.qans,.form{padding:24px}
+  .quiz{padding:26px}
+  .qrow{flex-direction:column;align-items:flex-start}
+  .pages{height:400px}.pg{width:78%}
+  .nav .btn .long{display:none}
+  .wa .txt{display:none}.wa{padding:0 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .w{background-size:100% .1em}
+  .chart .a{stroke-dashoffset:0}
+  .pre{opacity:1;transform:none}
+}
+
+/* ---- Added for the PHP build ---- */
+[hidden]{display:none!important}
+.brand .logo{width:25px;height:auto;display:block}
+.logo-tile{width:42px;height:42px;border-radius:11px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex:none}
+.logo-tile img{width:21px;height:auto;display:block}
+.form button.btn{width:100%}
+.hp{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+.form-msg{border-radius:12px;padding:12px 14px;font-weight:700;font-size:14px}
+.form-msg.ok{background:rgba(31,214,203,.14);color:var(--green-hi)}
+.form-msg.err{background:var(--amber-soft);color:var(--amber)}
+
+
+/* ---- Free Finance Health Check (lead magnet) ---- */
+.qz-left{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column}
+.qa-group{display:flex;flex-direction:column;gap:10px}
+.qa-group + .qa-group{margin-top:14px}
+.qa-h{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-hi);padding:2px}
+.hq{background:var(--ink-card);border:1px solid var(--ink-line);border-radius:16px;padding:16px 18px;transition:border-color .2s ease}
+.hq.done{border-color:rgba(31,214,203,.45)}
+.hq > p{font-weight:700;font-size:16px;line-height:1.4;display:flex;gap:10px}
+.hq-n{font-size:12px;font-weight:800;color:var(--green-hi);padding-top:3px;flex:none}
+.hq-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.hq-opt{position:relative;display:flex;align-items:center;gap:10px;min-height:46px;padding:9px 12px;border:1px solid var(--ink-line);border-radius:12px;cursor:pointer;font-size:14.5px;font-weight:600;color:var(--on-ink);line-height:1.3;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.hq-opt:hover{border-color:var(--on-ink-muted)}
+.hq-opt input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.hq-opt span{display:flex;align-items:center;gap:10px}
+.hq-opt span::before{content:"";width:16px;height:16px;border-radius:50%;border:2px solid var(--on-ink-muted);flex:none;box-sizing:border-box}
+.hq-opt.on{background:var(--green-hi);border-color:var(--green-hi);color:#0C1E3C}
+.hq-opt.on span::before{border:5px solid #0C1E3C;background:var(--green-hi)}
+.hq-opt.focus{outline:3px solid var(--green-hi);outline-offset:2px}
+.hs-progress{margin-top:12px;font-size:13px;font-weight:700;color:var(--on-ink-muted)}
+.hs-gate{margin-top:18px;background:var(--ink-card);border:1px solid var(--green-hi);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:opacity .4s ease,transform .4s ease}
+.hs-gate.sw{opacity:0;transform:translateY(10px)}
+.hs-gate h4{font-size:20px;margin:0}
+.hs-gate > p{color:var(--on-ink-muted);font-size:14.5px}
+.hs-gate .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hs-gate .btn{justify-content:center}
+.fl .opt{font-weight:500;color:var(--on-ink-muted)}
+
+.score-promo{padding-block:0 20px}
+.sp-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;background:var(--mint);border:1px solid var(--line);border-radius:22px;padding:24px 28px}
+.sp-card b{font-size:20px;letter-spacing:-.02em;display:block}
+.sp-card p{color:var(--muted);font-size:15.5px;max-width:52em}
+.sp-card .sp-ic{width:52px;height:52px;border-radius:14px;background:var(--ink);color:var(--green-hi);display:flex;align-items:center;justify-content:center;flex:none}
+.sp-l{display:flex;align-items:center;gap:16px;min-width:0;flex:1 1 420px}
+
+/* Report: a CFO-style document */
+.hr{margin-top:28px;background:var(--paper);color:var(--fg);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);overflow:hidden;transition:opacity .5s ease,transform .5s ease}
+.hr.sw{opacity:0;transform:translateY(16px)}
+.hr:focus{outline:none}
+.hr-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--ink);color:var(--on-ink);padding:16px 40px}
+.hr-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em}
+.hr-brand .logo-tile{width:34px;height:34px;border-radius:9px}
+.hr-brand .logo-tile img{width:17px}
+.hr-conf{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-hi)}
+.hr-title{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:32px 40px 26px;border-bottom:2px solid var(--ink)}
+.hr-title h3{font-size:clamp(28px,3.4vw,40px);line-height:1.05}
+.hr-title p{color:var(--muted);margin-top:8px}
+.hr-ring{--p:0;--c:var(--green);width:120px;height:120px;border-radius:50%;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(closest-side,var(--paper) 78%,transparent 79% 100%),conic-gradient(var(--c) calc(var(--p)*1%),var(--soft) 0)}
+.hr-ring b{font-size:38px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.hr-ring small{font-size:12px;color:var(--faint);font-weight:700}
+.hr-sec{padding:26px 40px;border-bottom:1px solid var(--line)}
+.hr-sec h4{display:flex;align-items:baseline;gap:12px;font-size:19px;margin:0 0 14px;letter-spacing:-.02em}
+.hr-sec h4 span{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--green)}
+.hr-lead{font-size:17px;line-height:1.65;color:var(--fg);max-width:62em}
+.hr-muted{color:var(--muted);margin-top:10px;max-width:34em}
+.hr-band{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;background:var(--mint);color:var(--mint-fg)}
+.hr-band.amber{background:var(--amber-soft);color:var(--amber)}
+.hr-scoregrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:32px;align-items:start}
+.hr-scale{position:relative;display:flex;gap:3px;margin-top:40px}
+.hr-scale span{display:flex;flex-direction:column;gap:6px;min-width:0}
+.hr-scale span::before{content:"";height:10px;border-radius:3px;background:var(--soft)}
+.hr-scale span:first-child::before{background:var(--amber-soft)}
+.hr-scale span:last-child::before{background:var(--mint)}
+.hr-scale i{font-style:normal;font-size:12px;font-weight:700;color:var(--muted);line-height:1.25}
+.hr-scale em{font-style:normal;font-size:11.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.hr-you{position:absolute;top:-30px;transform:translateX(-50%);background:var(--ink);color:var(--on-ink);font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;transition:left .9s cubic-bezier(.2,.8,.2,1)}
+.hr-you::after{content:"";position:absolute;left:50%;bottom:-5px;margin-left:-5px;border:5px solid transparent;border-bottom:0;border-top-color:var(--ink)}
+.hr-bench{width:100%;border-collapse:collapse;font-size:15px}
+.hr-bench td{padding:12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.hr-bench td:last-child{text-align:right;white-space:nowrap;padding-left:12px;font-variant-numeric:tabular-nums}
+.hr-bench tr:first-child td{font-weight:700}
+.hr-bench tr:last-child td{border-bottom:0}
+.hr-areas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.hr-area{border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.hr-area-h{display:flex;flex-direction:column;gap:6px}
+.hr-area-h b{font-size:15px;line-height:1.25}
+.hr-lvl{align-self:flex-start;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--mint);color:var(--mint-fg)}
+.hr-area.weak .hr-lvl{background:var(--amber-soft);color:var(--amber)}
+.hr-bar{height:8px;border-radius:4px;background:var(--soft);overflow:hidden}
+.hr-bar i{display:block;height:100%;width:0;border-radius:4px;background:var(--green);transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.hr-area.weak .hr-bar i{background:var(--amber)}
+.hr-pct{font-size:22px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.hr-ans{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted);line-height:1.4}
+.hr-ans li{border-top:1px solid var(--line);padding-top:6px}
+.hr-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.hr-two .hr-sec + .hr-sec{border-left:1px solid var(--line)}
+.hr-risks,.hr-wins{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.hr-risks li{display:flex;gap:10px;align-items:flex-start;background:var(--amber-soft);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.4}
+.hr-risks li svg{color:var(--amber);flex:none;margin-top:1px}
+.hr-risks li b{display:block}
+.hr-risks li small{display:block;color:var(--amber);font-size:12.5px;font-weight:700;margin-top:2px}
+.hr-risks li.none{background:var(--mint);color:var(--mint-fg);font-weight:700}
+.hr-wins li{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.45}
+.hr-wins li::before{content:"✓";width:22px;height:22px;border-radius:50%;background:var(--green);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex:none;margin-top:1px}
+.hr-wins li small{display:block;color:var(--green);font-size:12.5px;font-weight:700;margin-top:2px}
+.hr-plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.hr-plan > div{background:var(--soft);border-radius:14px;padding:16px;position:relative}
+.hr-plan .tiny{color:var(--green)}
+.hr-plan ul{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.45}
+.hr-plan li{padding-left:16px;position:relative}
+.hr-plan li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--green)}
+.hr-time{margin-top:14px;font-size:15px}
+.hr-rec{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 32px;background:var(--mint);padding:28px 40px}
+.hr-rec > div:first-child{flex:1 1 420px}
+.hr-rec b{display:block;font-size:20px;letter-spacing:-.02em;color:var(--fg);line-height:1.3}
+.hr-rec p{color:var(--muted);font-size:15.5px;margin-top:6px;max-width:44em}
+.hr-btns{display:flex;flex-wrap:wrap;gap:10px}
+.hr-wa{flex:1 1 100%;border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:10px}
+.hr-wa .fl{color:var(--fg);font-size:14px}
+.hr-wa-row{display:flex;gap:8px;margin-top:6px;max-width:460px}
+.hr-wa-row input{flex:1;min-width:0;background:var(--paper)!important;color:var(--fg)!important;border:1px solid var(--line)!important}
+.hr-wa-row .btn{min-height:50px}
+.hr-wa .form-msg.ok{background:var(--paper);color:var(--mint-fg)}
+.hr-foot{font-size:12.5px;color:var(--faint);padding:16px 40px 22px}
+
+@media (max-width:1100px){.hr-areas{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:1000px){
+  .qz-left{position:static}
+  .hr-scoregrid,.hr-two,.hr-plan{grid-template-columns:minmax(0,1fr)}
+  .hr-two .hr-sec + .hr-sec{border-left:0}
+  .hr-areas{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .hq-opts,.hs-gate .two{grid-template-columns:minmax(0,1fr)}
+  .hr-top,.hr-title,.hr-sec,.hr-rec,.hr-foot{padding-left:20px;padding-right:20px}
+  .hr-areas{grid-template-columns:minmax(0,1fr)}
+  .hr-scale i{font-size:10.5px}
+  .hr-ring{width:96px;height:96px}.hr-ring b{font-size:30px}
+}
+@media print{
+  @page{margin:12mm}
+  html,body{background:#fff}
+  body *{visibility:hidden}
+  #hsReport,#hsReport *{visibility:visible}
+  #hsReport{position:absolute;left:0;top:0;width:100%;margin:0;box-shadow:none;border:0;border-radius:0}
+  .no-print{display:none!important}
+  .wa,.nav{display:none!important}
+  .hr-areas{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .hr-scoregrid,.hr-two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .hr-plan{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hr-area,.hr-plan > div,.hr-risks li,.hr-wins li,.hr-title,.hr-rec{break-inside:avoid}
+  .hr-sec h4{break-after:avoid}
+  .hr *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* review-only controls */
+.fs{position:fixed;z-index:60;left:calc(20px + env(safe-area-inset-left,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--fg);font:700 14px var(--font);cursor:pointer;box-shadow:var(--shadow)}
+.fs:hover{border-color:var(--green)}
+.secnav{position:fixed;z-index:60;right:calc(16px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);display:none;flex-direction:column;gap:10px}
+:fullscreen .secnav{display:flex}
+.secnav a{width:12px;height:12px;border-radius:50%;background:var(--line);border:2px solid var(--paper);box-shadow:0 0 0 1px var(--line);position:relative;transition:background-color .2s ease,transform .2s ease}
+.secnav a:hover,.secnav a.on{background:var(--green);transform:scale(1.25)}
+.secnav a span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--ink);color:var(--on-ink);font:700 12px var(--font);padding:4px 10px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.secnav a:hover span{opacity:1}
+@media (max-width:560px){.fs .txt{display:none}}
+</style>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Finackle F.Z.E.",
+    "url": "https://finackle.com",
+    "logo": "https://finackle.com/assets/img/finackle-logo-original.png",
+    "email": "info@finackle.com",
+    "telephone": "+971 54 502 2747",
+    "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ajman Free Zone",
+        "addressCountry": "AE"
+    },
+    "areaServed": "United Arab Emirates",
+    "description": "Outsourced finance, accounting and CFO support for growing UAE businesses: bookkeeping, VAT and Corporate Tax, payroll, financial reporting and CFO advisory. Take the Free Finance Health Check."
+}
+</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ok" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Finackle home"><img class="logo" src="data:image/png;base64,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" alt="" width="25" height="35">Finackle</a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a><a href="#who">Industries</a><a href="#process">How it works</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#start">Contact</a>
+    </nav>
+    <div class="navr">
+      <a class="icon-btn" href="https://wa.me/971545022747" target="_blank" rel="noopener" aria-label="WhatsApp Finackle"><svg width="20" height="20" aria-hidden="true"><use href="#wa"/></svg></a>
+      <a class="btn btn-ink" href="#quiz"><span><span class="long">Get your </span>Free Finance Health Check</span></a>
+    </div>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="tagline">Turning financial data into clarity, control &amp; better business decisions.</p>
+      <h1>Outsourced <span class="g">finance, accounting &amp; CFO support</span> for growing businesses.</h1>
+      <p class="lede">We handle your bookkeeping, VAT and Corporate Tax, payroll and monthly reporting, and give you CFO-level advice, so you always know where the business stands and what to do next.</p>
+      <div class="ctas">
+        <a class="btn btn-ink" href="#quiz">Get my Free Finance Health Check <svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
+        <a class="btn btn-line" href="#services">View our services</a>
+      </div>
+      <nav class="svcrow" aria-label="Our services"><span class="svcrow-lbl">What we do</span><a href="#services">Bookkeeping</a><a href="#services">VAT &amp; Corporate Tax</a><a href="#services">Payroll &amp; WPS</a><a href="#services">Financial reporting</a><a href="#services">CFO advisory</a></nav>
+      <div class="trust">
+        <span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>UAE-based</span>
+        <span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>CFO Advisory</span>
+        <span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Business Insights</span>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div class="card hero-card" aria-label="Illustrative Finackle dashboard">
+        <div class="ch"><div><div class="tiny">A clearer view</div><b>Your finance, in context.</b></div><span class="tagp">Demo view</span></div>
+        <div class="kp">
+          <div><div class="tiny">Cash position</div><b>AED <span data-c="238" data-s="K">238K</span></b><small>Illustrative</small></div>
+          <div><div class="tiny">Cash runway</div><b><span data-c="4.2" data-d="1">4.2</span> months</b><small>Illustrative</small></div>
+        </div>
+        <svg class="chart" viewBox="0 0 400 140" role="img" aria-label="Illustrative monthly operating picture: actual line rising above plan">
+          <line class="gl" x1="0" y1="120" x2="400" y2="120"/><line class="gl" x1="0" y1="80" x2="400" y2="80" stroke-dasharray="3 6"/><line class="gl" x1="0" y1="40" x2="400" y2="40" stroke-dasharray="3 6"/>
+          <path class="b" d="M10 100 C80 96 140 90 200 84 S320 70 390 60"/>
+          <path class="a" d="M10 104 C50 98 70 88 100 92 S150 78 180 74 S230 84 260 66 S320 52 350 50 S380 36 390 32"/>
+          <circle cx="390" cy="32" r="5" fill="var(--green)"/>
+          <text x="6" y="136">Jun</text><text x="82" y="136">Jul</text><text x="160" y="136">Aug</text><text x="238" y="136">Sep</text><text x="316" y="136">Oct</text><text x="372" y="136">Nov</text>
+        </svg>
+        <div class="cbar"><span>Profit, cash and next decisions, together.</span><svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s" id="services" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">Services</span><h2>Everything your finance function needs.</h2></div>
+      <p>Bookkeeping, tax, payroll, reporting and CFO advice for UAE businesses. Choose one service or hand us the whole finance function.</p>
+    </div>
+    <div class="svcs">
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h6M8 11h6"/></svg></span>
+        <h3>Accounting &amp; bookkeeping</h3>
+        <p>Accurate records, reconciliations, payables, receivables and a dependable month-end close.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <h3>Financial reporting</h3>
+        <p>P&amp;L, balance sheet, cash flow and KPIs with commentary you can act on.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+        <h3>CFO advisory</h3>
+        <p>Budgets, forecasts, pricing and margin reviews, plus a senior view on big decisions.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 19 5"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/></svg></span>
+        <h3>VAT compliance</h3>
+        <p>VAT registration support, return preparation and record reviews to keep you compliant.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7z"/></svg></span>
+        <h3>Corporate Tax</h3>
+        <p>Registration, computations and filing support shaped around your UAE structure.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span>
+        <h3>Payroll &amp; WPS</h3>
+        <p>Payroll processing, payslips, WPS support and end-of-service calculations.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        <h3>Cash flow &amp; budgeting</h3>
+        <p>Rolling forecasts and budgets that show liquidity ahead of time.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+            <a class="svc rv hl" href="#start">
+        <span class="si"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7M17.5 14v7"/></svg></span>
+        <h3>Finance systems &amp; controls</h3>
+        <p>System set-up, automation, approval workflows and a documented close.</p>
+        <span class="go">Ask about this <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></span>
+      </a>
+          </div>
+  </div>
+</section>
+<section class="score-promo" aria-label="Free Finance Health Score">
+  <div class="wrap">
+    <div class="sp-card rv">
+      <div class="sp-l">
+        <span class="sp-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
+        <div><b>Free Finance Health Check</b><p>Answer 10 quick questions and receive a personalised Finance Health Report with your score, key risks, and practical recommendations to strengthen reporting, cash flow, and financial controls.</p></div>
+      </div>
+      <a class="btn btn-ink" href="#quiz">Start my free check <svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
+    </div>
+  </div>
+</section>
+<section class="s" id="challenge">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">The challenge</span><h2>Growing businesses rarely lack data. They lack <span class="g">clarity</span>.</h2></div>
+      <p>Financial information is fragmented, processes are manual, and there is limited visibility into profitability, cash flow and performance. Without reliable reporting and structured systems, confident decisions get harder.</p>
+    </div>
+    <div class="probs">
+      <div class="prob rv"><span class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="5" width="7" height="7" rx="1.5"/><rect x="6" y="14" width="7" height="7" rx="1.5"/></svg></span><h3>Fragmented information</h3><p>Sales in one tool, bank in another, receipts in a chat thread. No single version of the truth.</p><q>Which spreadsheet is the right one?</q></div>
+      <div class="prob rv"><span class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Manual processes</h3><p>Copy-paste reconciliations, chasing approvals, rebuilding the same report every month.</p><q>Month-end takes us three weeks.</q></div>
+      <div class="prob rv"><span class="pi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><path d="M4 20 20 4"/></svg></span><h3>Limited visibility</h3><p>Profit by product, next month’s cash, the real cost of a channel. Too often it’s a guess.</p><q>Profitable on paper, short on cash.</q></div>
+    </div>
+  </div>
+</section>
+<section class="s flow-wrap" id="how">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">How we help</span><h2>From clean books to confident decisions.</h2></div>
+      <p>Four services that build on each other: bookkeeping, reporting, compliance and CFO advice. Select each step to see what you get.</p>
+    </div>
+
+    <div class="flow" role="tablist" aria-label="Our four services" id="flow">
+      <span class="fillbar" id="fillbar"></span>
+            <button type="button" class="node" role="tab" id="fn0" aria-controls="fp0" aria-selected="true" tabindex="0">
+        <span class="ring"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+        <b>Bookkeeping</b>
+        <small>Clean, reconciled books every month</small>
+      </button>
+            <button type="button" class="node" role="tab" id="fn1" aria-controls="fp1" aria-selected="false" tabindex="-1">
+        <span class="ring"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+        <b>Reporting</b>
+        <small>Monthly reports and cash visibility</small>
+      </button>
+            <button type="button" class="node" role="tab" id="fn2" aria-controls="fp2" aria-selected="false" tabindex="-1">
+        <span class="ring"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <b>Compliance</b>
+        <small>VAT, Corporate Tax and controls</small>
+      </button>
+            <button type="button" class="node" role="tab" id="fn3" aria-controls="fp3" aria-selected="false" tabindex="-1">
+        <span class="ring"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+        <b>CFO advice</b>
+        <small>Planning and decisions with a senior view</small>
+      </button>
+          </div>
+
+        <div class="fpane" id="fp0" role="tabpanel" aria-labelledby="fn0">
+      <div>
+        <div class="tiny" style="color:var(--green-hi)">Step 1 of 4 · Bookkeeping</div>
+        <h3 style="margin-top:10px">We bring every source into one place.</h3>
+        <p class="fp">Bank feeds, sales channels, supplier bills, payroll and receipts are connected and recorded consistently, so nothing lives in a side spreadsheet.</p>
+        <ul>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Bank and card feeds reconciled</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Sales and marketplace data matched</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>One chart of accounts for the business</li>
+                  </ul>
+      </div>
+      <div class="doc"><div class="doc-h"><b>Sources connected</b><span class="st">Sample</span></div><div class="src"><div>Bank accounts <span class="st">Linked</span></div><div>Sales / POS <span class="st">Linked</span></div><div>Marketplace payouts <span class="st">Linked</span></div><div>Supplier bills <span class="st">Linked</span></div><div>Payroll / WPS <span class="st">Linked</span></div><div>Receipts <small>2 missing</small></div></div></div>    </div>
+        <div class="fpane" id="fp1" role="tabpanel" aria-labelledby="fn1" hidden>
+      <div>
+        <div class="tiny" style="color:var(--green-hi)">Step 2 of 4 · Reporting</div>
+        <h3 style="margin-top:10px">Accurate reports that tell a clear story.</h3>
+        <p class="fp">A monthly management pack built on reconciled numbers, with profitability, cash flow and KPIs explained in plain language.</p>
+        <ul>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Monthly P&amp;L, balance sheet and cash flow</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Profit by product, branch or channel</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>13-week cash forecast</li>
+                  </ul>
+      </div>
+      <div class="doc"><div class="doc-h"><b>Management P&amp;L · September</b><span class="st">Sample</span></div><table class="tbl"><tr><th>Line</th><th class="r">Actual</th><th class="r">vs Aug</th></tr><tr><td>Revenue</td><td class="r">312,450</td><td class="r up">+9.0%</td></tr><tr><td>Gross profit</td><td class="r">131,229</td><td class="r up">+6.2%</td></tr><tr><td>Operating costs</td><td class="r">−86,850</td><td class="r dn">+11.4%</td></tr><tr class="tot"><td>Net profit</td><td class="r">44,379</td><td class="r dn">−1.1 pts</td></tr></table></div>    </div>
+        <div class="fpane" id="fp2" role="tabpanel" aria-labelledby="fn2" hidden>
+      <div>
+        <div class="tiny" style="color:var(--green-hi)">Step 3 of 4 · Compliance</div>
+        <h3 style="margin-top:10px">Controls and compliance that protect the business.</h3>
+        <p class="fp">Approval limits, regular reconciliations, a documented close and a compliance calendar, so errors, leakage and penalties are caught before they cost you.</p>
+        <ul>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Approval matrix and segregation of duties</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>VAT and Corporate Tax prepared ahead of time</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Audit-ready records every month</li>
+                  </ul>
+      </div>
+      <div class="doc"><div class="doc-h"><b>Control &amp; compliance status</b><span class="st">Sample</span></div><table class="tbl"><tr><th>Item</th><th>When</th><th class="r">Status</th></tr><tr><td>Bank reconciliation</td><td>Weekly</td><td class="r"><span class="st">On track</span></td></tr><tr><td>Spend approvals</td><td>Ongoing</td><td class="r"><span class="st">Active</span></td></tr><tr><td>VAT return</td><td>28 days after period end</td><td class="r"><span class="st">Prepared</span></td></tr><tr><td>Corporate Tax return</td><td>Within 9 months of year-end</td><td class="r"><span class="st">Scheduled</span></td></tr></table></div>    </div>
+        <div class="fpane" id="fp3" role="tabpanel" aria-labelledby="fn3" hidden>
+      <div>
+        <div class="tiny" style="color:var(--green-hi)">Step 4 of 4 · CFO advice</div>
+        <h3 style="margin-top:10px">Better decisions, made with confidence.</h3>
+        <p class="fp">With reliable numbers in place, we help you plan: pricing, hiring, expansion, stock and cost changes, tested against your real cash position.</p>
+        <ul>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Budgets, forecasts and scenarios</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Pricing and margin reviews</li>
+                    <li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>A clear “can we afford it?” answer</li>
+                  </ul>
+      </div>
+      <div class="doc"><div class="doc-h"><b>Scenario: hire two people</b><span class="st">Sample</span></div><table class="tbl"><tr><th>Scenario</th><th class="r">Runway</th><th class="r">View</th></tr><tr><td>Current plan</td><td class="r">4.2 mo</td><td class="r"><span class="st">Comfortable</span></td></tr><tr><td>+1 hire</td><td class="r">3.5 mo</td><td class="r"><span class="st">Fine</span></td></tr><tr><td>+2 hires</td><td class="r">2.7 mo</td><td class="r"><span class="st w">Fix collections first</span></td></tr></table></div>    </div>
+      </div>
+</section>
+<section class="s" id="questions">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">The owner’s view</span><h2>Questions your numbers should <span class="g">answer</span>.</h2></div>
+      <p>Your finance should be connected to the decisions you are making, not sitting in a folder. Pick a question.</p>
+    </div>
+    <div class="qgrid">
+      <div class="qlist" role="tablist" aria-label="Owner questions" id="qlist">
+                <button type="button" role="tab" id="q0" aria-controls="qa0" aria-selected="true" tabindex="0">
+          <span class="n">01</span><span>Which products or services are actually profitable?</span><svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg>        </button>
+                <button type="button" role="tab" id="q1" aria-controls="qa1" aria-selected="false" tabindex="-1">
+          <span class="n">02</span><span>Where is margin moving, and why?</span><svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg>        </button>
+                <button type="button" role="tab" id="q2" aria-controls="qa2" aria-selected="false" tabindex="-1">
+          <span class="n">03</span><span>How much runway do we have?</span><svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg>        </button>
+                <button type="button" role="tab" id="q3" aria-controls="qa3" aria-selected="false" tabindex="-1">
+          <span class="n">04</span><span>Can we hire, expand or change our costs?</span><svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg>        </button>
+                <button type="button" role="tab" id="q4" aria-controls="qa4" aria-selected="false" tabindex="-1">
+          <span class="n">05</span><span>Are we on top of VAT and Corporate Tax?</span><svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg>        </button>
+              </div>
+            <div class="qans" id="qa0" role="tabpanel" aria-labelledby="q0">
+        <div class="tiny">How Finackle answers it</div>
+        <h3>Profit by product, service or channel</h3>
+        <p>We allocate direct costs, fees and discounts to each line so you see true contribution margin, not just revenue.</p>
+        <div class="rep">
+          <span class="ri"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <span class="rt"><b>Margin by product report</b><small>Included in your monthly pack</small></span>
+        </div>
+        <a class="btn btn-ink" href="#start" style="align-self:flex-start">Get this for your business <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+            <div class="qans" id="qa1" role="tabpanel" aria-labelledby="q1" hidden>
+        <div class="tiny">How Finackle answers it</div>
+        <h3>Month-on-month margin bridge</h3>
+        <p>We show exactly which costs moved margin each month, from supplier prices to delivery commissions.</p>
+        <div class="rep">
+          <span class="ri"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <span class="rt"><b>Margin bridge with commentary</b><small>Included in your monthly pack</small></span>
+        </div>
+        <a class="btn btn-ink" href="#start" style="align-self:flex-start">Get this for your business <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+            <div class="qans" id="qa2" role="tabpanel" aria-labelledby="q2" hidden>
+        <div class="tiny">How Finackle answers it</div>
+        <h3>Cash position and 13-week forecast</h3>
+        <p>Your forecast combines receivables, payables and commitments, so you see pressure weeks before it arrives.</p>
+        <div class="rep">
+          <span class="ri"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <span class="rt"><b>13-week cash forecast</b><small>Included in your monthly pack</small></span>
+        </div>
+        <a class="btn btn-ink" href="#start" style="align-self:flex-start">Get this for your business <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+            <div class="qans" id="qa3" role="tabpanel" aria-labelledby="q3" hidden>
+        <div class="tiny">How Finackle answers it</div>
+        <h3>Scenario planning</h3>
+        <p>We model the decision against your real cash and margins and give you a clear yes, not yet, or yes if.</p>
+        <div class="rep">
+          <span class="ri"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <span class="rt"><b>Scenario model and recommendation</b><small>Included in your monthly pack</small></span>
+        </div>
+        <a class="btn btn-ink" href="#start" style="align-self:flex-start">Get this for your business <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+            <div class="qans" id="qa4" role="tabpanel" aria-labelledby="q4" hidden>
+        <div class="tiny">How Finackle answers it</div>
+        <h3>Compliance calendar</h3>
+        <p>We map every obligation and prepare returns ahead of each deadline, with records kept audit-ready.</p>
+        <div class="rep">
+          <span class="ri"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+          <span class="rt"><b>Compliance status page</b><small>Included in your monthly pack</small></span>
+        </div>
+        <a class="btn btn-ink" href="#start" style="align-self:flex-start">Get this for your business <svg width="16" height="16" aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+          </div>
+  </div>
+</section>
+<section class="s" id="who" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">Made for the way you operate</span><h2>Finance that understands your <span class="g">kind of business</span>.</h2></div>
+      <p>Different models bring different pressures. We make the financial picture useful for the business you’re actually running.</p>
+    </div>
+    <div class="inds">
+      <div class="ind rv"><h3>E-commerce</h3><p>Marketplace and gateway fees, refunds, COD collections and margin by channel.</p><span class="q">“Which channel actually makes money?”</span></div>
+      <div class="ind rv"><h3>F&amp;B &amp; restaurants</h3><p>Daily sales, food cost, delivery commissions and branch performance.</p><span class="q">“Are delivery orders helping or hurting?”</span></div>
+      <div class="ind rv"><h3>Trading &amp; distribution</h3><p>Inventory, supplier payments, credit control and working capital.</p><span class="q">“Why is cash tight when sales are up?”</span></div>
+      <div class="ind rv"><h3>Professional services</h3><p>Project margins, utilisation, billing cycles and collections.</p><span class="q">“Which clients are worth the effort?”</span></div>
+    </div>
+  </div>
+</section>
+<section class="s" style="padding-top:20px">
+  <div class="wrap pack">
+    <div class="rv">
+      <span class="lbl">See before you commit</span>
+      <h2>What lands in your inbox every month.</h2>
+      <p>A short management pack built on reconciled numbers. Every page ends with what it means for you and what we suggest next.</p>
+      <ul>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Profit &amp; loss with month-on-month commentary</li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>13-week cash forecast and runway</li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>KPIs for your business model</li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Compliance status and upcoming deadlines</li>
+      </ul>
+      <a class="btn btn-ink" id="sampleBtn" href="https://wa.me/971545022747?text=Hello%20Finackle%2C%20please%20send%20me%20a%20sample%20monthly%20management%20pack." target="_blank" rel="noopener">Request a sample report <svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
+    </div>
+    <div class="pages rv" aria-label="Illustration of three pages from a sample monthly pack">
+      <div class="pg pg1"><div class="tiny">Page 3 · Cash</div><h4>13-week forecast</h4><div class="mini-b"><i style="height:80%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:52%"></i><i class="lo" style="height:30%"></i><i class="lo" style="height:26%"></i><i style="height:40%"></i><i style="height:56%"></i><i style="height:66%"></i></div><div class="note">Weeks 5–6 dip below your cash floor.</div></div>
+      <div class="pg pg2"><div class="tiny">Page 1 · Summary · Sample</div><h4>September at a glance</h4><div class="line"><span>Revenue</span><b>312,450 <span class="up">+9%</span></b></div><div class="line"><span>Gross margin</span><b>42.0% <span class="dn">−0.8</span></b></div><div class="line"><span>Net profit</span><b>44,379</b></div><div class="line"><span>Cash runway</span><b>4.2 mo</b></div><div class="note">Delivery-app fees rose 18%. Review pricing on top 10 items.</div></div>
+      <div class="pg pg3"><div class="tiny">Page 4 · Compliance</div><h4>Upcoming</h4><div class="line"><span>VAT return</span><span class="st">Prepared</span></div><div class="line"><span>Corporate Tax</span><span class="st">Scheduled</span></div><div class="line"><span>WPS payroll</span><span class="st">On track</span></div><div class="line"><span>Receipts</span><span class="st w">2 missing</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="s proc" id="process">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">How it starts</span><h2>Clear steps, clear timelines.</h2></div>
+      <p>No long onboarding. You see value from the first conversation.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="wk">Week 1 · Free</span><h3>Free Finance Health Check &amp; Review</h3><p>Take the 10-question Health Check for your personalised report, then a 30-minute review call where we go through your books, systems and reporting and share a written summary of gaps, risks and quick wins.</p></div>
+      <div class="step rv"><span class="wk">Weeks 2–4</span><h3>Clean-up &amp; set-up</h3><p>Reconcile what’s there, structure the chart of accounts, connect bank and sales channels, set controls and the close calendar.</p></div>
+      <div class="step dark rv"><span class="wk">Every month</span><h3>Your finance rhythm</h3><p>Books closed on schedule, management pack delivered, a review call, and compliance prepared ahead of deadlines.</p></div>
+    </div>
+    <div class="need rv"><b>What we need from you:</b><span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Bank statements or read-only access</span><span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Sales and invoice data</span><span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Receipts and bills</span><span><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>30 minutes a month</span></div>
+  </div>
+</section>
+<section class="s">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">Ways to work with us</span><h2>Choose the support that fits your stage.</h2></div>
+      <p>Every engagement has an agreed scope and a fixed fee, confirmed after your free Finance Health Review.</p>
+    </div>
+    <div class="engs">
+      <div class="eng rv"><span class="tiny">Project</span><h3>Clean-up &amp; set-up</h3><p>For books that are behind or a finance setup that no longer fits.</p><ul><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Backlog reconciled</li><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>System and chart of accounts</li><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Controls and close calendar</li></ul><a class="btn btn-line" href="#start">Discuss a project</a></div>
+      <div class="eng feat rv"><span class="tiny">Ongoing</span><h3>Monthly finance partner</h3><p>Your outsourced finance function, run every month.</p><ul><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Bookkeeping and reconciliations</li><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Management pack and review call</li><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>VAT, Corporate Tax and payroll support</li></ul><a class="btn btn-mint" href="#quiz">Start with the free Health Check</a></div>
+      <div class="eng rv"><span class="tiny">Advisory</span><h3>CFO advisory</h3><p>Senior perspective for bigger decisions, without a full-time CFO.</p><ul><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Budgets, forecasts, scenarios</li><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Pricing and margin reviews</li><li><svg width="14" height="14" aria-hidden="true"><use href="#ok"/></svg>Bank and investor reporting</li></ul><a class="btn btn-line" href="#start">Talk to us</a></div>
+    </div>
+  </div>
+</section>
+<section class="s" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl">Why Finackle</span><h2>Built on Trust. Focused on <span class="g">Your Growth.</span></h2></div>
+    </div>
+    <div class="trustgrid">
+      <div class="tc rv"><span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span><b>UAE-Based Finance Partner</b><p>Supporting businesses in the UAE with practical accounting, reporting, and finance solutions.</p></div>
+      <div class="tc rv"><span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8.5 12.5-1.5 8.5 5-3 5 3-1.5-8.5"/></svg></span><b>Experienced Finance Professionals</b><p>A team with expertise in accounting, reporting, cash flow management, and business insights.</p></div>
+      <div class="tc rv"><span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span><b>Technology-Enabled Finance</b><p>Using modern finance tools and systems to improve accuracy, efficiency, and visibility.</p></div>
+      <div class="tc rv"><span class="ti"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><b>Confidential &amp; Secure</b><p>Your financial information is handled with strict confidentiality and controlled access.</p></div>
+    </div>
+  </div>
+</section>
+<section class="s" id="quiz" style="padding-top:0">
+  <div class="wrap">
+    <div class="quiz" id="hs" data-config="{&quot;total&quot;:10,&quot;areas&quot;:[{&quot;key&quot;:&quot;close&quot;,&quot;name&quot;:&quot;Bookkeeping &amp; Close&quot;,&quot;report_name&quot;:&quot;Bookkeeping &amp; Month-end Close&quot;,&quot;win&quot;:&quot;Set a fixed month-end close calendar with clear owners, aiming to close by day 5.&quot;,&quot;plan&quot;:[&quot;Reconcile every bank and card account and clear any backlog&quot;,&quot;Introduce a month-end checklist with owners and dates&quot;,&quot;Close the books by day 5 every month&quot;],&quot;questions&quot;:[{&quot;q&quot;:&quot;How long does your month-end close usually take?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Within 5 days&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;6–10 days&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Month-end close takes 6–10 days&quot;},{&quot;label&quot;:&quot;More than 10 days&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Month-end close takes more than 10 days&quot;},{&quot;label&quot;:&quot;We don’t have a regular close&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;No regular month-end close&quot;}]},{&quot;q&quot;:&quot;How often are your bank and card accounts reconciled?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Weekly&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Monthly&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Bank accounts reconciled only once a month&quot;},{&quot;label&quot;:&quot;Quarterly or less&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Bank accounts reconciled quarterly or less&quot;},{&quot;label&quot;:&quot;Not reconciled regularly&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;Bank accounts not reconciled regularly&quot;}]}]},{&quot;key&quot;:&quot;reporting&quot;,&quot;name&quot;:&quot;Reporting&quot;,&quot;report_name&quot;:&quot;Reporting Maturity&quot;,&quot;win&quot;:&quot;Introduce monthly management accounts with a one-page summary of what changed.&quot;,&quot;plan&quot;:[&quot;Agree the 5–8 KPIs that matter for your business model&quot;,&quot;Produce the first monthly management pack with commentary&quot;,&quot;Add profit by product, service or channel&quot;],&quot;questions&quot;:[{&quot;q&quot;:&quot;What financial reports do you get each month?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;A management pack with KPIs and commentary&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Profit &amp; loss and balance sheet only&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Monthly reports have no KPIs or commentary&quot;},{&quot;label&quot;:&quot;Only bank balances or sales figures&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;No monthly profit and loss&quot;},{&quot;label&quot;:&quot;No regular reports&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;No regular financial reports&quot;}]},{&quot;q&quot;:&quot;Can you see profit by product, service, branch or channel?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Yes, every month&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Occasionally, when we work it out&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Product profitability checked only occasionally&quot;},{&quot;label&quot;:&quot;We see revenue, not profit&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Product profitability not tracked&quot;},{&quot;label&quot;:&quot;Not at all&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;No view of profit by product, service or channel&quot;}]}]},{&quot;key&quot;:&quot;cash&quot;,&quot;name&quot;:&quot;Cash Flow&quot;,&quot;report_name&quot;:&quot;Cash Flow Maturity&quot;,&quot;win&quot;:&quot;Build a rolling 13-week cash flow forecast and review it every week.&quot;,&quot;plan&quot;:[&quot;Build a 13-week cash forecast from receivables, payables and commitments&quot;,&quot;Set a minimum cash level and review the forecast weekly&quot;,&quot;Follow up overdue customer payments every week&quot;],&quot;questions&quot;:[{&quot;q&quot;:&quot;How far ahead can you accurately forecast cash?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;3 months or more&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;About 1 month&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Cash forecast covers only about a month&quot;},{&quot;label&quot;:&quot;About a week&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Cash visible only a week ahead&quot;},{&quot;label&quot;:&quot;We don’t forecast&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;No rolling cash forecast&quot;}]},{&quot;q&quot;:&quot;How do you manage money owed by customers?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Tracked weekly, with follow-ups&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Checked once a month&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Customer payments checked only monthly&quot;},{&quot;label&quot;:&quot;Chased when cash gets tight&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Customer payments chased only when cash is tight&quot;},{&quot;label&quot;:&quot;Not tracked&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;Overdue customer payments not tracked&quot;}]}]},{&quot;key&quot;:&quot;compliance&quot;,&quot;name&quot;:&quot;Compliance&quot;,&quot;report_name&quot;:&quot;Compliance Health&quot;,&quot;win&quot;:&quot;Put every VAT and Corporate Tax deadline into one compliance calendar.&quot;,&quot;plan&quot;:[&quot;Review VAT and Corporate Tax registrations and filing history&quot;,&quot;Set up a compliance calendar with preparation dates&quot;,&quot;Prepare every return two weeks before its deadline&quot;],&quot;questions&quot;:[{&quot;q&quot;:&quot;How are your VAT returns usually prepared?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Ready well before the deadline&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Usually close to the deadline&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;VAT returns prepared close to the deadline&quot;},{&quot;label&quot;:&quot;Often last-minute or late&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;VAT returns often last-minute or late&quot;},{&quot;label&quot;:&quot;Not sure we’re compliant&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;Unsure whether VAT is fully compliant&quot;}]},{&quot;q&quot;:&quot;Where are you with UAE Corporate Tax?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Registered, with filing planned&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Registered, filing not planned yet&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Corporate Tax filing not yet planned&quot;},{&quot;label&quot;:&quot;Not sure what applies to us&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Unclear on Corporate Tax obligations&quot;},{&quot;label&quot;:&quot;Not registered yet&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;Not yet registered for Corporate Tax&quot;}]}]},{&quot;key&quot;:&quot;controls&quot;,&quot;name&quot;:&quot;Financial Controls&quot;,&quot;report_name&quot;:&quot;Financial Controls&quot;,&quot;win&quot;:&quot;Set spending approval limits and move finance data into one system.&quot;,&quot;plan&quot;:[&quot;Agree approval limits for spending and payments&quot;,&quot;Move finance data into one cloud accounting system&quot;,&quot;Run a monthly controls check: access, approvals, reconciliations&quot;],&quot;questions&quot;:[{&quot;q&quot;:&quot;How is business spending approved?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;Clear approval limits at every level&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;The owner approves everything&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;All spending depends on owner approval&quot;},{&quot;label&quot;:&quot;Approved informally&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Spending approved informally&quot;},{&quot;label&quot;:&quot;No approval process&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;No spending approval process&quot;}]},{&quot;q&quot;:&quot;Where does your financial data live?&quot;,&quot;options&quot;:[{&quot;label&quot;:&quot;One cloud accounting system&quot;,&quot;score&quot;:3},{&quot;label&quot;:&quot;Accounting software plus spreadsheets&quot;,&quot;score&quot;:2,&quot;finding&quot;:&quot;Finance data split between software and spreadsheets&quot;},{&quot;label&quot;:&quot;Mostly spreadsheets&quot;,&quot;score&quot;:1,&quot;finding&quot;:&quot;Finance runs mostly on spreadsheets&quot;},{&quot;label&quot;:&quot;Scattered across files and chats&quot;,&quot;score&quot;:0,&quot;finding&quot;:&quot;Finance data scattered across files and chats&quot;}]}]}],&quot;bands&quot;:[{&quot;max&quot;:39,&quot;title&quot;:&quot;At risk&quot;,&quot;colour&quot;:&quot;amber&quot;,&quot;text&quot;:&quot;Your numbers are working against you. A few structured fixes would make a big difference quickly.&quot;},{&quot;max&quot;:64,&quot;title&quot;:&quot;Developing&quot;,&quot;colour&quot;:&quot;teal&quot;,&quot;text&quot;:&quot;The basics are in place, but gaps in reporting and control are limiting what you can see.&quot;},{&quot;max&quot;:84,&quot;title&quot;:&quot;Well managed&quot;,&quot;colour&quot;:&quot;teal&quot;,&quot;text&quot;:&quot;A solid finance function. Closing the remaining gaps would give you full control.&quot;},{&quot;max&quot;:100,&quot;title&quot;:&quot;Strong financial control&quot;,&quot;colour&quot;:&quot;teal&quot;,&quot;text&quot;:&quot;Strong foundations. The next gains are in planning, forecasting and insight.&quot;}],&quot;levels&quot;:[{&quot;min&quot;:80,&quot;label&quot;:&quot;Strong&quot;},{&quot;min&quot;:50,&quot;label&quot;:&quot;Developing&quot;},{&quot;min&quot;:0,&quot;label&quot;:&quot;At risk&quot;}],&quot;attention_below&quot;:80,&quot;strong_from&quot;:85,&quot;timelines&quot;:[{&quot;max_areas&quot;:0,&quot;text&quot;:&quot;1–2 weeks&quot;},{&quot;max_areas&quot;:2,&quot;text&quot;:&quot;2–4 weeks&quot;},{&quot;max_areas&quot;:3,&quot;text&quot;:&quot;4–6 weeks&quot;},{&quot;max_areas&quot;:5,&quot;text&quot;:&quot;6–8 weeks&quot;}],&quot;next_wins&quot;:[&quot;Model big decisions such as hiring or expansion against your real cash before you commit.&quot;,&quot;Review pricing and margins by product or service every quarter.&quot;,&quot;Set KPI targets for the year and track them in your monthly pack.&quot;],&quot;next_plan&quot;:[&quot;Set KPI targets for the year&quot;,&quot;Build a 12-month budget and rolling forecast&quot;,&quot;Run a quarterly scenario review&quot;],&quot;average&quot;:null,&quot;average_count&quot;:0}">
+      <div class="qz-left">
+        <span class="lbl">Free Finance Health Check</span>
+        <h2>How healthy are your finances?</h2>
+        <p>Answer 10 quick questions and receive a personalised Finance Health Report with your score, key risks, and practical recommendations to strengthen reporting, cash flow, and financial controls.</p>
+
+        <div class="score" aria-live="polite">
+          <div class="big"><span id="hsScore">0</span><small> / 100</small></div>
+          <div class="meter"><i id="hsMeter"></i></div>
+          <h4 id="hsBand">Start answering</h4>
+          <p id="hsText">It takes about two minutes. Pick the answer closest to how things work today.</p>
+          <div class="hs-progress" id="hsProgress">0 of 10 answered</div>
+        </div>
+
+        <form class="hs-gate" id="hsForm" method="post" action="report.php" novalidate hidden>
+          <h4>Your Finance Health Report is ready</h4>
+          <p id="hsTeaser">Enter your work email to see your full report: risks, priorities and a 90-day plan.</p>
+          <div class="form-msg" id="hsMsg" role="status" hidden></div>
+          <label class="fl" for="hsEmail">Work email<input id="hsEmail" name="email" type="email" autocomplete="email" maxlength="160" required></label>
+          <div class="two">
+            <label class="fl" for="hsFirst">First name <span class="opt">(optional)</span><input id="hsFirst" name="first_name" type="text" autocomplete="given-name" maxlength="60"></label>
+            <label class="fl" for="hsCompany">Company <span class="opt">(optional)</span><input id="hsCompany" name="company" type="text" autocomplete="organization" maxlength="120"></label>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <input type="hidden" name="ts" value="1792342822">
+          <input type="hidden" name="answers" id="hsAnswers" value="">
+          <button type="submit" class="btn btn-mint" id="hsSubmit">Show my free report <svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></button>
+          <p class="fine">We’ll also email you a copy. No spam, unsubscribe any time.</p>
+        </form>
+      </div>
+
+      <div class="qs" id="hsQuestions">
+                <div class="qa-group">
+          <div class="qa-h">Bookkeeping &amp; Close</div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql0">
+            <p id="hql0"><span class="hq-n">01</span>How long does your month-end close usually take?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq0" value="0" data-q="0"><span>Within 5 days</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq0" value="1" data-q="0"><span>6–10 days</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq0" value="2" data-q="0"><span>More than 10 days</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq0" value="3" data-q="0"><span>We don’t have a regular close</span></label>
+                          </div>
+          </div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql1">
+            <p id="hql1"><span class="hq-n">02</span>How often are your bank and card accounts reconciled?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq1" value="0" data-q="1"><span>Weekly</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq1" value="1" data-q="1"><span>Monthly</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq1" value="2" data-q="1"><span>Quarterly or less</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq1" value="3" data-q="1"><span>Not reconciled regularly</span></label>
+                          </div>
+          </div>
+                  </div>
+                <div class="qa-group">
+          <div class="qa-h">Reporting</div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql2">
+            <p id="hql2"><span class="hq-n">03</span>What financial reports do you get each month?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq2" value="0" data-q="2"><span>A management pack with KPIs and commentary</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq2" value="1" data-q="2"><span>Profit &amp; loss and balance sheet only</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq2" value="2" data-q="2"><span>Only bank balances or sales figures</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq2" value="3" data-q="2"><span>No regular reports</span></label>
+                          </div>
+          </div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql3">
+            <p id="hql3"><span class="hq-n">04</span>Can you see profit by product, service, branch or channel?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq3" value="0" data-q="3"><span>Yes, every month</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq3" value="1" data-q="3"><span>Occasionally, when we work it out</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq3" value="2" data-q="3"><span>We see revenue, not profit</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq3" value="3" data-q="3"><span>Not at all</span></label>
+                          </div>
+          </div>
+                  </div>
+                <div class="qa-group">
+          <div class="qa-h">Cash Flow</div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql4">
+            <p id="hql4"><span class="hq-n">05</span>How far ahead can you accurately forecast cash?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq4" value="0" data-q="4"><span>3 months or more</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq4" value="1" data-q="4"><span>About 1 month</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq4" value="2" data-q="4"><span>About a week</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq4" value="3" data-q="4"><span>We don’t forecast</span></label>
+                          </div>
+          </div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql5">
+            <p id="hql5"><span class="hq-n">06</span>How do you manage money owed by customers?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq5" value="0" data-q="5"><span>Tracked weekly, with follow-ups</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq5" value="1" data-q="5"><span>Checked once a month</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq5" value="2" data-q="5"><span>Chased when cash gets tight</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq5" value="3" data-q="5"><span>Not tracked</span></label>
+                          </div>
+          </div>
+                  </div>
+                <div class="qa-group">
+          <div class="qa-h">Compliance</div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql6">
+            <p id="hql6"><span class="hq-n">07</span>How are your VAT returns usually prepared?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq6" value="0" data-q="6"><span>Ready well before the deadline</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq6" value="1" data-q="6"><span>Usually close to the deadline</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq6" value="2" data-q="6"><span>Often last-minute or late</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq6" value="3" data-q="6"><span>Not sure we’re compliant</span></label>
+                          </div>
+          </div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql7">
+            <p id="hql7"><span class="hq-n">08</span>Where are you with UAE Corporate Tax?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq7" value="0" data-q="7"><span>Registered, with filing planned</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq7" value="1" data-q="7"><span>Registered, filing not planned yet</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq7" value="2" data-q="7"><span>Not sure what applies to us</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq7" value="3" data-q="7"><span>Not registered yet</span></label>
+                          </div>
+          </div>
+                  </div>
+                <div class="qa-group">
+          <div class="qa-h">Financial Controls</div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql8">
+            <p id="hql8"><span class="hq-n">09</span>How is business spending approved?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq8" value="0" data-q="8"><span>Clear approval limits at every level</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq8" value="1" data-q="8"><span>The owner approves everything</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq8" value="2" data-q="8"><span>Approved informally</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq8" value="3" data-q="8"><span>No approval process</span></label>
+                          </div>
+          </div>
+                    <div class="hq" role="radiogroup" aria-labelledby="hql9">
+            <p id="hql9"><span class="hq-n">10</span>Where does your financial data live?</p>
+            <div class="hq-opts">
+                            <label class="hq-opt"><input type="radio" name="hq9" value="0" data-q="9"><span>One cloud accounting system</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq9" value="1" data-q="9"><span>Accounting software plus spreadsheets</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq9" value="2" data-q="9"><span>Mostly spreadsheets</span></label>
+                            <label class="hq-opt"><input type="radio" name="hq9" value="3" data-q="9"><span>Scattered across files and chats</span></label>
+                          </div>
+          </div>
+                  </div>
+              </div>
+    </div>
+
+    <article class="hr" id="hsReport" tabindex="-1" hidden>
+  <header class="hr-top">
+    <span class="hr-brand"><span class="logo-tile"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIkAAADACAYAAAAwc0BtAAA2BUlEQVR4nO19eZwcVbn2856q6nW2ZCYhLCEJkAgJAiEDKBAmA4RFUMHQoyDC9YoJKKjX7wL6KXRGWUSvLCJLWEThgjAj8rEk7CQDCDFOICEJ+xIQCIEwa2btqvN+f1QvVdXV3dXLbMm8v99M16nznqXqPOddzlaEElIkElGamwGg2QAAQYAhOfyTn9+1/9vvf3rw521dB8VisYO7tvdPCPi1vbu392MwZkBK6Z4hpV3kIPKYJEd+eZdr4bX/DEPZ5HqZfiu/cqVkXfOH1Gm7l9+az1vISNFoVDQ2AkCjJABPPPlq9XV/eXTBZ592fL2zq/eIvv7B6TGDhGFIGIYBgCENHUIIEAlQtlqMGaCkN5Z7Sq/lFlB2BnZPQLFESYmY5g9rkyf4bl7/zNLzigNJNCrQ+CoBzYYigCX/dfthL2/64Ltt7V2LtvfKmlhMQhoxgCSIWBIJjleHiIiYE8EsVECvphwvzSXzHFGFNVZB0qSYcjMkyUeaMCOm+kLaxErfso3PRM+VHBWFg6SuTkVLi64I4Gvf+f2X3nh763/39PQv6h+Q0PUBCIJBJBI1E8Pdq0srTfIr2+Unv7JHSJowI6b6g1p5WCx749nLzpUcUcBNMm+QMDMREQGQF0fvmP7Mi+9e+cknHd/qH5SQxgALQYYAKez9beWsvD16Z1M7pZEm9tvpDMyIKVpQCwf4lrdevHIJc0QBmiRArHqsAQDTMCUiQ1XAC0+74vzm5a/8uqt7sIrlAAshpBBCAaCyvXizUjk1iwfVM9b4sj56jvyS0YWX67VEZtYVNaSFAvL2t174zRJGCiDwWDoAoK4uqra0NOo33vn45Fv+1HLT1s+3f2Ogvw+KIAOA4uSnTKFRqXZyMIxFtZMhiVOasOSYUIPaLpMCzRueWdqgG6fZAOK55ARAFv9k2cErX3j9r51dsVmG0acrQiicxTcZW0AZ7WqngLKzqh0CS6mTGlT33rPqiecevPhkoqUGeCmDyKYMRK7iEgD56reuPHrVi28+93lb7yyW/boQQuWkMHWndLXjhUrP540zBxenXXjPj7Ol9FpuAZQlLbOhkxJQ95tZ8+JzD168iIj0aBRwAgTIBc1IREFzszH/xF8cvfmjrkd6evuDikBKvXjoXaNDmljkybjaAbPUSQTUWTOqV7c8cNHxRNRljnU1uo5qZpQkkThAzjrvuvoPPu56pLevP6gIlrDaHx56V0ZpkrWHlLpXF5QkSyYFJMoqTXJkzhkDuct13o0DZMbUqtUtD3wvDhDOCBAgA0ii0ahobm42llx80/TVL21+oLtnICiIJUBZ1NMYUjvDDFBn2mKwVhAl0rLUSQmoU3crX3390uNOIKqJA4QyAgRwBQlTYyPAzIHnnnvn4W2f91Qqgo2MABnSnjk8vWvM8BVjF0nWoQTUKZPCq6/46Ykn1NbWdkYiESUXQAAgfZykbqlCzzbqhy4c+OO29r79FTJ0gNRifXp7TG6f3hMVkJbBpn1SzLiNLSrPcYycw0alH7dhhk5KQK2Z4F993vcPP2HhwtrOuAQxPGRglySRSJOClkb9xG9edtKWrT3fM2L9OojUVKW80Lh94jVt8Wondw7MrAvFr06o0Faf+a39T1jSsLDTNFJzS5AEpUDCTM3Nm3jlyo1l77y37abevn4WIpsNkq3yXtlGqVgfDr6SdIwcbMy6UAJqOKT882uHTz3hZ0saOrN5MZkopW4aGgTQbFz6O/55R1dsqkIyrmactSvlULL3rL2n9ZbRiKudnKmKfNdxgAQDYvXco6afcNVVSwoCCJCQJNGoQHOz/M11K/bYsrXzv2KDfZIEpQ21p2qXhUbcLfZOo1/tFCjJmHUoftXn4zXz9qw6ofmqJZ0oECBoalIEAERenUNE4OWPvXhR13Y9qBBJ5oL7debKZ4wZBW5xMfkV43WU3C1mg0lTy0Lq+iNqJ57Q3PyzzkgkoqAQgDALNDQYgpmpubnB+PP9T1Zv+bTjO7rezyBShrtXe087RG5xMeWOJJ8doIYhFWVydejd759x2Ffuuenn7ZFIk9Lc3OzJi7HRypUqiOTJH71+jrpgwVIFgP6XO184vadXVgnilC2SVS0Wb5+MHre4cFPKvdwRcYsN3YAybY8JW5d8+8snLj574cfmmuOG/AHS2qqhtja24N+v/fj1gP9a0dICycy09dOO7w7GYhAEMZy9YUjUTgHi31uSoZeghWRBDEM3SJm2+8TPzvnmoccvPnvhm4VKkHlxgNRt3nj+5oDv2u1d3boKNMqfXrL3gT29sbksY8yKsLu9w9yrPXSrPDMfQ3yFSW5Dl6TsPmXCtjO+cfDC8753wvq6uqja3NygeyjcTq2t2tra2tjh7268YHMo+Ie+ri5DYygCAL207p0T+wdAQlhH4IZvsCtjzDB7Hey5Ow+RXZQzVVqMYUhSdqmp2HbK0bMX/p/zvro+sbTDY8EpikuQL23eeP6HZcE/9HV3G0KyYAIJVRHc3rH9aF2PIb521VN18+IbcbfYO2LGjlvMhmSh1Ews23bMkXstbPxlw7pCAZJQMfM2bzz/42Dw+v6ubkNIKUBEYEA0Nb9Yvb1nYC5LHZRtEVIxD+4xo3G32H6Z5U0ZkhVlQmVo2xHzpi287orvFgwQMKtra2tjc9955fxPA4Hr+7vjALGsOBRNK/554KAuqwHJ7D5053qZla+A6OFJu0O4xQZDKBVlgW0HzN5t4W3XLS5OghDpB771yvnbwsHrB7u7DWHEJYilOupn2zrmxXQQSLguaE5VvijjyhFdarfYa7neaVS6xcwGk6KEg/5t+8yoPK75tvMLBkgds9pCFJv9xsvnf14WvD7Wvd2gpIrhlCBhQHR09cyRUoKyrlZNVN4LjVK3uAC+0eUWswFSlaBf+3zqbhULH7v35y8XY6S2EOn7vvXyDzsryq4f7N5uwCpBHPVWdWnMMQwDgvLoOCPcuwqqWDHlFsuXt1hy8rFkqIpfU7ftOilwXMuDvyzKBgFRbNbrL/+wK1T2R71ru0FsAsQqQACOV4Mgurv7qgAJb7UfPvtkh3KLi+FjlsxC+HxqW9VE5bgXH7usMAnCTPGhdn3Om+t/vL089Ed9e3dKxSTZHFVkhggHA/sYhg4iez/LWfnctSqab0jUzhhyiwksDYMoHAr2fHFmzVdfefqqwgGyapVC9fX6vLc3XNQRDl2rd/fEAQKCAxjOqoqu7j4oQsDc4Z/nMxXTuzx6Ha61GoFePdxuMRE4pktMqCqTCw7fK7Livp+9MG/eYi1fgHAcIEp9vT7/7Vcv/SQYuCrW3a2Tzc1Nf69WiSIGB3W4WivZi3a9zJtGRdrR5xYTgQdjBk+qmSBOrN/vzDuuW/LovHmLtbVrb4l5zNwsgZmouVmo9fX6MZtfv+KdoK9xsKtbJykVp5uLhDhxNC0zIAzDgH2glV2u8nvIUvMNrdrxTsOhdojAsRjL6olVYsHh+5z1hyvPurcYgPgaGowTNr9xzSaf8vOBzk6dpFQZ5khqxjo5wqotIsNQWmaLdvi8DntMslxOPC67vv4c5QJ5ex0MSm2lJmRodFvm7kSIy3QLHzHHdBZVVRXK4bXTz7r5d9+9K26DFAyQkze/efMav7Kk//M2XSVS2TrsZH3sZFUSEjNRJ+eWirxdNbe0BVB+aSUzS2YpQIqQBogEQVW1LElyNJYXPhtX6gXm4vRaLsEc866s8KP2gD3O+sv1S+6K2yAFA+Sk99+8ZY2mfr/v87aYSqQlelMCHWlAScbbLlz23bgweZImORmLHUtgaUgGkSpUzSf8mgBgdFZVhHtIcNvWT7s+iL/rIpSB180BlufNmcQjUBjS7wuKL+wz8e77bj3/nmIlyAnvv7nsX5oSBwg0TpMajITWyQoUJtDkWd9jKR3vNUPvyt5xSt+7EsTMBkNRAgE/Kit862uqwg/M3Hv3lrkzd339hz88qTMcCvT19g3kKngMUVQA+a1JTQBEa2gwjn3v9WXrNXXxQHtbTCWh2VrX+frJ0b5k5xVABpDYmPMESU7GHChyAIWZDUUNKJXlvjcOnL3npU1/+tH9RG47zyIZ5p3GFkUiQL4ryqwAqX/ntWUb/dri/va2mArSAHIBhjNMbpcAzGNWM4PEltlIAYUMyYqy+5TKv91w+RmL588/oB0AUBdVI5PncFNTRFIK/sX4HGOXmAloFho1GPPffm3Z6wFt8UBbW0wBaRbbE2lgcQUOOS9zSJK0jIZd7RggTdltl/InNzx71XGSUwfq5Mp5pyFmQnOzUBsajCPe3LTszaB/8WBbW0xJGKmAoznyB4pALrOroL5ZgkEnBhsSoqLc99mS7x19pmSISKRJGQeIhSwAOfytTTe/GfCZAAHZbRBbczgGChzD8UmD1n7pYWW8ywiSZ+wUqABYshHwB2m/fXb93Q/OOv7TurqoKGhrwI5KFoDUvr5h2Vs+3xITIEi5uS6DZeZtlxGlNOCw7VKkc2WtnWu+2fi85mchySA1FBBbf/yfx9wCgFpWLR0HSILiAFEaGoy5r264eXMwsHigvS0mQKabm2nKxHY7B1AcN7wNDLjJL7d83RLlq3aYpaL6UFkWXLFwYW0nIk3C7bC3nZKYCUAcIOtv/iAUWDLYFgcIrCrCIkoyqBcTKM537+Q1bwh3DrcK5vM0hadlgFRVoHpi+eMAqO7TTYWO4+5YlJAgRMYXN627+d/B4JJYXIJklgoZOqr1djagxONFdo6MNfaYIv/8pGTFrxFmz95tIwBesAD5b3Te0SgOENHQYMzeuP6mLaGQCRBGai4iLiXsEsVykQsoGVQTANDkWf/p4gLnPypaGrcYklmIsrC25Y7/PW9W/f77b0eWabSdguLjIIIajP02vnzTtlDo3FhHuylBEuQcAXO+bnK7ibQwuQy8CfI+WWGpdN4pkBHNDjInuYCycKh/wZw5PYWUtENRQoJQgzFrw8s3fRYKnRtra9cFO1RMBpVhFybZJYp56WLQIiNISq12PGZNADMjFNR6UPic8o5BCQnS0GDsvf6lm9pCoXP19o4YEamur3CogMJZJUnWwS7XQLH2CUtITdPw4cdtbxGRjM/H7HyqJi5BiBqMGS+33tQZDp2rd7TFiFmztXPaeEieQMnq+aSicqibIQJKjmY3ONNH+XYCSgCkocGYsX7tjV3lZefqbe0xkgkbhDM0fjK9HSzZgOJMa+NPlSOGy7UtadodlSwAmbq29cbuUPg8o609RhQHiLWlswHFzMtynUqScywFsAElNeKatcGG0C0eB0qKzIEyEg0NxtSX1tzUW15mAsTqxQDpQGGPQLHE5+MiA2njJBmfwGNUqcdPdg6KRqMCS5eSSiT3fqn1T73h8nON9rYY0iRInFxQUTBQPBi0ORdCe6IMabNnGY8tptwdgOJnqzIz0xdPPfXuLQHfGbK9QyciDcxgio9fON9TMsxILFpmSt0CLPz2/Zvpr56RWsOYltZtjWtG8tqaBbT6TgqUKLNoJJLMrNVu2PDXLX7fItneESNBtpFUW+NnW7Scwks6fz5AcaQVWQ2YNCqR2kkey+aI3YmAYgFI4PBXXvl/76nKItnRYRqpLioj455km57x4Pm4pM3l+aTbJEMJlAQIuvviYcuIO8ND2TsGWQASPmrTxkfeUJWvcAIgCXIBA2d6V7awB6BkcJEzeT7eZ4G9UqZsiACDAUGgyCFmRQ0jfd5hBycLQMoWvPbaio2gY2RnZ9IGSWt82MO2XcnZpEo2oADpQMni+bjPAhcjTTLwMQD0DYLOrQct/Trop8cDMQlImarFDi5JkgDZurVs/saNK9ZLeRR3dOgE61C7C1AcYUaWA3acQGGPQLHE24WJqwtcavsEpg3S1WcCpKEW+KAN9LWDQJd+DTAkoMeBsgPP91pVzOFbt67YyJiPjk5dKCJ5+nZGoMRv2a7ZI1Cc2eUDlDgNwUJoR1qVgI4e0JlfBn33SKC9D1AF0NYDOm4OaOkpJl/M2GElilWCfGnDhhWvAfPR1akTkcrWCYh8gBK/MeRA4RLOAruSIoC2XtDXDoI4/xigqy9lvCoCaO8FLdgX+NWpprQZ1M0FDDsQWSXIIR9vWfEm4yh0dulEpLp227hdydYA7PG2a6fn42rTpPSOzUD1aNDmngUuVO2oKRCIi08CegfTkykC3NYDOnwf4PJFgE/doYCSBMiWLeF569aveFuI+dwVB4hLT7eRrednAUqSN4NBy2mM9tu5DFoUtBDaAykC6OwD5k2DiH7dtDusE7uJijKnwFQ7HfhNBAj5gN5+ijLnvyBqFFECIFu2bAkftOWTFe8K5Sju7LJ80xCuKsFGTqBkbHwMHVAkcjVEhkKz8SkC2N4PzNwFyuWLAE0xpYPl5CVTSlpqqgqgsxd04FTgitMgJlfGGokkll08JoFiBcjCj7aseJ/EUdzZkZQg7NqAHoDitFNc1EtGz8fG6w0oxMySsn4MOlPqLHyKAPoGgV0roVx5GlARBPpjKfWRyIo5PWzaKIqcVcP+W885Mrr+1YOxpDZWt3JlHlMHI08JgKzbsiV87EefLP9QUY7iri6dHN8zTANK0lBAfkBxUjwfTwZtylRJ55VS6qpC5ULRafLM72beC2yjHIuZBQGDBhDyQ1x3BmifXcyRVSW1/8usv7M32F8M6wYboQDtRmrXV6U4+co5X3gufnrxqN/imQDI4+vWhX8SM5ZvUdQ67urSSVgA4jzfwbn22LlJ37F3187rvgDaGu+y5z9rOeY8DhtGKKDsKpTu+mBoUWkWQgsyxzoUgrj8G6BZU1IASaA1bonb83IAxDRmSentlx/FYhX3w1jxH63r57cQ6aNdolgBcsGAvnyLotUhzUiFXWLEL50mg+0iTZ1Yw7kMWq+ejyXMbMhQSKmC+PciX3jhDdP2fjIPSQK4o5vMyg7qEL9eBDp6P6C9x12C2CtjryNbmQEyWOo+TVSS2P6FnoETH/ty7fPz4h/t8VjZ4SNmASJ557p14cb+2PJtmlbHnd26UByfzHXp6dY4zxLFyZ9TosSXG2SIS14w61wWVsOG/sYX+o3jnqqt/aBu5UpVcBrEspGjoRMF9A5CXPgV0DGzUwBJShBOqZjkn0UfWqUMp4phQUIZGJBdUpZtDPoePXjV6vlra2tj81pbsx2ONuwUjQNkWetHoaV9CYB06SSgOjVrLnezYIM2H88ng0RhlroMh9SJBr9Zr+GYBEBa6ut1mjTzP1hKBqVBLBNZEKkIoKMX9KOFEGcfAbRZAIJ06QBnOBOP5W2xwZL9PqFJ3r5fb+ybK488ZAVWrlRRXz/yNkocIL9bty78x56B5R3+QB13dupkkyDx8z6yngtCmYP5SBQP54/Y2jnhTzDrKC9TpxK9cbrwHfuzWbM+jDArzfETpUQaYnNSnE8IoL0HdPaREN85wi5BkAUg1pysPE4LPxEvSNDAgBxkWfZuOPDI2S+/tpjq63Uwj6yNEgdItPWj0PU9A490+Px13NFpGqm23sqW/7Zb1rwyB/ORKE6jJYNEsWXJrKOiXJ0Bse7KcDpAAMtgmsujZCY1DpBT50H84GigqxcgK0ASusSauVPFONSQmdDGk7xHJJSYLjtjA9yiYdnX1rz0AyLSMVKqJwmQ1tDt/R8u79R8C7jTApAkn+WCOUPjJ/O03bRpEGcHclEZWYGSFo63NrOOyiq1YmDwketqJh/1lamzPow0NdkAAjhWy3uCSAIgx8yGuOgrQI/91EN2GKROFeMuYVIVtyaxgYZIaIZBHT3bjbWBwA1HPN96HkbCRokDZHFra+jWXn35dp9/Qa65GGvAfXzEyuuwU+AW716OHSiO1nQEpZQxmlClVvf1P3RHW+epR06a1B1lFs0N6YcF0aR9TJsk7WwtN1LiU/7zZkD8zzfNe7pMKtFiAcKOcJLH+vIksy6EDAZCyqT2rh+8Uv/lm7CSVSyAMeTnmMQBcnJra6i1Z3B5XyC4AJ1dOhTnOEj8IqN9QOlrrYbJ8yECDCljysSJ2rTBgYfW7n/gNwiQUYAaiVw3xaXGSWzt6/KuE8PtX9gV4vJFZngoAcKwAyShnYhIMQzR39drfFJZduOsZ1b/EPWko7lZxPeuDA3FAXLm4+vCa7YPLu/zBxfIjk6dnTaITcVY09vjnB09q53iKlEsFy55pVjskZKh+6prtAMM48G1+x+4iAAZXbo0I0AA5wRfJrWjCHMWd/cJEFdGgDK/OdxeIoBkDqfS2SUtkTAMoff3G+2V4T8uXLPuN/6GBgPNzYKHACiRpiYFRPLi1tbKp/39K/r9AYsN4rJI2QFudyoAKK5qzCNQmMFEuigvV6f2993wzH5zFhGREV26lBobsx8snPHY8PhR++Zoan8MqAxCubIBmFIBdA8kB8uGRII48mFHGABAcaD09eobqyZcXLd63YRVXzpoCTU1KWCWpVI9kaYmpbmhwbj+1Verf/dp1/IeTTsMnV06hH02l4nT98cwzG0K1n0OyfqbDBzfL0GwprFUwLEVwhZM5pVstLQtF0ymJDAA3VdRoVb19F62trb2EopGBZiRTYIkKLsbSTBXjPlUiMtPA/aZbC4BGGmApNhJMKu9bZ/H1lVOWDzv+Vb+15G15+olAkrCFbxj48Ypl23rXtGuKnOpq1OHZckhgGTjZwWK6/3Ec8XPeE+Ls7wfB1DSgeUOFJLMMUFGqKpK3aN/4Ndra2svrVu5Um1ZsMCzDec+d5NsZLNy4tKvgw6eNqoAgvgaT2ZABWmDHe2xt8tCS76w6p83C9NCF9FotOClBgmA/PWtt6b+pqPvqa1Mc6m7W4cQarLgBFnq5ro/hi03MqqM/FxkN/XiLIOYWSeS5RMmqgcZ+mUvzZ17KZujqHkZ+ZlfoiBg+wDoe0eBTjwA2LbddH/hBpD4A2QFCHsGSHKMIAdArGAWgKZ3dsS2VlQsmfrUC8uIyGhsbGQUAJQEQP72/vt7Xb6145kPY8Yc0bNdBwnHOIil4axASdgpeQEl9ey2uEx5xIt3JE/FG5INEgiGQsqhhvGLp/Y/4BK5cqWKBQsMZ6m5KPMLlAwENfDydeCXNgNVISBmZAAILA0WD6Q1rJ09mwTJHEYaQKz5EJNmdHXoXZXli2euWvO/zOxDY6PMZ5Vb3cqVajOR8dd33pn16w+3rXx3QN9H6es1QKaRaquLtZ4u95NAcT6TK4BSgawGrYsUSwMKSylVlX0+H+8yOHj6A3PmXKEnpjIKUMGZXx4DUBXw+9tgXHgv+M2t4PKg6fbmBRAvEiQlbjNLEM4KkOQvs8pd3fq2cPjbR6xe9wR/9ll5I5EnoCQmtO5++98zr/y4/em3+gb2VPv7DIBSX8BwuujW+lnrknwEtzo6ns+Zn/VdWONtYQdQ4kFiloZQEPb7MIPlN1859NB70dqqFTPXJRy1s5NkIBwA2ntgXHgP8PoWc7WZDSjWOmeWBNkBYo13y8dyK0s+iZ5LBFV2dsReFcpRB7/xwaOvPf9aTqBEmJWW+nr9T5vennnllq1Pv9U/sIfS32eA4gCxNai9gZK/GSRNVjslo9RgdylhCztuSJaDQtCEQBC1UL655pBD/javtVVDkcsrcothQwIBH9DRC3nRX4FXPwIqAoBulAAgzni3fOBJgrAjTAQNnV36e6p2xCl696O3Pf98eSORjDQ1pX0XJ6Firt309szffd7+9Dt9A1O1/n4DRAqzS31slYZ7Sw43UJilrmliUiiknxj0Nzx08IF/w7JlJVl/Q5P2Oduy6CjLOJQigIFBUFkQdEUDaM7u4KS3M1QShB3x7vk4AWIrX7KO8gq1sqfnH4cq/Sc019dvjzSx0txgTmIlVMxVL22aeUfX9qffH9SnqgP9KQlidScdQ+WpX/elhm73k3l44PU8lM9scDCo+ICtR/m1yP0HHvhcKZdTeAcJYHo3/TFQyA+6vAH44h5AZ69tiUApAeJNxSAjQJKXUuooq1ADvT0vfDsUOvX3Rxz0aUKiNDc0GL96adPM/+3Y/vS/Y7E4QISSqbHyA4o7r+sqsUKAQgCYDRkIKOWCPpne33fsP+bP31Tq9TYOkKTVKp1UAeqPAUE/6LJFwAF7WsZPRhtALGEJXYZC6m6Qb/14YsUp5+0/61UAiK7duM89Hduf+UjXpyr9/QaExUh1a2SURqIkwVIMUJh1PRBQd9GUTw4RdOy9c+duGopF4y4gSatVOikCNBgD/D7gV4tAB01LSRTAMnzg0vjIDZBiVUwaQJJAYd0IBNQ9FPHJ93epOaKzf2Dw7m2fv/BxLAEQYQGI5YKc9zIAxYxIv58LKGm8jnKd6cyAzqGguqeqfNLgDx976ZyZmxKqEyWmwkBCMM8ZGTQAnwYsPRU0bzrQ0QdOqp6RsUEyAiSRj2RDDwSVybGBD2EYxidCmZbyYjI1zDADxcrvZodI1mVZmTqZ6JX/U1bZ8IP99npjqAACFLphnAFIBvviu/OifweveRdcGTK9nkQjJf/i6sMWTudxBYiFh129nDwAwgATKUpvD38GscenLKYpfX0SICUFNsuzM6wZp+4lVapLWdbybHWw1yOtzml5WMq13jdYR2WFWqEPvnDk9o66H+y31xtoalKGCiBAoceGJ6IlAz7FBEbjA8Dqt4HKkDmOkszCzb5Iz8zaHrYX6uRIA0DqNydAEmEhSOi6VMCSFDVtTQ1cG98dQOaBuG6N7Aa29Oey1T2N136DJetcUaFOjukv/GhC5Ql/qa/viDArcFlNVkoq/NjwBIeUgCbM8ZRfPwC8+JYFKC4AgePlJSQIu/BkVDlAKmOkXrIXgKTiBZgFCQGy7nbNVE+v1/kAJQ+JwpJjVFmp7g1+4aG9p51w8X77dbutRx0Kokl7n83SDd0plhw5xH+EiKsaAD//OnD4TKCj126juDRiuvqAvX3cerVzOiAtb7uYdgFIWp1YSjBb3ndOA7JAO6UQz4eho7JC3VfwM6unTT2Vamq6EjsGMQxU/LHhiWgpAVUBQMAVDwLPvRG3UVISxcbvZRQ1DSA2cRO/bQGES2/OBZCkZiMBsn7c1KZmXJ43g6RhL9LDXjnX+4nnYiklVVaqEwYHbl998EHHDzdAAM8fRfKgdoA4UITZa37zMNDyOlAZdNgoSAEEqbA93iJ6nXWwAMIGIpe8vAAkFWaYhyxkUD2uqsUF/PAIlDTwO3kBZimVygoxub/v1g+OOOwcAgxEhxcggMtC6MyUhcH6jFKa4yWCQL99GFj5qsOYtUiQZDeG7aWlSQenlwNLQ9h4LABxSWf1huwASZVNJEDskChOPtvrYBdeD0BxPHMagJiZQ36hPdDae+L8iy+SzBRdCkLj8AIEcH48OrfAyEzWtmY2JYoqQL9fDjyzKQ4UI7eKcb70tLBLOoeUSZtwdPBkAkgibwYBbH81noFiLSrfyUEr0EN+iLtWY8LDr2DaXb8KgoiXLi2qhQqmgj8enT2aTfdYCEBVQFevAJ7aYNooRkqi2NJ4AEiaBEnkY+vB6emsPPaxGlj+zMhUPMX/nM/HqbSwpE+h01a/NBfZCXTnswCAX4X2lxdYe3gDUB7Y+l9nHtVpRuRwIoaISntsuI0j/tKEAHwq6NrHgCc2ABWhlBeUJ0AyzQNlBYglnHE+KVVjezpJ5p8X6ZG87S4lXNVPav4i1al8KrTbn4P62AamyhAE8LkiqBem4zSSkgSwP1EROaa9fzYNWb8Kcf1joMfXpw24DStAnA+XNhrs4JEEGB6AkktKIBNQYLPjtJtXQV35urm4SzJCQd8nQhCA6MiIEWQ6NtxxmU45UGQRteZFAiga6I9PAI+uM4FiSA8AsYhxF4BwMuhRgljBkG0+yQIYlgDrjsfOJFGcZdl4XYAi2Rw6kAzfDSuhvvA2uCII1g1WFBVCEZt1g4G6Aj7PWyLKfGx4TsqTLwGUgAZx01PA8pfBFUGLjRL/lyZBHMWlubjp6TypmHwnHCXFgeLW+BmAkkHSJIEiGdBUIGbAd/3TUFo3J98Jw3xd5SHfZgCow8jRkB8bzrZAHChBDWLZU6CHXzJtFCN9wI0T/NZ6eBieHxKAJMgAOEbp0s+Z3lpWhvtsSLBPBfoG4bv2SYgNH4IrAslOwwyoquDKyvC7GGHKPQucFSg5UMQuXObwJhD0Qdz2DOjBVlP/Gk4bJZeKYbg1rB0gmfPxDJAECBI3DACDDqDY8skkaSzMBgMBDejqg//qx6G88QlQFkjZaSapggyqLC97GwAWLMCIfQa38FngYviSEsUPcccq0AOtQHkIMDjnXI27hLFGOgGQnk9eAHErz2DwADIAxS1PSz6GBIIa6PPtCFzzOMTmbeAyf6qTJFIRQVPE56ed+OUPAWDp0qXFyPWiyNsscM7qZWFwUztAHCgAQj6Iv6wCPbAGXB4wLX2GawPlAkiqw3uRIO6SKB1A9nySa1oMgPvzBIohwUEf6JMu+K5+HPRRBzjsAAgDAElAIBDQPvjGqXPbARClrYIePvJuMReD40xYSzRAOABx17MQf18DlJuun03EewSIu2RIpctso5j/MkugRDIXidKXaUunoy66NEdRP2yD/5rHQZ91g4M+C0BsHYiFosLv1zYNxgwAdYqdYXiptMeGF8KXaNhwAOLu5yD+9k9TP3NKonhRMd4B4vabW8W4b5CHKVF6HWrS9phsAqQsAHrvM/ivfQLo6DVtEuk0MxJ1ZaiKgvKywDoAqKtbgJGk/GaBh0LtJINxoNz7D4i/vWjuHJSJYXKvKsZRjRKqmPR8U/mwDsg+y5iPNT9Dgsv9EK9/DP8fnjTPmPOrprTM8MaYWagCmDKp6mUAmDx5zohJESAfdZOgkqmdLEBpehGi6UWwQ6LY+IZExaTnk2uDfCJdan2QRf0YElwWgPLKh/D98WlgQDe/6eNYeO4IMSCEpqLzxK8cth4AmpsjI+bZAHmBpERqJ5tQSjRUWQDi/tUQ9/4DCPlhn8QbXQBJAsLyqRYA5kq38iCUtZvhu/kZ88ulmkgDiOO1AICEEAiFfK+fdeqh7TDXqY20JLF201xUArWTi49hvsiyAJQH1kCxAUV6AohVQw0VQNgKEMDsbolrg00J8uJb8N26yrynKRkBYnt8ZlYVDZXlweeJSNbVRdP2Lg83FTAfUAKgZFM7CZIMlAcgHmyFcs/z5he1OGUOZJMguVRDKQBiSwek3qTB4HI/1JbX4bvjufjEnTAH0LI9bzyGGaSphOrqimeAkbdHgIKODbdQMdX3grUEUB5phXL38+CgH0mkJMCSbDCLBElcWIVkPKJ4gLBLOgaBASnBZX5oT26C/+4XTftDCItYczy8y1thkOL3ofPsUw/4JwA0NY2sPQKkLYQuQk0UwuelXMlAeRBixUtQ7n7WPAYDsDQeOySMS35sT1KcBEEaQJLhkB/aivXw3bcGHFATG7pdnjfjM0sSGkKhwPOnnbbwcyCi0FAfYOyBip8FLkbt2DhyASUA5bGXodzVEgcKubuRw6ViEmEJ8y2G/NAefAm+B1rBIc2eV/rDuhJLZk1TsduUyhVSAnV1s0dumNVCohhtk6SSqZ1cQAlBeXI9lDtXAX4NIKQGsZK6BrYws3PzV3pDuy6qttYtE0AS/EEN2v1roC1/2ZyHcQ6s5Xr41COqQT8G6+rnrgBGdlLPSlSz13fi37uB2851L1l4ZPe4ySsXnyCgux+yfn/EzqwDBmImgAiZpYflno0nMQ8Da1o3GyQ9b7P5GBzww//IGvie3WSO63g9xiP9XRsSqth9SvlTm57/7XGGcakAsp/UPFzkemy4SyALlU7teOKTDFQEIFZugHrnKtM4JKQah5P/7Fm6zC4XDhDzhgz44VvRCt9zr7oAJAc5qygZAZ+PdptcdadhMOpGcCWakxzfu4H3trRRCYDiVe0ApjtZEYLSsgnqn1eaq7soNVDFDLuKyaCGUioIKRDF/9Lj4/8MBoQA+zUEHl4Df8tGcybXFSA5niMeTWBmkBIM4NMlPzjhEQDU0rJ0yPf4eiUbWtMfqQDElMw+yUGGBMqDUP/xmgmU+D4fNpwr8dPFhk3YuEiZtN2DSYCYq8kYQKDpOfie2wQOZQKI46GycTAbiurDpInl951aP7cDdXXKSI+yWinrseEugSxUIr58RJqU4LIglBffgHbjo0DvgDmWYkiLOEllZTNik/ddAGKTQgBYmoNkoQCovQfBPz0Fbe074PgkZJESlCVDCfgpNnfunn8AgOiCBaPCFklQ0nC13Uy7SAtky9Ije26jjryWK4QJkMlViJ0+H8Z+e4B6B8z5EvJ2Fr4NIIl4ZnM6X1PBmgp1/XvwP/IviO4+cMAXn+rPcIqA9+c1mDRl7+kTHm596oqvGcZpCtA8alQNkEGSFGeflC6t5yykuaCH2rrhu/FRaH9/EYjp4HDQjE9KFmv+WQAiObkXhsNBUFcvAvc9h8BfW0B9A2DbWpDiJKghJYWDGh+4/56XGwYjEvH60MNHrpIkGZn8Z7vjJVuPSUrkFif5zSFw6huA3HUC9KMPgHHgDMhwABTTzc+yJFbmI7XhyrZgSAhAU8CCQG3bobW+DW31G6DuXiDoTyTIVtlclbQGTCmy54TlrU9fcfI35GlK8yiTIgCgphRvhqezRWXhy5xo+PjYFP8cDoI+74bvnmchV22EcfBe0GfvCZ5UaXoiSVWSMFIp6UZT7wDEB59C3fQB1I0fgDp6wH4NHPKDvLi4Xh8JYCmZwmFl8MtzZ178zyeZZkdnMxo9pR1Wopq9zoxLEvcnS7dPRrk0SSQiMpXpoA6K6eCgH3JKFXi3asjJVeCKkLnvRTLQNwDR0QuxtR3i4zbQti6QboD9mrm7ziJpstciD2nCrJMSUPfas+qG1U9cdn4k0qQ0Nw/t2WeFkuXLWe5ASd5Nv8hBFr6sSXLkl9QM+XwFHWbDGjCNTp9pQ4h/bwO996kZLShp1JKMe0IEsKrE06hm4UnbgzzU1qLGstrlLHUmpbpc/eyn53zl0oYnFDG7edOocXmd5Pi82ihXJ4XwSU4NOfg0sN/BBoLt047OcZNCp9iyVNWQUgYDZer0aZN+1NBweFsk0qQ0jlIpAuT6Bl+c3IVIng2Wkz23XWT+FAEo14k3Bjx9ADSVnydpkomR2RBKQK2Z6L//mb//8l6MYjWTIM9LBcacW5xXuVkHu1wD2bPM5C2yNJhEVYX26Xe/c+QPDckCs0evmklQYSdCjxRf3khl18u8qTRp2ZCQ4VCQZu+761k/+f7Xt0YiTYQc3+QdDZTXXmD3NsqzwYrp1TaOkQeoZ2nCADPrqhZUZ+w5YemDd/3s8bq6qDra1UyC8p6OHptqp3QAdfJ5AQoz60IJaNN3r3zgHyt+1VhXV6e2tDQO2VnwpSaR/SmHsLcWU24xSB0CcGfLkpl1Ej51QoXv2XtvPecMQ0aUlpZVY0KCJKigvcAlUTsl4CtY7QwbQNmQrKi771K++ar/u+j0GTNm9Eejsy0++dggD8eGu9PwqJ3cXseI2CcufC5dyZCsKtUTQ5sXHP2FY0455ciPo9GoaBwDhqqTPI2TZBoZSB8/KWAMw2uSLNnkl0Xpxm2cgcQVM+sMRZ1YFXz/kNo9j7m28XvvRiJNSmPj2DBUnVSaY8NHkm+02SdxG2S3KVWbTzr2gKPvuemn747meRkvZJ8FLqBX5y1E3FIX06ttHAVIshLymRJEU6dUl62+YPGxZyw+6/j34q7umPFk3CjPE6G9jsaOTK8uyD4pgV1EBJaG1BU1qE6fOvGxCxfPqV981vHvRSIRZSy5upko5yxwOg0hX9YkOfIrXBgWZRcRs9QNplC4XN11l/Kr//Xk5RcSEceN1DGrYqxENTO+7f7x6ALWgIy5tbHFlsusSxZqeUVwYOaMyeeveujS23QjCdUx5eZmo5IeGz6m3eI8yiWApZQGKQF1Uk3Fa3WHzTrqqQcuvU03IsqOBhBgCI4NL9w+8QpQb9kUlIW3RLouQYFgmTJt96o/X/rjbxxx57IfrUFdVDVXue9YAAFyzQLvNG5xboAmpAdIUydUhrfNPWD3s19uufK73/72/PZIJKJgBzBQM5HDJrFFuV5m5XO7m/faWAvv6LBPGMyGwaQGg0FMrgn//aRjD/zp5Zec+T4QUYAmuSNKDytlGXEtzusofDQ2Z9Z5pS3S2zGkZEVRA2p1he/jWXvv+osn/vbzP69rAVAXVU3pUWgFxw4V/fHobHwu8xn551eAAe2MTv8yaM78DMOQzNCUcCjYu/f0mhsu/unXDl5x38//rBsRJRqNih1ZvTgpi7pJsrheZuVzuzsm3GKWUjJI+EVZyIddp1TeN++L0y+94erFbwJAJBJRmptH3+apoSYPIAFGzj4prlxndCagECAlm4d1BwM+VFUEHqo9cMZv777tR/8wPxe4c9gemaioWWCvfEM/W1zwaKxkydKAUAP+ACZXl/3zgP2mXfbXOy54ZNNqAIBANAo0Nho7g+2RiTxKkiS77Scnn9udUaB2CMTMLCULxR8IorJC27TbLlVLn35w6f3x0w5FNBrFWFz7MRRENTPOyLrN08HuepmVz+3uyAGFwWxICVXzBVEWVt+btfeuf3i0+Re3EJmfVY1EImJntDuyUZ4gAUoPlGGzT0x3VgtgQoWvc/fda6657KJjrz7yyCO7gZ3XKPVCBYAEKKZXj4A0MaSUilD8CAfVnkk1lTdFTpl3/c9+0vABANTVRVXzfLKd0yj1QlQz/QyWyfM2St2r3RmGCSiGlAZB+EUooMipe9Q0HXXorMt+e9l/bDLjIwrQnDisZJyykOndDJnXkSN1CUZUnWS6sxIMn1JWFsaEquBD+++766/uvf2/165+AgDqVOZVBhGNqxaPNHwfj855t+hyJTMbhiSh+YJiyi4Vq446fN+TX1t99dfvue2/10qOj5SiRR8N57WPJTLVTcIFHubJuFKoHSKwZDaYherz+1FTHX59+tTJlz5x/y+aY+Z3dsfd2SLJDhJg2L2OQr0dAjED0pCs+P1BhEPa21N3n/TbVY9E7yKifgAUiTSJsbxKfbRQFpCkBbJl4zFJSYDCAKRhSEXVgigLa5/N3HvKjVf+4qRramtrOwEAkYiCcXe2ZJQOEmDYB7vyUDuGlKwIxY+Kcm2gpqbyusjx86656KKGT4CEO9toYNxjKSm5gwQYBWrHFjCklETCJwJ+Edt1SvVdJ59U+/tfXdjwKgNAXZ2KllXjYx1DRFQ9/QzmTHM3Iw8UKSWYhKoEgz7sNqVqxZz9pl7ylxsueMms8c49OztcJAAvsnl43WKKu7NSkggGQ8qk6vInv3TIrGPXPfc/J/35hgteYiTc2R1z4fFoI6qOq5uMHX/IpIkrQ3wCjlSf34/qCeH1B8yZ9tsH7r7wnsHYuDs7UkTV00/nxFGlww8USvxnZkjJUHz+ACZUBt6fMqmycdWKy+4iIh3js7MjSnGQpMa4Xdt06LwdBsgwDKmqWgBlIXXLtGm7/PGuG8+5adq0ae3A+OzsaCBvIEmLKAlQDENKRVECqCjz9+45teaWRYsOv+LH3/vKZwASYx3jE3CjgNI2jGeccyvdZJwhpRQkfEp5mWZUTyi/9Zj5B11zzW/OfvPZFeZYx6pVS8cn4EYRWSRJ8pblv5M7YyBbEfEfllIyg1Ql4Fex264THzr8sH0vv/F3319jFj/uzo5WclkInUWi2G56Ey0ElpLBzIoSCgVRPTG0atq06kseve+S519qAYCIEo3O5sadfLHxaCYXSQJ4t08yNyrBnJ2VTKrfH0BFWWDN/vvu/vvHHlja1D8QA8bd2TFDGUACFKF2mOPg8Gl+VE8Mbd57xpQrHmn65W3xdRzj7uwYoywgAQoAiiElK6oWQHmZb8sukyt/e+eN5/xp1qxZXRifuh+zVDhI7BGGYbCiqH6EQ2rnXtN3uf2c0+f/z3e+c+IWAONT92OcqHra6ZaF0K4slv9pZEhmQUKjijI/T66pvOWoI/e78veXn/M+gPjsbMv41P0YJ8dCaDdy9XaklBIgTQkGFFRXV9x77Pw5v7/+9+e2/qsFsCw23ml23u/IlO9eYMmSmUlRAsEAdtul6tl9Z+12yb13XPjsxtUAEFHATRJEOtG4O7ujkKcToYlMj0WXJPzBsDK5pmL13ANmfHXTmuvr7vnThc+mVqI3Gxhfib7DEVVP+xY7PlhpJdOdlVA1XwBVFYE3Zu879eqH7v3F7fFh83F3diegOEgsFof5wwBkwp2dWBX4bNcpEy9vWXHFLUTUB4zPzu5MlA4SwDDYnJ0NBZW2qXtU3/jLn0RuOPnkw6yLjccN0p2ILCCBISULEj4qC2uxPfecfGf9/Jm/vvySuDs7vnd2pyU1bpQCpCplZX5UVYb+94hD9v3tbTdesOGFJwDU1am8anzv7E5NVVO/xZNmnMn7f+mCFYsvuKFeURIxEQXs6avK47Sj0wGH/+jV40+55OuamsBDwp0dp3Ey6f8DSbyZ3AmSrKAAAAAASUVORK5CYII=" alt="" width="21" height="30"></span>Finackle</span>
+    <span class="hr-conf">Finance Health Report · Confidential</span>
+  </header>
+
+  <div class="hr-title">
+    <div>
+      <h3>Finance Health Report</h3>
+      <p>Prepared for <b id="rpWho">your business</b> · <span id="rpDate"></span></p>
+    </div>
+    <div class="hr-ring" id="rpRing"><b id="rpScore">0</b><small>/ 100</small></div>
+  </div>
+
+  <section class="hr-sec">
+    <h4><span>01</span>Executive summary</h4>
+    <p class="hr-lead" id="rpSummary"></p>
+  </section>
+
+  <section class="hr-sec">
+    <h4><span>02</span>Finance Health Score</h4>
+    <div class="hr-scoregrid">
+      <div>
+        <span class="hr-band" id="rpBand"></span>
+        <p id="rpBandText" class="hr-muted"></p>
+        <div class="hr-scale" aria-hidden="true">
+                    <span style="flex:40"><i>At risk</i><em>0–39</em></span>
+                    <span style="flex:25"><i>Developing</i><em>40–64</em></span>
+                    <span style="flex:20"><i>Well managed</i><em>65–84</em></span>
+                    <span style="flex:16"><i>Strong financial control</i><em>85–100</em></span>
+                    <b class="hr-you" id="rpMarker">You</b>
+        </div>
+      </div>
+      <table class="hr-bench">
+        <tr><td>Your score</td><td><b id="rpScore2">0</b>/100</td></tr>
+        <tr id="rpAvgRow" hidden><td>Average of businesses that took this check</td><td><b id="rpAvg"></b>/100</td></tr>
+        <tr><td>Businesses with strong financial control</td><td><b>85+</b>/100</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="hr-sec">
+    <h4><span>03</span>Maturity by area</h4>
+    <div class="hr-areas">
+            <div class="hr-area" data-area="close">
+        <div class="hr-area-h"><b>Bookkeeping &amp; Month-end Close</b><span class="hr-lvl"></span></div>
+        <span class="hr-bar"><i></i></span>
+        <div class="hr-area-f"><span class="hr-pct">0%</span></div>
+        <ul class="hr-ans"></ul>
+      </div>
+            <div class="hr-area" data-area="reporting">
+        <div class="hr-area-h"><b>Reporting Maturity</b><span class="hr-lvl"></span></div>
+        <span class="hr-bar"><i></i></span>
+        <div class="hr-area-f"><span class="hr-pct">0%</span></div>
+        <ul class="hr-ans"></ul>
+      </div>
+            <div class="hr-area" data-area="cash">
+        <div class="hr-area-h"><b>Cash Flow Maturity</b><span class="hr-lvl"></span></div>
+        <span class="hr-bar"><i></i></span>
+        <div class="hr-area-f"><span class="hr-pct">0%</span></div>
+        <ul class="hr-ans"></ul>
+      </div>
+            <div class="hr-area" data-area="compliance">
+        <div class="hr-area-h"><b>Compliance Health</b><span class="hr-lvl"></span></div>
+        <span class="hr-bar"><i></i></span>
+        <div class="hr-area-f"><span class="hr-pct">0%</span></div>
+        <ul class="hr-ans"></ul>
+      </div>
+            <div class="hr-area" data-area="controls">
+        <div class="hr-area-h"><b>Financial Controls</b><span class="hr-lvl"></span></div>
+        <span class="hr-bar"><i></i></span>
+        <div class="hr-area-f"><span class="hr-pct">0%</span></div>
+        <ul class="hr-ans"></ul>
+      </div>
+          </div>
+  </section>
+
+  <div class="hr-two">
+    <section class="hr-sec">
+      <h4><span>04</span>Biggest risks</h4>
+      <ul class="hr-risks" id="rpRisks" data-icon="&lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z&quot;/&gt;&lt;path d=&quot;M12 9v4M12 17h.01&quot;/&gt;&lt;/svg&gt;"></ul>
+    </section>
+    <section class="hr-sec">
+      <h4><span>05</span>Top 3 priorities</h4>
+      <ol class="hr-wins" id="rpWins"></ol>
+    </section>
+  </div>
+
+  <section class="hr-sec">
+    <h4><span>06</span>Suggested 90-day improvement plan</h4>
+    <div class="hr-plan">
+      <div><span class="tiny">Days 1–30</span><ul id="rpPlan0"></ul></div>
+      <div><span class="tiny">Days 31–60</span><ul id="rpPlan1"></ul></div>
+      <div><span class="tiny">Days 61–90</span><ul id="rpPlan2"></ul></div>
+    </div>
+    <p class="hr-time">Estimated implementation: <b id="rpTimeline"></b></p>
+  </section>
+
+  <section class="hr-rec">
+    <div>
+      <b id="rpRecTitle"></b>
+      <p id="rpRecText"></p>
+    </div>
+    <div class="hr-btns no-print">
+      <a class="btn btn-ink" href="#start" id="rpBook">Book my Finance Health Review <svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></a>
+      
+    </div>
+    <form class="hr-wa no-print" id="rpWa" action="followup.php" method="post" novalidate>
+      <label class="fl" for="rpPhone">Want follow-up support on WhatsApp? Add your number.
+        <span class="hr-wa-row"><input id="rpPhone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+971 5x xxx xxxx"><button type="submit" class="btn btn-ink">Send</button></span>
+      </label>
+      <div class="form-msg" id="rpWaMsg" role="status" hidden></div>
+    </form>
+  </section>
+
+  <p class="hr-foot">This report is a quick self-assessment based on your answers, not an audit. Finackle F.Z.E. · info@finackle.com · +971 54 502 2747</p>
+</article>
+  </div>
+</section>
+<section class="s" id="faq" style="padding-top:0">
+  <div class="wrap fgrid">
+    <div><span class="lbl">FAQ</span><h2 style="font-size:clamp(32px,4vw,46px);line-height:1.06;margin-top:16px">Questions before we talk</h2></div>
+    <div class="faqs">
+            <details open>
+        <summary>How is this different from a bookkeeper?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>A bookkeeper records transactions. We design and run your finance function: the structure, controls, reporting and compliance calendar, so the numbers stay reliable and useful as you grow.</p>
+      </details>
+            <details>
+        <summary>Do you work with free zone and mainland companies?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Yes. We support businesses across UAE free zones and the mainland, and shape reporting and compliance around your structure.</p>
+      </details>
+            <details>
+        <summary>What does the Free Finance Health Check include?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Two parts, both free. The 10-question Health Check gives you a personalised Finance Health Report straight away: your score, key risks, top priorities and a 90-day plan. If you like, we then go through it with you in a 30-minute Finance Health Review call and send a written summary. There is no obligation to continue.</p>
+      </details>
+            <details>
+        <summary>Our books are behind. Can you still help?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Yes. Clean-up is often where we start. We scope it with you and agree it before any work begins.</p>
+      </details>
+            <details>
+        <summary>Which accounting software do you use?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>We work with leading cloud accounting systems and can build around what you already use. If you don’t have one yet, we’ll recommend the right fit for your size.</p>
+      </details>
+            <details>
+        <summary>How do you keep our data secure?<span class="pm" aria-hidden="true">+</span></summary>
+        <p>Access is limited to your assigned team, we use view-only bank access where possible, and your information is never shared without your permission.</p>
+      </details>
+          </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How is this different from a bookkeeper?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A bookkeeper records transactions. We design and run your finance function: the structure, controls, reporting and compliance calendar, so the numbers stay reliable and useful as you grow."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you work with free zone and mainland companies?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We support businesses across UAE free zones and the mainland, and shape reporting and compliance around your structure."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What does the Free Finance Health Check include?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Two parts, both free. The 10-question Health Check gives you a personalised Finance Health Report straight away: your score, key risks, top priorities and a 90-day plan. If you like, we then go through it with you in a 30-minute Finance Health Review call and send a written summary. There is no obligation to continue."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Our books are behind. Can you still help?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Clean-up is often where we start. We scope it with you and agree it before any work begins."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Which accounting software do you use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We work with leading cloud accounting systems and can build around what you already use. If you don’t have one yet, we’ll recommend the right fit for your size."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you keep our data secure?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Access is limited to your assigned team, we use view-only bank access where possible, and your information is never shared without your permission."
+            }
+        }
+    ]
+}
+</script>
+<section class="s final" id="start">
+  <div class="wrap fwrap">
+    <div>
+      <span class="lbl">Your next step</span>
+      <h2>Book your free 30-minute Finance Health Review.</h2>
+      <p class="intro">A straightforward conversation about how your finance is working today, and where more clarity and control could help.</p>
+      <ul class="inc">
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>30-minute call with a qualified finance professional</li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Review of your books, reporting and compliance</li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#ok"/></svg>Written summary of gaps and quick wins</li>
+      </ul>
+      <div class="reach">
+        <div><span><small>WhatsApp / phone</small><a href="https://wa.me/971545022747" target="_blank" rel="noopener" style="text-decoration:none"><b>+971 54 502 2747</b></a></span></div>
+        <div><span><small>Email</small><a href="mailto:info@finackle.com" style="text-decoration:none"><b>info@finackle.com</b></a></span></div>
+      </div>
+    </div>
+
+    <form class="form" id="hc" method="post" action="send.php" novalidate data-whatsapp="971545022747">
+      <h3>Tell us a little about your business</h3>
+
+            <div class="form-msg" id="formMsg" role="status" hidden></div>
+
+      <div class="two">
+        <label class="fl" for="fn">Your name<input id="fn" name="name" type="text" autocomplete="name" maxlength="120" required></label>
+        <label class="fl" for="fe">Work email<input id="fe" name="email" type="email" autocomplete="email" maxlength="160"></label>
+      </div>
+      <label class="fl" for="fb">What kind of business do you run?
+        <select id="fb" name="business">
+          <option>E-commerce</option><option>F&amp;B / restaurants</option><option>Trading &amp; distribution</option><option>Professional services</option><option>Other</option>        </select>
+      </label>
+      <label class="fl" for="fx">What do you most want clarity on?
+        <select id="fx" name="focus">
+          <option>Profitability</option><option>Cash flow</option><option>VAT / Corporate Tax</option><option>Books that are behind</option><option>Planning a big decision</option>        </select>
+      </label>
+
+      <!-- Spam protection: real visitors never see or fill these -->
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <input type="hidden" name="ts" value="1792342822">
+
+      <button type="submit" class="btn btn-mint" id="send">Request my Finance Health Review <svg width="18" height="18" aria-hidden="true"><use href="#arr"/></svg></button>
+      <p class="fine">We reply within one business day. No obligation. Not ready for a call? <a href="#quiz">Take the 2-minute Health Check</a>.</p>
+    </form>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div style="max-width:360px">
+        <a class="brand" href="#top"><span class="logo-tile"><img src="data:image/png;base64,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" alt="" width="21" height="30"></span>Finackle</a>
+        <p style="margin-top:14px;font-size:15px">Turning financial data into clarity, control and better business decisions for growing UAE businesses.</p>
+      </div>
+      <div class="fc">
+        <div><b>Explore</b><a href="#quiz">Free Health Check</a><a href="#services">Services</a><a href="#who">Industries</a><a href="#process">How it works</a><a href="#about">About</a><a href="#faq">FAQ</a></div>
+        <div><b>Contact</b><a href="mailto:info@finackle.com">info@finackle.com</a><a href="https://wa.me/971545022747" target="_blank" rel="noopener">+971 54 502 2747</a><span>Ajman Free Zone, UAE</span></div>
+      </div>
+    </div>
+    <div class="fb"><span>© 2026 Finackle F.Z.E. All rights reserved.</span><span>Finance operations · Reporting · Compliance · CFO advisory</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/971545022747" target="_blank" rel="noopener" aria-label="Chat with Finackle on WhatsApp"><svg width="22" height="22" aria-hidden="true"><use href="#wa"/></svg><span class="txt">Chat with us</span></a>
+<button type="button" class="fs" id="fsBtn" aria-label="View full screen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" id="fsIco"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg><span class="txt" id="fsTxt">Full screen</span></button>
+<nav class="secnav" id="secnav" aria-label="Jump to section"></nav>
+<script>
+/*
+ * Finackle website interactions.
+ * All text is already in the HTML (built by PHP). This file only adds behaviour:
+ *   1. Count-up numbers in the hero card
+ *   2. "How we help" 4-step tabs (auto-play once when scrolled into view)
+ *   3. Owner questions tabs
+ *   4. Free Finance Health Check: live score, unlock form, CFO-style report, WhatsApp follow-up
+ *   5. Fade-up of sections on scroll
+ *   6. Health check form: sends to send.php and opens WhatsApp with the request
+ * Everything respects "reduce motion" settings and the page works without JavaScript.
+ */
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $$(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+
+  /* Fade a newly shown panel in (uses the .sw class from style.css). */
+  function showPanel(panel) {
+    if (reduceMotion) { panel.hidden = false; return; }
+    panel.classList.add('sw');
+    panel.hidden = false;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { panel.classList.remove('sw'); });
+    });
+  }
+
+  /* Generic tab behaviour: buttons with aria-controls -> panels. */
+  function setupTabs(list, onChange) {
+    var tabs = $$('[role="tab"]', list);
+    var current = Math.max(0, tabs.findIndex(function (t) { return t.getAttribute('aria-selected') === 'true'; }));
+
+    function select(i, focus) {
+      if (i === current && !onChange.force) { if (focus) tabs[i].focus(); return; }
+      tabs.forEach(function (t, j) {
+        var on = j === i;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (!panel) return;
+        if (on) showPanel(panel); else panel.hidden = true;
+      });
+      current = i;
+      if (focus) tabs[i].focus();
+      onChange(i, tabs);
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { onChange.userAction && onChange.userAction(); select(i); });
+    });
+    list.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (current + 1) % tabs.length;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = (current + tabs.length - 1) % tabs.length;
+      if (e.key === 'Home') next = 0;
+      if (e.key === 'End') next = tabs.length - 1;
+      if (next !== null) { e.preventDefault(); onChange.userAction && onChange.userAction(); select(next, true); }
+    });
+    onChange(current, tabs);
+    return { select: select, current: function () { return current; }, count: tabs.length };
+  }
+
+  /* 1. Count-up numbers (data-c = target, data-d = decimals, data-s = suffix) */
+  $$('[data-c]').forEach(function (el) {
+    if (reduceMotion) return;
+    var target = parseFloat(el.dataset.c), dec = +(el.dataset.d || 0), suffix = el.dataset.s || '', start;
+    function frame(t) {
+      start = start || t;
+      var p = Math.min(1, (t - start) / 1500), eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  });
+
+  /* 2. How we help: 4 steps */
+  var flow = $('#flow');
+  if (flow) {
+    var fill = $('#fillbar'), autoTimer = null;
+    var stopAuto = function () { if (autoTimer) { clearInterval(autoTimer); autoTimer = null; } };
+    var onStep = function (i, tabs) {
+      tabs.forEach(function (t, j) { t.classList.toggle('done', j < i); });
+      if (fill) fill.style.width = (tabs.length > 1 ? i / (tabs.length - 1) * 76 : 0) + '%';
+    };
+    onStep.userAction = stopAuto;
+    var stepTabs = setupTabs(flow, onStep);
+
+    // Auto-play through the steps once, every 4.5s, the first time the section is seen.
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      var seen = false;
+      new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting && !seen) {
+            seen = true; obs.disconnect();
+            autoTimer = setInterval(function () {
+              if (stepTabs.current() >= stepTabs.count - 1) { stopAuto(); return; }
+              stepTabs.select(stepTabs.current() + 1);
+            }, 4500);
+          }
+        });
+      }, { threshold: 0.4 }).observe(flow);
+    }
+  }
+
+  /* 3. Owner questions */
+  var qlist = $('#qlist');
+  if (qlist) setupTabs(qlist, function () {});
+
+  /* 4. Free Finance Health Check (lead magnet)
+     Same scoring rules as includes/health.php (hc_compute). Change both together. */
+  var hs = $('#hs');
+  var report = $('#hsReport');
+  var hsCfg = hs ? JSON.parse(hs.dataset.config) : (report && report.dataset.config ? JSON.parse(report.dataset.config) : null);
+
+  function joinNames(n) { return n.length <= 1 ? n.join('') : n.slice(0, -1).join(', ') + ' and ' + n[n.length - 1]; }
+  var countWords = ['no', 'one', 'two', 'three', 'four', 'five'];
+  function byScoreThenOrder(a, b) { return a.score - b.score || a.order - b.order; }
+
+  function computeReport(cfg, answers, who) {
+    var q = 0, sum = 0, max = 0, answered = 0, areas = [], findings = [];
+    cfg.areas.forEach(function (area, ai) {
+      var aSum = 0, aMax = 0, lines = [];
+      area.questions.forEach(function (question) {
+        var oi = answers[q], opt = (oi !== undefined && question.options[oi]) ? question.options[oi] : null;
+        if (opt) answered++;
+        var s = opt ? opt.score : 0;
+        aSum += s; aMax += 3;
+        lines.push({ q: question.q, a: opt ? opt.label : 'Not answered', score: s });
+        if (opt && opt.finding) findings.push({ text: opt.finding, area: area.report_name, score: s, order: q });
+        q++;
+      });
+      var pct = Math.round(aSum / Math.max(1, aMax) * 100);
+      var level = cfg.levels[cfg.levels.length - 1].label;
+      for (var i = 0; i < cfg.levels.length; i++) { if (pct >= cfg.levels[i].min) { level = cfg.levels[i].label; break; } }
+      areas.push({ key: area.key, name: area.name, report_name: area.report_name, pct: pct, level: level, lines: lines, win: area.win, plan: area.plan, order: ai });
+      sum += aSum; max += aMax;
+    });
+
+    var score = Math.round(sum / Math.max(1, max) * 100);
+    var band = cfg.bands[cfg.bands.length - 1];
+    for (var b = 0; b < cfg.bands.length; b++) { if (score <= cfg.bands[b].max) { band = cfg.bands[b]; break; } }
+
+    var strongest = areas[0];
+    areas.forEach(function (a) { if (a.pct > strongest.pct) strongest = a; });
+
+    var weak = areas.filter(function (a) { return a.pct < cfg.attention_below; })
+                    .sort(function (x, y) { return x.pct - y.pct || x.order - y.order; });
+
+    findings.sort(byScoreThenOrder);
+    var risks = findings.filter(function (f) { return f.score <= 1; }).slice(0, 3);
+    if (risks.length < 3) risks = risks.concat(findings.filter(function (f) { return f.score === 2; })).slice(0, 3);
+
+    var wins = weak.slice(0, 3).map(function (w) { return { area: w.report_name, text: w.win }; });
+    for (var n = 0; wins.length < 3 && n < cfg.next_wins.length; n++) wins.push({ area: 'Next stage', text: cfg.next_wins[n] });
+
+    var planAreas = weak.slice(0, 3), plan = [[], [], []];
+    for (var p = 0; p < 3; p++) {
+      if (planAreas.length) planAreas.forEach(function (pa) { plan[p].push(pa.plan[p]); });
+      else plan[p].push(cfg.next_plan[p]);
+    }
+
+    var timeline = cfg.timelines[cfg.timelines.length - 1].text;
+    for (var t = 0; t < cfg.timelines.length; t++) { if (weak.length <= cfg.timelines[t].max_areas) { timeline = cfg.timelines[t].text; break; } }
+
+    var whoText = who || 'Your business';
+    var summary = whoText + ' scores ' + score + '/100, which puts it in the “' + band.title + '” range. ';
+    if (!weak.length) {
+      summary += 'All five areas are well controlled, and ' + strongest.report_name + ' is the strongest. The next gains are in planning, forecasting and insight.';
+    } else {
+      var weakNames = weak.slice(0, 3).map(function (w) { return w.report_name; });
+      summary += strongest.report_name + ' is the strongest area, while ' + joinNames(weakNames) + (weakNames.length === 1 ? ' needs' : ' need') + ' the most attention. ';
+      if (risks.length) summary += 'The most important risk we found is: ' + risks[0].text + '. ';
+      summary += 'Closing these gaps would take an estimated ' + timeline + '.';
+    }
+
+    var recTitle = 'Based on your answers, we’d recommend a 30-minute Finance Health Review.';
+    var recText = weak.length
+      ? 'We identified ' + countWords[weak.length] + ' area' + (weak.length === 1 ? '' : 's') + ' where you could improve visibility and cash control. In the review we’ll go through this report with you and agree where to start.'
+      : 'Your finance function is in good shape. In the review we’ll look at the next stage: budgeting, forecasting and decision support.';
+
+    return { score: score, band: band, answered: answered, total: cfg.total, areas: areas, weak_count: weak.length,
+             strongest: strongest.report_name, risks: risks, wins: wins, plan: plan, timeline: timeline,
+             summary: summary, rec_title: recTitle, rec_text: recText };
+  }
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  function renderReport(cfg, r, meta) {
+    $('#rpWho').textContent = meta.who || 'your business';
+    $('#rpDate').textContent = meta.date || new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    var amber = r.band.colour === 'amber';
+    $('#rpScore').textContent = r.score; $('#rpScore2').textContent = r.score;
+    var ring = $('#rpRing'); ring.style.setProperty('--p', r.score); ring.style.setProperty('--c', amber ? 'var(--amber)' : 'var(--green)');
+    $('#rpSummary').textContent = r.summary;
+    var bandEl = $('#rpBand'); bandEl.textContent = r.band.title; bandEl.className = 'hr-band' + (amber ? ' amber' : '');
+    $('#rpBandText').textContent = r.band.text;
+    $('#rpMarker').style.left = Math.min(98, Math.max(2, r.score)) + '%';
+    $('#rpMarker').textContent = 'You · ' + r.score;
+    if (cfg.average !== null && cfg.average !== undefined) { $('#rpAvg').textContent = cfg.average; $('#rpAvgRow').hidden = false; }
+
+    r.areas.forEach(function (a) {
+      var card = $('.hr-area[data-area="' + a.key + '"]', report);
+      if (!card) return;
+      card.classList.toggle('weak', a.pct < cfg.attention_below);
+      $('.hr-lvl', card).textContent = a.level;
+      $('.hr-pct', card).textContent = a.pct + '%';
+      $('.hr-bar i', card).style.width = a.pct + '%';
+      var ul = $('.hr-ans', card); ul.innerHTML = '';
+      a.lines.forEach(function (l) { ul.appendChild(el('li', '', l.a)); });
+    });
+
+    var risks = $('#rpRisks'); risks.innerHTML = '';
+    if (!r.risks.length) risks.appendChild(el('li', 'none', 'No major risks found. Every answer shows a well-run process.'));
+    r.risks.forEach(function (k) {
+      var li = el('li'); li.innerHTML = risks.dataset.icon;
+      var d = el('div'); d.appendChild(el('b', '', k.text)); d.appendChild(el('small', '', k.area));
+      li.appendChild(d); risks.appendChild(li);
+    });
+
+    var wins = $('#rpWins'); wins.innerHTML = '';
+    r.wins.forEach(function (w) { var li = el('li'), d = el('div'); d.appendChild(document.createTextNode(w.text)); d.appendChild(el('small', '', w.area)); li.appendChild(d); wins.appendChild(li); });
+
+    r.plan.forEach(function (items, i) { var ul = $('#rpPlan' + i); ul.innerHTML = ''; items.forEach(function (t) { ul.appendChild(el('li', '', t)); }); });
+    $('#rpTimeline').textContent = r.timeline;
+    $('#rpRecTitle').textContent = r.rec_title;
+    $('#rpRecText').textContent = r.rec_text;
+  }
+
+  function reveal(node) {
+    if (reduceMotion) { node.hidden = false; return; }
+    node.classList.add('sw'); node.hidden = false;
+    requestAnimationFrame(function () { requestAnimationFrame(function () { node.classList.remove('sw'); }); });
+  }
+
+  if (report) {
+    var printBtn = $('#rpPrint');
+    if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+  }
+
+  // Printable report page (my-report.php): render straight away from the stored answers.
+  if (report && report.dataset.answers && hsCfg) {
+    renderReport(hsCfg, computeReport(hsCfg, JSON.parse(report.dataset.answers), report.dataset.who), { who: report.dataset.who, date: report.dataset.date });
+  }
+
+  var lead = null; // { id, t } returned by report.php, used for the WhatsApp follow-up
+
+  if (hs) {
+    var answers = {}, gate = $('#hsForm'), unlocked = false;
+
+    $$('#hsQuestions input[type="radio"]').forEach(function (inp) {
+      inp.addEventListener('change', function () {
+        answers[+inp.dataset.q] = +inp.value;
+        var group = inp.closest('.hq');
+        $$('.hq-opt', group).forEach(function (o) { o.classList.toggle('on', $('input', o).checked); });
+        group.classList.add('done');
+        update();
+      });
+      inp.addEventListener('focus', function () { inp.parentNode.classList.add('focus'); });
+      inp.addEventListener('blur', function () { inp.parentNode.classList.remove('focus'); });
+    });
+
+    function update() {
+      var r = computeReport(hsCfg, answers, '');
+      var answered = Object.keys(answers).length;
+      $('#hsScore').textContent = r.score;
+      var meter = $('#hsMeter'); meter.style.width = r.score + '%';
+      $('#hsProgress').textContent = answered + ' of ' + hsCfg.total + ' answered';
+      if (answered < hsCfg.total) {
+        $('#hsBand').textContent = answered === 0 ? 'Start answering' : 'Keep going';
+        $('#hsText').textContent = (hsCfg.total - answered) + ' more to see your result.';
+        meter.style.background = 'var(--green-hi)';
+        return;
+      }
+      $('#hsBand').textContent = r.band.title;
+      $('#hsText').textContent = r.band.text;
+      meter.style.background = r.band.colour === 'amber' ? 'var(--amber)' : 'var(--green-hi)';
+      $('#hsProgress').textContent = 'All ' + hsCfg.total + ' answered';
+      var riskWord = r.risks.length === 1 ? 'risk' : 'risks';
+      $('#hsTeaser').textContent = 'We found ' + (r.risks.length || 'no major') + ' ' + riskWord + ' and three priorities for you. Enter your work email to see your full report, including a 90-day improvement plan.';
+      if (unlocked) { renderReport(hsCfg, r, currentMeta()); return; }
+      if (gate.hidden) {
+        reveal(gate);
+        if (window.innerWidth <= 1000) gate.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      }
+    }
+
+    function currentMeta() {
+      var first = gate.elements.first_name.value.trim(), company = gate.elements.company.value.trim();
+      return { who: company || first, date: '' };
+    }
+
+    gate.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = $('#hsMsg');
+      function say(type, text) { msg.hidden = false; msg.className = 'form-msg ' + type; msg.textContent = text; }
+      var email = gate.elements.email.value.trim();
+      if (!email || !gate.elements.email.checkValidity()) { say('err', 'Please enter a valid work email so we can send your report.'); gate.elements.email.focus(); return; }
+
+      var meta = currentMeta();
+      $('#hsAnswers').value = JSON.stringify(answers);
+      renderReport(hsCfg, computeReport(hsCfg, answers, meta.who), meta);
+      unlocked = true; msg.hidden = true;
+
+      // Show the report first, so the visitor gets it even if the email step fails.
+      reveal(report);
+      report.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      setTimeout(function () { report.focus({ preventScroll: true }); }, 400);
+
+      var btn = $('#hsSubmit'); btn.disabled = true;
+      fetch(gate.action, { method: 'POST', body: new FormData(gate), headers: { 'X-Requested-With': 'fetch' } })
+        .then(function (r) { return r.json(); })
+        .then(function (res) { say(res.ok ? 'ok' : 'err', res.message); if (res.lead) lead = res.lead; })
+        .catch(function () { say('ok', 'Your report is ready below.'); })
+        .then(function () { btn.disabled = false; btn.firstChild.textContent = 'Update my report '; });
+    });
+  }
+
+  // WhatsApp follow-up, inside the report
+  var waForm = $('#rpWa');
+  if (waForm) {
+    waForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var m = $('#rpWaMsg'), phone = waForm.elements.phone.value.trim();
+      function say(type, text) { m.hidden = false; m.className = 'form-msg ' + type; m.textContent = text; }
+      if (phone.replace(/[^0-9]/g, '').length < 7) { say('err', 'Please enter a WhatsApp number, for example +971 50 123 4567.'); return; }
+      var ref = lead || (report.dataset.lead ? JSON.parse(report.dataset.lead) : null);
+      var fd = new FormData(waForm);
+      if (ref) { fd.append('id', ref.id); fd.append('t', ref.t); }
+      fetch(waForm.action, { method: 'POST', body: fd, headers: { 'X-Requested-With': 'fetch' } })
+        .then(function (r) { return r.json(); })
+        .then(function (res) { say(res.ok ? 'ok' : 'err', res.message); })
+        .catch(function () { say('ok', 'Thank you. We’ll follow up on WhatsApp.'); });
+    });
+  }
+
+  /* 5. Fade-up on scroll: only items that start below the first screen are hidden first. */
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.remove('pre'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    $$('.rv').forEach(function (el, i) {
+      if (el.getBoundingClientRect().top > window.innerHeight) {
+        el.classList.add('pre');
+        el.style.transitionDelay = (i % 4) * 80 + 'ms';
+        io.observe(el);
+      }
+    });
+    // Safety net: never leave content hidden.
+    setTimeout(function () { $$('.pre').forEach(function (el) { el.classList.remove('pre'); }); }, 8000);
+  }
+
+  /* 6. Health check form */
+  var form = $('#hc');
+  if (form) {
+    var msg = $('#formMsg'), btn = $('#send');
+    function say(type, text) { msg.hidden = false; msg.className = 'form-msg ' + type; msg.textContent = text; }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.elements.name.value.trim();
+      var email = form.elements.email.value.trim();
+      if (!name) { say('err', 'Please enter your name.'); form.elements.name.focus(); return; }
+      if (email && !form.elements.email.checkValidity()) { say('err', 'Please check your email address.'); form.elements.email.focus(); return; }
+
+      // Open WhatsApp first (must happen right after the click, or browsers block the new tab).
+      var text = 'Hello Finackle, I would like to book a free Finance Health Review.' +
+        ' Name: ' + name + '.' + (email ? ' Email: ' + email + '.' : '') +
+        ' Business: ' + form.elements.business.value + '.' +
+        ' I want clarity on: ' + form.elements.focus.value + '.';
+      var wa = window.open('https://wa.me/' + form.dataset.whatsapp + '?text=' + encodeURIComponent(text), '_blank');
+      if (wa) { try { wa.opener = null; } catch (err) {} }
+
+      // Then email the request through send.php.
+      btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'X-Requested-With': 'fetch' } })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          say(res.ok ? 'ok' : 'err', res.message);
+          if (res.ok) form.reset();
+        })
+        .catch(function () {
+          say(wa ? 'ok' : 'err', wa
+            ? 'Your request is ready in WhatsApp. Please press send there.'
+            : 'Sorry, your request could not be sent. Please WhatsApp or email us.');
+        })
+        .then(function () { btn.disabled = false; });
+    });
+  }
+})();
+
+</script>
+<script>
+(function(){
+  var R=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(s){return document.querySelector(s)}
+  function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s))}
+  /* full screen + section dots */
+  var fsBtn=$('#fsBtn'),fsTxt=$('#fsTxt'),fsIco=$('#fsIco'),root=document.documentElement;
+  var canFS=!!(root.requestFullscreen||root.webkitRequestFullscreen);
+  function isFS(){return !!(document.fullscreenElement||document.webkitFullscreenElement)}
+  function syncFS(){var on=isFS();fsTxt.textContent=on?'Exit full screen':'Full screen';fsBtn.setAttribute('aria-label',on?'Exit full screen':'View full screen');fsIco.innerHTML=on?'<path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/>':'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>'}
+  fsBtn.addEventListener('click',function(){
+    if(isFS()){(document.exitFullscreen||document.webkitExitFullscreen).call(document);return}
+    var req=root.requestFullscreen||root.webkitRequestFullscreen;
+    if(!req){fsTxt.textContent='Use the expand icon on the panel';return}
+    var p=req.call(root);if(p&&p.catch)p.catch(function(){fsTxt.textContent='Use the expand icon on the panel'});
+  });
+  document.addEventListener('fullscreenchange',syncFS);document.addEventListener('webkitfullscreenchange',syncFS);
+  if(!canFS)fsTxt.textContent='Full screen';
+  var secs=[['top','Home'],['services','Services'],['challenge','The challenge'],['how','How we help'],['who','Industries'],['process','How it works'],['about','About'],['quiz','Health Check'],['faq','FAQ'],['start','Contact']];
+  $('#secnav').innerHTML=secs.map(function(s){return '<a href="#'+s[0]+'" data-s="'+s[0]+'"><span>'+s[1]+'</span></a>'}).join('');
+  function spy(){var cur=secs[0][0];secs.forEach(function(s){var el=document.getElementById(s[0]);if(el&&el.getBoundingClientRect().top<innerHeight*.4)cur=s[0]});$$('#secnav a').forEach(function(a){a.classList.toggle('on',a.dataset.s===cur)})}
+  addEventListener('scroll',spy,{passive:true});spy();
+
+})();
+</script>
+
+</body></html>
