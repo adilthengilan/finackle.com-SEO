@@ -215,7 +215,14 @@ $email   = clean_header_str($data['email'] ?? '');
 $phone   = clean_header_str($data['phone'] ?? $data['contactNumber'] ?? '');
 $company = clean_header_str($data['company'] ?? $data['companyName'] ?? '');
 $service = clean_header_str($data['service'] ?? $data['subject'] ?? 'Finance Health Check & Diagnostic Review');
-$message = trim((string)($data['message'] ?? ''));
+$leadType = clean_header_str($data['lead_type'] ?? '');
+$score    = isset($data['score']) ? intval($data['score']) : null;
+$bandTitle = clean_header_str($data['band_title'] ?? '');
+$isHealthCheck = ($leadType === 'health_checked_client') || (strpos(strtolower($service), 'health check report') !== false);
+
+if (empty($name) && $isHealthCheck) {
+    $name = !empty($company) ? $company : 'Finance Leader';
+}
 
 // -------------------------------------------------------------------------
 // 6. SERVER-SIDE VALIDATION
@@ -328,7 +335,14 @@ function send_resend_email($apiKey, $payload) {
 // -------------------------------------------------------------------------
 // 9. COMPOSE & SEND ADMIN NOTIFICATION EMAIL
 // -------------------------------------------------------------------------
-$adminSubject = "New Website Enquiry - {$name}";
+if ($isHealthCheck) {
+    $scoreDisplay = ($score !== null) ? " (Score: {$score}/100)" : "";
+    $adminSubject = "[Health Checked Client] New Finance Health Report Lead - {$name}{$scoreDisplay}";
+    $autoReplySubject = "Your Finackle Finance Health Report{$scoreDisplay}";
+} else {
+    $adminSubject = "New Website Enquiry - {$name}";
+    $autoReplySubject = "Thank You for Contacting Finackle";
+}
 
 $safeName    = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
 $safeEmail   = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
