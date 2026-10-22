@@ -221,7 +221,7 @@ $bandTitle = clean_header_str($data['band_title'] ?? '');
 $isHealthCheck = ($leadType === 'health_checked_client') || (strpos(strtolower($service), 'health check report') !== false);
 
 if (empty($name) && $isHealthCheck) {
-    $name = !empty($company) ? $company : 'Finance Leader';
+    $name = !empty($company) ? $company : 'Team';
 }
 
 // -------------------------------------------------------------------------
