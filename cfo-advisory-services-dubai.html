@@ -455,6 +455,66 @@ h1,h2,h3,h4,.logo,.sf-logo,.eyebrow,.kicker,.hero-tag,.btn,.nav-cta,.nav-links,.
   .sf-tag{font-size:13px}
   .sf-bottom{font-size:12px;padding-bottom:84px}
 }
+
+
+/* Screenshot-matched Finackle hero and navigation */
+:root{--bg:#091729;--bg-2:#0d2037;--card:#10243d;--card-2:#162e49;--line:#203b59;--teal:#2dd4c7;--text:#edf3fc;--muted:#a9bfd8;--silver:#c4d2e2}
+.container,.nav{width:min(76.2%,1550px)}
+.nav{padding:5px 0;gap:20px}
+.nav-wrap{background:#091729;border-bottom:1px solid #20334a}
+.logo{font-size:25px;gap:12px}
+.logo-mark{width:50px;height:50px;border-radius:13px}
+.logo-mark img{height:37px}
+.nav-links{font-size:17px;gap:clamp(20px,1.8vw,34px);color:#c0ccdc}
+.nav-right{gap:10px}
+.wa-icon{width:52px;height:52px;background:#0e2036}
+.nav-cta{height:52px;padding:0 23px;font-size:16px;background:#142f55;color:#f5f8ff}
+.nav-cta:hover{background:#1a3b65;color:#fff}
+.cta-short{display:none}
+.hero{padding:clamp(145px,9.3vw,172px) 0 78px;background:#091729}
+.hero-grid{grid-template-columns:1.12fr .88fr;gap:58px;align-items:center}
+.hero-copy{min-width:0}
+.eyebrow{font-size:clamp(16px,1.1vw,21px);line-height:1.4;margin-bottom:25px;color:#2dd4c7}
+.hero h1{font-size:clamp(48px,4.05vw,76px);line-height:1.02;letter-spacing:-.055em;font-weight:800;max-width:850px}
+.hero h1 em{color:#2dd4c7}
+.hero-sub{margin-top:24px;max-width:790px;font-size:clamp(18px,1.28vw,24px);line-height:1.58;color:#c4d2e2}
+.actions{margin-top:34px;gap:14px}
+.btn{padding:18px 28px;font-size:16px}
+.btn-primary{background:#142f55;color:#fff}
+.btn-primary:hover{background:#1b3c66}
+.btn-secondary{background:#10243d;border-color:#25415e;color:#f3f7ff}
+.what-we-do{margin-top:31px}
+.what-we-do>p{font-family:Manrope,Inter,sans-serif;font-size:12px;font-weight:800;letter-spacing:.15em;color:#91a9c5;margin-bottom:10px}
+.pills{margin-top:0;gap:9px}
+.pill{font-size:12px;padding:9px 14px;background:#10243d;color:#c4d2e2;border-color:#25415e}
+.hero-card{background:#10243d;border-color:#203b59;border-radius:28px;padding:26px}
+.hc-title{color:#f4f7fc}
+.hc-metric{background:#162e49;border-color:#162e49}
+.hc-foot{background:#142f55;border-color:#142f55}
+.hc-chart svg path:last-of-type{stroke:#2dd4c7}
+.hc-chart svg circle{fill:#2dd4c7}
+.wa-float{right:18px;bottom:16px}
+@media(max-width:1100px){
+ .container,.nav{width:min(calc(100% - 40px),1550px)}
+ .hero-grid{grid-template-columns:1fr;gap:42px}
+ .hero-card{max-width:760px}
+}
+@media(max-width:600px){
+ .container,.nav{width:min(calc(100% - 28px),1550px)}
+ .nav{padding:8px 0}
+ .logo{font-size:19px}
+ .logo-mark{width:40px;height:40px}
+ .logo-mark img{height:30px}
+ .nav-cta{height:38px;padding:0 12px;font-size:12px}
+ .hero{padding-top:110px}
+ .hero h1{font-size:clamp(36px,9vw,46px)}
+ .hero-sub{font-size:16px}
+ .actions{gap:10px}
+ .btn{padding:15px 18px;font-size:14px}
+ .what-we-do{margin-top:25px}
+ .hero-card{padding:20px;border-radius:24px}
+}
+
 </style>
 </head>
 <body>
@@ -493,41 +553,26 @@ h1,h2,h3,h4,.logo,.sf-logo,.eyebrow,.kicker,.hero-tag,.btn,.nav-cta,.nav-links,.
 
 <header class="hero">
   <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">Virtual CFO · Outsourced CFO · Dubai &amp; UAE</p>
-      <h1><em>CFO services in Dubai</em> for better financial decisions.</h1>
-      <p class="hero-tag">Understand your cash flow. Improve visibility into profitability. Make confident business decisions.</p>
-      <p class="hero-sub">Growing a business in Dubai often means managing increasing complexity. Sales may be growing, but cash flow can become difficult to predict. New products, additional employees, inventory commitments and expansion decisions can create financial challenges that standard accounting reports alone may not answer.</p>
+    <div class="hero-copy">
+      <p class="eyebrow">Turning financial data into clarity, control &amp; better business decisions.</p>
+      <h1>Outsourced <em>finance, accounting &amp; CFO support</em> for growing businesses in Dubai.</h1>
+      <p class="hero-sub">We handle your bookkeeping, VAT and Corporate Tax coordination, payroll and monthly reporting, and provide CFO-level insight—so you can understand your cash flow, improve profitability and make confident business decisions.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#contact">Book Your Free Finance Health Review <span aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href="#contact">Get my Free Finance Health Check <span aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary" href="#services">View our services</a>
       </div>
-      <p class="cta-note">30-minute review · Practical recommendations · No obligation to continue</p>
+      <div class="what-we-do">
+        <p>WHAT WE DO</p>
+        <div class="pills">
+          <a class="pill" href="#services">Bookkeeping</a>
+          <a class="pill" href="#services">VAT &amp; Corporate Tax</a>
+          <a class="pill" href="#services">Payroll &amp; WPS</a>
+          <a class="pill" href="#reporting">Financial reporting</a>
+          <a class="pill" href="#services">CFO advisory</a>
+        </div>
+      </div>
     </div>
 
-    <aside class="hero-card" aria-label="Illustrative finance dashboard">
-      <div class="hc-top">
-        <div>
-          <div class="hc-kicker">A clearer view</div>
-          <div class="hc-title">Your finance, in context.</div>
-        </div>
-        <span class="badge">Demo view</span>
-      </div>
-      <div class="hc-metrics">
-        <div class="hc-metric"><small>Cash position</small><strong>AED 238K</strong><span>Illustrative</span></div>
-        <div class="hc-metric"><small>Cash runway</small><strong>4.2 months</strong><span>Illustrative</span></div>
-      </div>
-      <div class="hc-chart">
-        <svg viewBox="0 0 540 160" role="img" aria-label="Illustrative cash trend from June to November">
-          <line x1="0" y1="30" x2="540" y2="30" stroke="#24406a" stroke-width="1" stroke-dasharray="3 6"/>
-          <line x1="0" y1="95" x2="540" y2="95" stroke="#24406a" stroke-width="1" stroke-dasharray="3 6"/>
-          <path d="M10,128 L540,66" fill="none" stroke="#3a5278" stroke-width="2" stroke-dasharray="6 8"/>
-          <path d="M10,130 C60,120 100,112 150,114 C200,116 230,92 280,88 C330,84 360,96 400,70 C440,50 480,50 515,42 C525,38 530,32 534,26" fill="none" stroke="#00D4C8" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="534" cy="26" r="7" fill="#00D4C8"/>
-        </svg>
-        <div class="hc-months"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span></div>
-      </div>
-      <a class="hc-foot" href="#reporting"><span style="color:inherit">Profit, cash and next decisions, together.</span><span aria-hidden="true">→</span></a>
-    </aside>
   </div>
 </header>
 
