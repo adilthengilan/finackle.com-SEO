@@ -1,0 +1,462 @@
+/* FINACKLE OFFICIAL WEBSITE COLOUR SYSTEM */
+
+:root {
+  /* Primary Navy */
+  --navy: #142F55;
+  --navy-2: #0C1E3C;
+  --ink: #0F1F38;
+
+  /* Teal & Cyan */
+  --aqua: #0B7F8A;
+  --teal: #1FD6CB;
+  --teal-brand: #0B7F8A;
+  --teal-dim: rgba(31, 214, 203, 0.14);
+  --aqua-2: #D6F3F2;
+  --mint: #D6F3F2;
+  --mint-text: #08636D;
+  --aqua-light: #D6F3F2;
+
+  /* Backgrounds */
+  --bg: #F4F7F8;
+  --bg-2: #E9F0F3;
+  --card: #FFFFFF;
+  --card-2: #E9F0F3;
+  --white: #FFFFFF;
+
+  /* Text */
+  --text: #0F1F38;
+  --muted: #3B4D66;
+  --muted-2: #5D6E86;
+  --silver: #E9F0F3;
+
+  /* Borders */
+  --line: #D3DDE3;
+
+  /* Alerts */
+  --warning: #9A5A12;
+  --warning-bg: #FBEBD6;
+  --success: #08636D;
+  --success-bg: #D6F3F2;
+  --whatsapp: #25D366;
+
+  /* Additional Surfaces */
+  --sage: #E0F1F1;
+  --sand: #F1ECE0;
+  --mist: #E7E8F0;
+  --blush: #F5E6DE;
+
+  /* Effects */
+  --shadow: 0 18px 55px rgba(20, 47, 85, 0.08);
+
+  /* Layout */
+  --radius: 24px;
+  --radius-sm: 18px;
+  --max: 1550px;
+}
+
+/* GLOBAL */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background: var(--teal);
+  color: var(--navy-2);
+}
+
+/* NAVIGATION */
+
+.nav-wrap {
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  color: var(--navy);
+}
+
+.nav-links {
+  color: var(--muted);
+}
+
+.nav-links a:hover,
+.fcol a:hover {
+  color: var(--aqua);
+}
+
+.wa-icon {
+  background: var(--white);
+  color: var(--aqua);
+}
+
+.nav-cta {
+  background: var(--teal);
+  color: var(--navy-2);
+}
+
+.nav-cta:hover {
+  background: var(--aqua);
+  color: var(--white);
+}
+
+/* HERO */
+
+.hero,
+.hero.hero-center {
+  background:
+    radial-gradient(circle at 50% 38%, rgba(31,214,203,0.12), transparent 55%),
+    var(--bg);
+}
+
+.hero h1 {
+  color: var(--navy);
+}
+
+.hero h1 em {
+  color: var(--aqua);
+}
+
+.hero-sub,
+.hero p {
+  color: var(--muted);
+}
+
+.eyebrow {
+  color: var(--aqua);
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.dot {
+  background: var(--teal);
+}
+
+/* BUTTONS */
+
+.btn-primary {
+  background: var(--teal);
+  color: var(--navy-2);
+}
+
+.btn-primary:hover {
+  background: var(--aqua);
+  color: var(--white);
+}
+
+.btn-secondary {
+  color: var(--navy);
+  border-color: var(--line);
+}
+
+.btn-secondary:hover {
+  border-color: var(--aqua);
+  color: var(--aqua);
+}
+
+/* PILLS */
+
+.pill {
+  background: var(--white);
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+/* DASHBOARD & HERO CARDS */
+
+.hero-card,
+.dashboard,
+.card,
+.team-card,
+.industry-card {
+  background: var(--white);
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hc-title,
+.dash-title {
+  color: var(--navy);
+}
+
+.hc-kicker,
+.hc-metric small,
+.hc-metric span {
+  color: var(--muted-2);
+}
+
+.hc-metric,
+.hc-foot {
+  background: var(--bg-2);
+  border-color: var(--line);
+}
+
+.badge,
+.num {
+  background: var(--aqua-2);
+  color: var(--mint-text);
+}
+
+.hc-foot span {
+  color: var(--aqua);
+}
+
+/* SECTIONS */
+
+.insights {
+  background: var(--white);
+  border-color: var(--line);
+}
+
+section {
+  background: transparent;
+}
+
+.kicker {
+  color: var(--aqua);
+}
+
+h2,
+.card h3,
+.industry-card h3,
+.team-card h3 {
+  color: var(--navy);
+}
+
+.lead,
+.card p,
+.industry-card span,
+.team-card p {
+  color: var(--muted);
+}
+
+/* INDUSTRY CARDS */
+
+.industry-card {
+  background: var(--white);
+}
+
+.industry-card:hover {
+  border-color: var(--teal);
+}
+
+.industry-card:after {
+  background: var(--aqua-2);
+}
+
+.industry-icon {
+  color: var(--aqua);
+}
+
+/* FINANCIAL DASHBOARD */
+
+.dashboard {
+  background: var(--white);
+}
+
+.dash-period {
+  background: var(--bg);
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.metric,
+.chart-card {
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.metric strong {
+  color: var(--navy);
+}
+
+.metric small,
+.chart-title,
+.aging-row {
+  color: var(--muted);
+}
+
+.metric .up {
+  color: var(--aqua);
+}
+
+.chart {
+  border-color: var(--line);
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 41px,
+    var(--line) 42px
+  );
+}
+
+.bar {
+  background: var(--bg-2);
+}
+
+.bar i {
+  background: var(--teal);
+}
+
+/* TEAM */
+
+.team-card {
+  background: var(--white);
+}
+
+.team-card .icon {
+  background: var(--aqua-2);
+  color: var(--aqua);
+}
+
+/* INSIGHT PANEL */
+
+.insight-panel {
+  background: linear-gradient(
+    135deg,
+    var(--navy),
+    var(--navy-2)
+  );
+  border-color: var(--navy);
+}
+
+.insight-panel h2 {
+  color: var(--white);
+}
+
+.insight-panel p {
+  color: #D3DDE3;
+}
+
+.quote-mark {
+  color: var(--teal);
+}
+
+.insight-item {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.insight-item b {
+  color: var(--white);
+}
+
+.insight-item span {
+  color: #D3DDE3;
+}
+
+/* CALL TO ACTION */
+
+.cta2-sec {
+  background: var(--bg);
+}
+
+.cta2 {
+  background: linear-gradient(
+    135deg,
+    var(--navy),
+    var(--navy-2)
+  );
+  border-color: var(--navy);
+}
+
+.cta2 h2 {
+  color: var(--white);
+}
+
+.cta2 p {
+  color: #D3DDE3;
+}
+
+.cta2-kicker {
+  color: var(--teal);
+}
+
+.cta2-btn {
+  background: var(--teal);
+  color: var(--navy-2);
+}
+
+.cta2-btn:hover {
+  background: var(--aqua);
+  color: var(--white);
+}
+
+.cta2-mail {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.cta2-mail:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: var(--navy-2);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.sf-logo {
+  color: var(--white);
+}
+
+.footer-brand p,
+.fcol a,
+.footer-bottom {
+  color: #D3DDE3;
+}
+
+.fcol h4 {
+  color: var(--white);
+}
+
+.social-icons a {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+.social-icons a:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.footer-bottom {
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* WHATSAPP */
+
+.wa-float {
+  background: var(--whatsapp);
+  color: #FFFFFF;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+  background: var(--white);
+}
+
+.mobile-menu a {
+  color: var(--navy);
+  border-color: var(--line);
+}
+
+.menu {
+  background: var(--white);
+  color: var(--navy);
+  border-color: var(--line);
+}
+
+/* ACCESSIBILITY */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
