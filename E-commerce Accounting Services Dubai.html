@@ -141,65 +141,65 @@
 </script>
 <style>
 :root{
-  --bg:#0a1628;--bg-2:#0d1c33;--card:#10223d;--card-2:#132845;--line:#1c3254;
-  --teal:#2dd4c4;--teal-dim:rgba(45,212,196,.14);--text:#f1f5fb;--muted:#9fb0c9;--muted-2:#7b8ca8;
-  --radius:24px;--radius-sm:18px;--max:1160px;
+  --bg:#091629;--bg-2:#0d1c33;--card:#10233d;--card-2:#162d49;--line:#203957;
+  --teal:#2dd4c4;--teal-dim:rgba(45,212,196,.14);--text:#edf3fc;--muted:#b4c5dc;--muted-2:#8fa7c6;
+  --silver:#b9c9df;--aqua-light:#7fe5dd;--radius:24px;--radius-sm:18px;--max:1460px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-.container{width:min(82%,var(--max));margin:auto}
+.container{width:min(78%,var(--max));margin:auto}
 h1,h2,h3,h4,.logo,.eyebrow,.kicker,.btn,.nav-cta,.nav-links,.badge,.hc-kicker,.hc-title,.hc-metric small,.hc-metric strong,.hc-foot,.num,.faq summary,.fcol h4,.wa-float,.pill,.outcome b,.dash-title,.cta2-kicker,.cta2-btn,.cta2-mail{font-family:Manrope,Inter,ui-sans-serif,system-ui,sans-serif}
 
 /* NAV */
 .nav-wrap{position:fixed;z-index:50;top:0;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line)}
-.nav{width:min(82%,var(--max));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 0}
+.nav{width:min(78%,var(--max));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:9px 0}
 .logo{display:inline-flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:-.04em;color:var(--text)}
 .logo-mark{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;flex:none}
 .logo-mark img{height:26px;width:auto;display:block}
 .nav-links{display:flex;gap:clamp(14px,1.4vw,24px);align-items:center;font-size:14px;font-weight:500;color:var(--silver)}
 .nav-links a:hover{color:var(--teal)}
 .nav-right{display:flex;align-items:center;gap:12px}
-.wa-icon{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;color:var(--teal)}
+.wa-icon{width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:#10233d;display:grid;place-items:center;color:#16c784}
 .wa-icon svg{width:18px;height:18px}
-.nav-cta{background:linear-gradient(90deg,#00B3A9,#00D4C8);color:#0A285C;border-radius:999px;padding:0 16px;height:38px;display:inline-flex;align-items:center;font-size:13.5px;font-weight:700;white-space:nowrap}
-.nav-cta:hover{background:linear-gradient(90deg,#00D4C8,#7FE5DD)}
+.nav-cta{background:#122d50;color:#f1f5fb;border:1px solid #18385d;border-radius:999px;padding:0 22px;height:54px;display:inline-flex;align-items:center;font-size:15px;font-weight:800;white-space:nowrap}
+.nav-cta:hover{background:#18385d;border-color:#2dd4c4;color:#fff}
 .menu{display:none;border:1px solid var(--line);background:var(--card);border-radius:10px;width:36px;height:36px;font-size:17px;color:var(--text);cursor:pointer}
 .mobile-menu{display:none}
 
 /* HERO */
-.hero{padding:clamp(96px,6.5vw,120px) 0 clamp(80px,6vw,110px);position:relative;background:var(--bg)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.eyebrow{color:var(--teal);font-size:clamp(15px,1.15vw,22px);font-weight:700;margin-bottom:28px}
-.hero h1{font-size:clamp(38px,4.3vw,82px);line-height:1.04;letter-spacing:-.045em;font-weight:800;color:var(--text)}
+.hero{padding:clamp(140px,8.7vw,168px) 0 clamp(80px,6vw,110px);position:relative;background:var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .9fr;gap:clamp(54px,6vw,100px);align-items:center}
+.eyebrow{color:var(--teal);font-size:clamp(16px,1.1vw,21px);font-weight:700;margin-bottom:26px}
+.hero h1{font-size:clamp(42px,4.05vw,76px);line-height:1.04;letter-spacing:-.05em;font-weight:800;color:var(--text);max-width:820px}
 .hero h1 em{font-style:normal;color:var(--teal)}
-.hero-sub{margin-top:24px;color:var(--silver);font-size:clamp(16px,1.35vw,26px);line-height:1.65;max-width:790px}
+.hero-sub{margin-top:24px;color:#b8cbe3;font-size:clamp(17px,1.2vw,23px);line-height:1.65;max-width:790px}
 .actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
-.btn{padding:19px 28px;border-radius:999px;font-size:16px;font-weight:700;display:inline-flex;align-items:center;gap:12px;transition:.2s ease}
+.btn{padding:19px 28px;border-radius:999px;font-size:16px;font-weight:800;display:inline-flex;align-items:center;gap:12px;transition:.2s ease}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:linear-gradient(90deg,#00B3A9,#00D4C8);color:#0A285C}
-.btn-primary:hover{background:linear-gradient(90deg,#00D4C8,#7FE5DD)}
-.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn-primary{background:#122d50;color:#f3f7ff;border:1px solid #122d50}
+.btn-primary:hover{background:#18385d;border-color:#2dd4c4}
+.btn-secondary{background:#10233d;color:var(--text);border:1px solid var(--line)}
 .btn-secondary:hover{border-color:var(--teal);color:var(--teal)}
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
-.pill{font-size:12px;font-weight:700;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 13px}
+.pill{font-size:12px;font-weight:700;color:#b8cbe3;background:#10233d;border:1px solid #203957;border-radius:999px;padding:8px 13px}
 
 /* HERO CARD */
-.hero-card{background:var(--card);border:1px solid var(--line);border-radius:36px;padding:28px}
+.hero-card{background:#10233d;border:1px solid #203957;border-radius:28px;padding:28px;box-shadow:0 20px 55px rgba(0,0,0,.12)}
 .hc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .hc-kicker{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .hc-title{font-size:clamp(20px,1.6vw,26px);font-weight:700;letter-spacing:-.03em;margin-top:6px}
 .badge{background:rgba(0,212,200,.15);color:var(--teal);border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800;white-space:nowrap}
 .hc-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
-.hc-metric{background:var(--card-2);border:1px solid var(--card-2);border-radius:20px;padding:20px}
+.hc-metric{background:#162d49;border:1px solid #162d49;border-radius:18px;padding:20px}
 .hc-metric small{display:block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-2)}
 .hc-metric strong{display:block;font-size:clamp(26px,2vw,38px);letter-spacing:-.04em;margin:14px 0 18px;font-weight:700}
 .hc-metric span{font-size:13px;color:var(--muted-2)}
 .hc-chart{margin-top:26px}
 .hc-chart svg{width:100%;height:auto;display:block}
 .hc-months{display:flex;justify-content:space-between;font-size:13px;color:var(--muted-2);padding:10px 4px 0;border-top:1px solid var(--line);margin-top:6px}
-.hc-foot{margin-top:18px;background:var(--card-2);border-radius:18px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600}
+.hc-foot{margin-top:18px;background:#122d50;border-radius:18px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:700}
 .hc-foot span{color:var(--teal)}
 
 /* SECTIONS */
@@ -347,7 +347,7 @@ tr:last-child td,tr:last-child th{border-bottom:0}
   .nav{padding:8px 0}
   .logo{font-size:17px}.logo-mark{width:34px;height:34px}.logo-mark img{height:24px}
   .wa-icon{display:none}
-  .nav-cta{height:34px;padding:0 11px;font-size:12px}
+  .nav-cta{height:38px;padding:0 12px;font-size:11px}
   .hero{padding-top:88px}
   .hero h1{font-size:32px}
   .hero-sub{font-size:16px}
@@ -394,7 +394,7 @@ tr:last-child td,tr:last-child th{border-bottom:0}
     </div>
     <div class="nav-right">
       <a class="wa-icon" href="https://wa.me/971545022747" aria-label="Chat on WhatsApp" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2Zm0 18.200a8.200 8.200 0 0 1-4.200-1.150l-.3-.18-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200Zm4.500-6.100c-.25-.12-1.450-.72-1.700-.8-.23-.09-.4-.12-.56.120-.17.250-.64.800-.78.970-.14.160-.29.180-.54.060a6.700 6.700 0 0 1-3.300-2.900c-.25-.43.250-.4.720-1.330.08-.16.040-.3-.02-.42-.06-.12-.56-1.350-.77-1.850-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.060-.66.300-.23.250-.87.850-.87 2.070s.9 2.400 1 2.570c.13.160 1.750 2.700 4.250 3.780 1.580.68 2.200.74 3 .62.480-.07 1.450-.6 1.650-1.170.2-.58.200-1.080.14-1.180-.06-.1-.23-.16-.48-.28Z"/></svg></a>
-      <a class="nav-cta" href="#contact">Book a Consultation</a>
+      <a class="nav-cta" href="#contact">Get your Free Finance Health Check</a>
       <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </nav>
@@ -415,7 +415,7 @@ tr:last-child td,tr:last-child th{border-bottom:0}
       <h1><em>E-commerce accounting</em> in Dubai for online sellers.</h1>
       <p class="hero-sub">Finackle helps Dubai online businesses keep accurate books across every sales channel — from bookkeeping and marketplace reconciliation to UAE VAT support, inventory costing and profitability reports.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#contact">Book a Consultation <span aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href="#contact">Get my Free Finance Health Check <span aria-hidden="true">→</span></a>
         <a class="btn btn-secondary" href="#services">View our services</a>
       </div>
       <div class="pills">
