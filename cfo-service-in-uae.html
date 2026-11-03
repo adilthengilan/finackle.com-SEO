@@ -778,6 +778,30 @@ h1,h2,h3,h4,.logo,.sf-logo,.eyebrow,.kicker,.hero-tag,.btn,.nav-cta,.nav-links,.
 }
 
 
+
+/* Screenshot-matched Finackle navigation and hero */
+:root{--bg:#091629;--bg-2:#0b1a2e;--card:#10233d;--card-2:#162d49;--line:#203a59;--teal:#2dd4c4;--text:#eef3fb;--muted:#a9bad0;--silver:#c6d2e2;--max:1360px}
+.nav-wrap{background:#091629;border-bottom:1px solid #20334c}
+.nav{width:min(76.5%,1360px);padding:5px 0;gap:22px;min-height:70px}
+.logo{font-size:24px;gap:12px}.logo-mark{width:50px;height:50px;border-radius:13px}.logo-mark img{height:37px}
+.nav-links{gap:clamp(20px,2vw,34px);font-size:17px;color:#b9c6d8}
+.nav-right{gap:10px}.wa-icon{width:52px;height:52px;color:#00c879}.wa-icon svg{width:22px;height:22px}
+.nav-cta{height:52px;padding:0 22px;font-size:16px;background:#122e52;color:#f3f7ff;border:1px solid #17365c}
+.nav-cta:hover{background:#193b65;color:#fff}
+.hero{padding:clamp(145px,9.2vw,170px) 0 78px;min-height:720px}
+.hero-grid{width:min(76.5%,1360px);grid-template-columns:1.12fr .88fr;gap:72px;align-items:center}
+.hero-copy{min-width:0}.eyebrow{font-size:19px;line-height:1.4;margin-bottom:24px;color:#2dd4c4;letter-spacing:-.02em}
+.hero h1{font-size:clamp(48px,4.1vw,74px);line-height:1.04;letter-spacing:-.055em;max-width:760px}
+.hero h1 em{color:#2dd4c4}.hero-sub{font-size:22px;line-height:1.65;margin-top:27px;max-width:720px;color:#c2cee0}
+.actions{gap:14px;margin-top:36px}.btn{height:62px;padding:0 27px;font-size:16px}.btn-primary{background:#122e52;color:#f4f7fc;border:1px solid #17375d}.btn-primary:hover{background:#193b65}.btn-secondary{border-color:#294461;background:transparent}
+.hero-tag{margin-top:34px;color:#8fa9c7;font:800 13px Manrope,Inter,sans-serif;letter-spacing:.14em}
+.pills{margin-top:12px;gap:9px}.pill{font-size:13px;padding:10px 15px;background:#10233d;border-color:#29435f;color:#d0dbea}
+.hero-card{padding:27px;border-radius:27px;background:#10223a;border-color:#233e5c;box-shadow:0 22px 60px rgba(0,0,0,.12)}
+.hc-title{font-size:22px}.hc-metric{background:#162d49;border:0;border-radius:17px}.hc-metric strong{font-size:30px}.hc-foot{background:#122e52;border:0;border-radius:17px}
+@media(max-width:1100px){.nav{width:calc(100% - 40px)}.hero-grid{width:calc(100% - 40px);gap:42px}.hero h1{font-size:clamp(44px,6vw,64px)}}
+@media(max-width:1000px){.hero{padding-top:125px}.hero-grid{grid-template-columns:1fr}.hero-card{max-width:700px}.hero h1{max-width:850px}}
+@media(max-width:600px){.nav{min-height:58px}.logo{font-size:19px}.logo-mark{width:40px;height:40px}.logo-mark img{height:30px}.nav-cta{height:40px;padding:0 12px;font-size:11px}.hero{padding-top:100px}.hero-grid{width:calc(100% - 28px)}.eyebrow{font-size:15px;margin-bottom:18px}.hero h1{font-size:39px}.hero-sub{font-size:16px;margin-top:20px}.btn{height:52px;padding:0 17px;font-size:14px}.hero-card{padding:19px}.hc-metric strong{font-size:24px}.pills{gap:7px}.pill{font-size:11px;padding:8px 10px}}
+
 </style>
 </head>
 <body>
@@ -788,14 +812,14 @@ h1,h2,h3,h4,.logo,.sf-logo,.eyebrow,.kicker,.hero-tag,.btn,.nav-cta,.nav-links,.
       <span class="logo-mark"><img src="/finackle-logo.png" alt="Finackle logo" width="36" height="50"></span>
       Finackle
     </a>
-    <div class="nav-links"><a href="https://finackle.com/">Home</a><a href="https://finackle.com/#value">Value</a><a href="https://finackle.com/#industries">Industries</a><a href="https://finackle.com/#why-finackle">Why Finackle</a><a href="https://finackle.com/#about">About</a></div>
+    <div class="nav-links"><a href="https://finackle.com/">Home</a><a href="https://finackle.com/#value">Value</a><a href="https://finackle.com/#industries">Industries</a><a href="https://finackle.com/#why-finackle">Why Finackle</a><a href="https://finackle.com/#about">About</a><a href="index.html/#start">Contact</a></div>
     <div class="nav-right">
       <a class="wa-icon" href="https://wa.me/971545022747" aria-label="Chat on WhatsApp" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2Zm0 18.200a8.200 8.200 0 0 1-4.200-1.150l-.3-.18-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200Zm4.500-6.100c-.25-.12-1.450-.72-1.700-.8-.23-.09-.4-.12-.56.120-.17.250-.64.800-.78.970-.14.160-.29.180-.54.060a6.700 6.700 0 0 1-3.300-2.900c-.25-.43.250-.4.720-1.330.08-.16.040-.3-.02-.42-.06-.12-.56-1.350-.77-1.850-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.060-.66.300-.23.250-.87.850-.87 2.070s.9 2.400 1 2.570c.13.160 1.750 2.700 4.250 3.780 1.580.68 2.200.74 3 .62.480-.07 1.450-.6 1.650-1.170.2-.58.200-1.080.14-1.180-.06-.1-.23-.16-.48-.28Z"/></svg></a>
       <a class="nav-cta" href="#contact">Book a Consultation</a>
       <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
     </div>
   </nav>
-  <div class="mobile-menu" id="mobileMenu"><a href="https://finackle.com/">Home</a><a href="https://finackle.com/#value">Value</a><a href="https://finackle.com/#industries">Industries</a><a href="https://finackle.com/#why-finackle">Why Finackle</a><a href="https://finackle.com/#about">About</a></div>
+  <div class="mobile-menu" id="mobileMenu"><a href="https://finackle.com/">Home</a><a href="https://finackle.com/#value">Value</a><a href="https://finackle.com/#industries">Industries</a><a href="https://finackle.com/#why-finackle">Why Finackle</a><a href="https://finackle.com/#about">About</a><a href="index.html/#start">Contact</a></div>
 </div>
 
 <header class="hero">
