@@ -515,6 +515,21 @@ h1,h2,h3,h4,.logo,.sf-logo,.eyebrow,.kicker,.hero-tag,.btn,.nav-cta,.nav-links,.
  .hero-card{padding:20px;border-radius:24px}
 }
 
+/* HERO CARD ADDITIONS (graph card restored) */
+.hero-card{position:relative;box-shadow:0 30px 80px rgba(0,0,0,.28)}
+.hc-metric strong{white-space:nowrap}
+.hc-chart svg .grid-line{stroke:#294766;stroke-width:1;stroke-dasharray:2 5;fill:none}
+.hc-chart svg .trend-line{stroke:#4a6585;stroke-width:1.5;stroke-dasharray:5 5;fill:none}
+.hc-chart svg .main-line{stroke:#2dd4c7;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:1000;stroke-dashoffset:1000;animation:hcDraw 2.2s ease .4s forwards}
+.hc-chart svg .end-dot{fill:#2dd4c7;opacity:0;animation:hcDot .4s ease 2.4s forwards}
+@keyframes hcDraw{to{stroke-dashoffset:0}}
+@keyframes hcDot{to{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+  .hc-chart svg .main-line{animation:none;stroke-dashoffset:0}
+  .hc-chart svg .end-dot{animation:none;opacity:1}
+}
+@media(max-width:600px){.hc-title{font-size:20px}.hc-metric{padding:16px}.hc-metric strong{margin:10px 0 12px}.hc-foot{font-size:14px;padding:15px 16px}.hc-months{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -573,6 +588,41 @@ h1,h2,h3,h4,.logo,.sf-logo,.eyebrow,.kicker,.hero-tag,.btn,.nav-cta,.nav-links,.
       </div>
     </div>
 
+    <aside class="hero-card" aria-label="Illustrative finance dashboard">
+      <div class="hc-top">
+        <div>
+          <div class="hc-kicker">A clearer view</div>
+          <div class="hc-title">Your finance, in context.</div>
+        </div>
+        <span class="badge">Demo view</span>
+      </div>
+
+      <div class="hc-metrics">
+        <div class="hc-metric">
+          <small>Cash position</small>
+          <strong>AED 238K</strong>
+          <span>Illustrative</span>
+        </div>
+        <div class="hc-metric">
+          <small>Cash runway</small>
+          <strong>4.2 months</strong>
+          <span>Illustrative</span>
+        </div>
+      </div>
+
+      <div class="hc-chart">
+        <svg viewBox="0 0 520 150" role="img" aria-label="Illustrative cash trend rising from June to November" preserveAspectRatio="xMidYMid meet">
+          <line class="grid-line" x1="0" y1="20" x2="520" y2="20"/>
+          <line class="grid-line" x1="0" y1="82" x2="520" y2="82"/>
+          <path class="trend-line" d="M170 98 C 260 90, 360 82, 440 70 S 505 56, 516 52"/>
+          <path class="main-line" d="M8 127 C 50 118, 90 112, 130 110 S 190 112, 215 104 S 270 84, 320 80 S 380 80, 410 78 S 440 62, 470 50 S 520 40, 540 36 C 546 32, 548 28, 548 24"/>
+          <circle class="end-dot" cx="506" cy="22" r="6"/>
+        </svg>
+        <div class="hc-months"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span></div>
+      </div>
+
+      <div class="hc-foot">Profit, cash and next decisions, together. <span aria-hidden="true">→</span></div>
+    </aside>
   </div>
 </header>
 
