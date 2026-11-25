@@ -81,13 +81,14 @@
    "primaryImageOfPage": {"@type": "ImageObject","url": "https://finackle.com/finackle-logo.png"},
    "inLanguage": "en-AE",
    "datePublished": "2026-11-21",
-   "dateModified": "2026-11-23",
+   "dateModified": "2026-11-25",
    "about": {"@id": "https://finackle.com/fb-finance-support-ajman/#service"},
    "speakable": {"@type": "SpeakableSpecification","cssSelector": ["h1",".answer-box p:first-of-type"]}
   },
   {
    "@type": "Service",
    "@id": "https://finackle.com/fb-finance-support-ajman/#service",
+   "url": "https://finackle.com/fb-finance-support-ajman/",
    "name": "F&B Finance Support in Ajman",
    "serviceType": "F&B and restaurant finance support",
    "provider": {"@id": "https://finackle.com/#organization"},
@@ -114,10 +115,10 @@
    "isPartOf": {"@id": "https://finackle.com/fb-finance-support-ajman/#webpage"},
    "mainEntity": [
     {"@type": "Question","name": "What is F&B finance support in Ajman?","acceptedAnswer": {"@type": "Answer","text": "F&B finance support in Ajman gives restaurants, cafes, cloud kitchens and food businesses finance-team capability without a full-time hire. It covers food cost analysis, cash flow management, budgeting and forecasting, management reporting and profitability by outlet, menu category and sales channel."}},
-    {"@type": "Question","name": "Do you support Ajman Free Zone F&B businesses?","acceptedAnswer": {"@type": "Answer","text": "Yes. We support free-zone and mainland food businesses in Ajman."}},
-    {"@type": "Question","name": "Can you calculate break-even for a new Ajman outlet?","acceptedAnswer": {"@type": "Answer","text": "Yes. We model costs and expected sales to show the break-even point before you commit."}},
-    {"@type": "Question","name": "Can you track cloud kitchen profitability in Ajman?","acceptedAnswer": {"@type": "Answer","text": "Yes. We show margin by brand and platform after commissions and food cost."}},
-    {"@type": "Question","name": "Can you help with weekly cash planning?","acceptedAnswer": {"@type": "Answer","text": "Yes. We build short-term cash forecasts around payroll, rent and supplier payments."}},
+    {"@type": "Question","name": "Do you support Ajman Free Zone F&B businesses?","acceptedAnswer": {"@type": "Answer","text": "Yes. We support both Ajman Free Zone and mainland food businesses, including restaurants, cafes, cloud kitchens and catering operations. Whatever your licence type, we set up monthly reporting, food cost tracking and cash planning around how your business actually runs, and we flag where your legal structure may affect VAT or corporate tax so you can confirm it with the right authority."}},
+    {"@type": "Question","name": "Can you calculate break-even for a new Ajman outlet?","acceptedAnswer": {"@type": "Answer","text": "Yes. Before you commit to a new outlet, we model rent, staff, utilities, food cost and expected sales to show the monthly sales needed to break even. We also test scenarios, such as lower footfall or higher rent, so you can see how much room you have before the outlet starts losing money."}},
+    {"@type": "Question","name": "Can you track cloud kitchen profitability in Ajman?","acceptedAnswer": {"@type": "Answer","text": "Yes. For each cloud kitchen brand we calculate margin after food cost, packaging, delivery-platform commission, delivery charges and refunds, so you see which brand and which platform actually earns. We reconcile platform settlements to your accounts monthly and report net margin per brand in plain English."}},
+    {"@type": "Question","name": "Can you help with weekly cash planning?","acceptedAnswer": {"@type": "Answer","text": "Yes. We build a weekly cash forecast around your sales, payroll, rent, supplier payments and delivery-platform settlements. You see when cash is likely to run tight, which payments can be timed better and how much buffer you hold, so purchasing and payment decisions are made with numbers rather than guesswork."}},
     {"@type": "Question","name": "Do restaurants and food businesses in Ajman need to register for VAT?","acceptedAnswer": {"@type": "Answer","text": "UAE VAT registration is mandatory when taxable supplies and imports exceed AED 375,000 over the previous 12 months or are expected to in the next 30 days. Voluntary registration is possible above AED 187,500. The standard rate is 5%. Check the Federal Tax Authority for current rules."}},
     {"@type": "Question","name": "Does UAE corporate tax apply to restaurants and cafes in Ajman?","acceptedAnswer": {"@type": "Answer","text": "UAE corporate tax is 9% on taxable income above AED 375,000. Whether and how it applies to your business depends on your legal structure and free-zone status, so confirm with the Federal Tax Authority or a registered tax adviser. Good management reporting makes profit and tax planning easier to forecast."}},
     {"@type": "Question","name": "How do I get started with F&B finance support in Ajman?","acceptedAnswer": {"@type": "Answer","text": "Email info@finackle.com to book a consultation. We review your reporting, budgeting, food cost tracking and cash flow, then recommend the right level of support."}}
@@ -140,7 +141,7 @@
   color-scheme:light;
   --bg:#F4F7F8;--card:#FFFFFF;--card-2:#EAF1F4;--line:#D4E0E6;
   --teal:#0B8793;--teal-brand:#087B86;--aqua:#2DD4C4;--teal-dim:rgba(11,135,147,.10);
-  --navy:#17365D;--text:#10213D;--silver:#435B75;--muted:#536B85;--muted-2:#71869C;
+  --navy:#17365D;--text:#10213D;--silver:#435B75;--muted:#536B85;--muted-2:#566C82;
   --radius:24px;--radius-sm:18px;--max:1550px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -170,9 +171,15 @@ section{padding:100px 0}
 .menu{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;width:36px;height:36px;font-size:17px;color:var(--text);cursor:pointer}
 .mobile-menu{display:none;background:var(--bg)}
 
+/* Breadcrumb */
+.crumbs{padding-top:84px;font-size:13px;color:var(--muted)}
+.crumbs a{color:var(--teal);font-weight:600}
+.crumbs a:hover{text-decoration:underline}
+.crumbs span[aria-current]{color:var(--text);font-weight:600}
+
 /* Hero */
-.hero{padding:clamp(96px,6.5vw,120px) 0 clamp(80px,6vw,110px);background:var(--bg)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero{padding:clamp(24px,2.5vw,40px) 0 clamp(80px,6vw,110px);background:var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;margin-top:28px}
 .eyebrow{color:var(--teal);font-size:clamp(15px,1.15vw,22px);font-weight:700;margin-bottom:28px}
 .hero h1{font-size:clamp(38px,4.3vw,82px);line-height:1.04;letter-spacing:-.045em;font-weight:800}
 .hero h1 em{font-style:normal;color:var(--teal)}
@@ -187,6 +194,7 @@ section{padding:100px 0}
 .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
 .pill{font-size:12px;font-weight:700;color:var(--silver);background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px}
 .hero-tag{margin-top:24px;font-size:clamp(17px,1.2vw,23px);font-weight:700;color:var(--teal)}
+.hero-tag a{text-decoration:underline;text-underline-offset:3px}
 .hero-card{background:#fff;border:1px solid var(--line);border-radius:36px;padding:28px}
 .hc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .hc-kicker{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
@@ -236,6 +244,23 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
 .team-card .icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#DDF2F2;color:#087B86;font:800 13px Manrope,Inter,sans-serif;margin-bottom:26px}
 .team-card h3{font:700 20px/1.2 Manrope,Inter,sans-serif;margin-bottom:10px;color:var(--text)}
 .team-card p{font-size:14px;color:var(--muted)}
+
+/* Process, definitions, comparison */
+.process .card{min-height:190px}
+.defs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.def-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}
+.def-card h3{font:700 20px/1.2 Manrope,Inter,sans-serif;margin-bottom:10px;color:var(--text)}
+.def-card p{font-size:14px;color:var(--muted)}
+.formula{display:block;margin-top:14px;padding:12px 14px;background:var(--card-2);border:1px solid #E1E9ED;border-radius:12px;font:600 13px Inter,sans-serif;color:var(--navy)}
+.table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:22px}
+.cmp{width:100%;border-collapse:collapse;min-width:640px;font-size:14px}
+.cmp caption{text-align:left;padding:20px 24px 4px;font:700 16px Manrope,Inter,sans-serif;color:var(--text)}
+.cmp th,.cmp td{text-align:left;padding:16px 24px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--muted)}
+.cmp thead th{font:800 12px Manrope,Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--text);background:var(--card-2)}
+.cmp tbody th{color:var(--text);font-weight:700;width:22%}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.inline-links{margin-top:22px;font-size:15px;color:var(--muted)}
+.inline-links a{color:var(--teal);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 
 /* Dashboard (sample figures) */
 .dashboard{background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px}
@@ -335,7 +360,7 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
   .hero-grid{grid-template-columns:1fr;gap:50px}
   .section-head{display:block}
   .section-head .lead{margin-top:15px}
-  .team-grid{grid-template-columns:1fr 1fr}
+  .team-grid,.defs-grid{grid-template-columns:1fr 1fr}
   .insight-panel{grid-template-columns:1fr}
 }
 @media(max-width:800px){
@@ -351,7 +376,8 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
   .logo-mark img{height:24px}
   .wa-icon{display:none}
   .nav-cta{height:34px;padding:0 11px;font-size:12px}
-  .hero{padding-top:88px}
+  .crumbs{padding-top:76px}
+  .hero{padding-top:16px}
   .hero h1{font-size:34px}
   .hero-sub{font-size:16px}
   .eyebrow{font-size:15px}
@@ -360,7 +386,7 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
   .hero-card{padding:20px;border-radius:28px}
   .hc-metric strong{font-size:26px}
   section{padding:70px 0}
-  .cards-4,.industry-grid,.team-grid,.metrics{grid-template-columns:1fr}
+  .cards-4,.industry-grid,.team-grid,.defs-grid,.metrics{grid-template-columns:1fr}
   .cards-4 .card{min-height:165px}
   .industry-card{min-height:170px;padding:22px}
   .dashboard{padding:18px;border-radius:22px}
@@ -390,17 +416,18 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
 <div class="nav-wrap">
   <nav class="nav" aria-label="Main navigation">
     <a class="logo" href="https://finackle.com/" aria-label="Finackle home"><span class="logo-mark"><img src="https://finackle.com/finackle-logo.png" alt="Finackle logo" width="36" height="50" decoding="async"></span>Finackle</a>
-    <div class="nav-links"><a href="#services">Services</a><a href="#what-is">F&amp;B Finance</a><a href="#dashboard">Dashboard</a><a href="#team">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+    <div class="nav-links"><a href="#services">Services</a><a href="#what-is">F&amp;B Finance</a><a href="#process">Process</a><a href="#dashboard">Dashboard</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
     <div class="nav-right">
       <a class="wa-icon" href="https://wa.me/971545022747" aria-label="Chat on WhatsApp" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.25-.12-1.45-.72-1.7-.8-.23-.09-.4-.12-.56.12-.17.25-.64.8-.78.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.3-.23.25-.87.85-.87 2.07s.9 2.4 1 2.57c.13.16 1.75 2.7 4.25 3.78 1.58.68 2.2.74 3 .62.48-.07 1.45-.6 1.65-1.17.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28Z"/></svg></a>
       <a class="nav-cta" href="https://finackle.com/quiz">Get your free health check</a>
       <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </nav>
-  <div class="mobile-menu" id="mobileMenu"><a href="#services">Services</a><a href="#what-is">F&amp;B Finance</a><a href="#dashboard">Dashboard</a><a href="#team">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  <div class="mobile-menu" id="mobileMenu"><a href="#services">Services</a><a href="#what-is">F&amp;B Finance</a><a href="#process">Process</a><a href="#dashboard">Dashboard</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
 </div>
 
 <header class="hero">
+  <nav class="container crumbs" aria-label="Breadcrumb"><a href="https://finackle.com/">Home</a> › <span aria-current="page">F&amp;B Finance Support Ajman</span></nav>
   <div class="container hero-grid">
     <div>
       <p class="eyebrow">F&amp;B Finance Support · Ajman</p>
@@ -410,8 +437,8 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
         <a class="btn btn-primary" href="#contact">Book a Finance Consultation <span aria-hidden="true">→</span></a>
         <a class="btn btn-secondary" href="#services">Explore Our Services</a>
       </div>
-      <div class="pills"><span class="pill">F&amp;B Finance Support Ajman</span><span class="pill">Restaurant Accounting Ajman</span><span class="pill">Food Cost Analysis Ajman</span><span class="pill">Restaurant Cash Flow Ajman</span><span class="pill">Cloud Kitchen Accounting Ajman</span></div>
-      <p class="hero-tag">Based in Ajman Free Zone, serving food businesses across the UAE.</p>
+      <div class="pills"><span class="pill">Restaurant Accounting Ajman</span><span class="pill">Food Cost Analysis</span><span class="pill">Cloud Kitchen Accounting</span></div>
+      <p class="hero-tag">Based in Ajman Free Zone, serving food businesses across the <a href="https://finackle.com/fb-finance-support-uae/">UAE</a>.</p>
     </div>
     <aside class="hero-card" aria-label="Sample restaurant dashboard">
       <div class="hc-top">
@@ -447,7 +474,7 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
       <p><strong>F&amp;B finance support in Ajman gives restaurants and food businesses finance-team capability without a full-time hire, with a focus on cost control.</strong> It covers food cost analysis, cash flow management, budgeting and forecasting, management reporting and profitability by outlet, menu category and sales channel.</p>
       <p>Finackle supports restaurants, cafes, cloud kitchens and food businesses in Ajman, including Ajman Free Zone companies.</p>
       <p>VAT registration in the UAE is mandatory above AED 375,000 of taxable supplies and imports, and the standard rate is 5%. UAE corporate tax is 9% on taxable income above AED 375,000. See the <a href="https://tax.gov.ae/en/taxes/vat.aspx" target="_blank" rel="noopener">UAE Federal Tax Authority's VAT guidance</a> for current rules.</p>
-      <p class="updated">Last updated: <time datetime="2026-11-23">23 November 2026</time></p>
+      <p class="updated">Last updated: <time datetime="2026-11-25">25 November 2026</time></p>
     </div>
   </div>
 </section>
@@ -459,7 +486,7 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
         <div class="kicker">Finance challenges</div>
         <h2>Restaurants run on sales.<br>Profit runs on control.</h2>
       </div>
-      <p class="lead">Ajman's food market is competitive and price-sensitive, so tight cost control and clear cash visibility decide who stays profitable.</p>
+      <p class="lead">Food businesses work on tight margins, so cost control and clear cash visibility often decide which outlets stay profitable.</p>
     </div>
     <div class="cards-4">
       <article class="card reveal"><div><div class="num">01</div><h3>Pricing needs food cost data.</h3></div><p>Test menu prices against food cost before changing them.</p></article>
@@ -485,6 +512,66 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
       <article class="industry-card reveal"><div class="industry-icon" aria-hidden="true">◎</div><h3>Food Cost and Profitability</h3><span>Margins, wastage and outlet-level performance.</span></article>
       <article class="industry-card reveal"><div class="industry-icon" aria-hidden="true">▦</div><h3>Cash Flow Management</h3><span>Weekly cash planning, liquidity and supplier timing.</span></article>
     </div>
+    <p class="inline-links reveal">Also serving food businesses in <a href="https://finackle.com/fb-finance-support-dubai/">Dubai</a>, <a href="https://finackle.com/fb-finance-support-abu-dhabi/">Abu Dhabi</a>, <a href="https://finackle.com/fb-finance-support-ras-al-khaimah/">Ras Al Khaimah</a> and <a href="https://finackle.com/fb-finance-support-umm-al-quwain/">Umm Al Quwain</a>. See our <a href="https://finackle.com/fb-finance-support-uae/">UAE F&amp;B finance support</a> overview.</p>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">How it works</div>
+        <h2>Four steps to clearer<br>restaurant numbers.</h2>
+      </div>
+      <p class="lead">A simple, repeatable process that fits around a busy kitchen and a busy owner.</p>
+    </div>
+    <ol class="cards-4" style="list-style:none">
+      <li class="card reveal"><div><div class="num">01</div><h3>Review</h3></div><p>We review your current reporting, budgeting, food cost tracking and cash flow.</p></li>
+      <li class="card reveal"><div><div class="num">02</div><h3>Set up reporting</h3></div><p>We connect sales, purchases and delivery settlements to your accounts and agree your KPIs.</p></li>
+      <li class="card reveal"><div><div class="num">03</div><h3>Monthly cycle</h3></div><p>Each month you get a management report with margins, variances and plain-English insights.</p></li>
+      <li class="card reveal"><div><div class="num">04</div><h3>Budget and forecast review</h3></div><p>We update budgets and cash forecasts so you can plan stock, staff and new outlets.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="definitions">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Restaurant finance basics</div>
+        <h2>The numbers every<br>owner should know.</h2>
+      </div>
+      <p class="lead">Three measures we track for Ajman restaurants, cafes and cloud kitchens.</p>
+    </div>
+    <div class="defs-grid">
+      <article class="def-card reveal"><h3>Food cost %</h3><p>The share of food sales spent on the ingredients you sold. A rising food cost % often points to wastage, portioning or supplier price changes.</p><code class="formula">Food cost % = cost of food sold ÷ food sales × 100</code></article>
+      <article class="def-card reveal"><h3>Prime cost</h3><p>Your two biggest controllable costs together: what you spend on food and beverage plus what you spend on labour. Tracking it as a % of sales shows whether the business is under control.</p><code class="formula">Prime cost = food and beverage cost + labour cost</code></article>
+      <article class="def-card reveal"><h3>Break-even sales</h3><p>The sales an outlet needs in a month to cover all its costs. It is the key number before opening a new site or changing a lease.</p><code class="formula">Break-even sales = fixed costs ÷ contribution margin %</code></article>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker">Choosing support</div>
+        <h2>In-house accountant or<br>outsourced F&amp;B finance?</h2>
+      </div>
+      <p class="lead">Many Ajman food businesses use both: an in-house person for daily bookkeeping and outsourced support for analysis and planning.</p>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <caption>In-house accountant vs outsourced F&amp;B finance support</caption>
+        <thead><tr><th scope="col">Factor</th><th scope="col">In-house accountant</th><th scope="col">Outsourced F&amp;B finance support</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cost</th><td>Fixed salary and overheads, whether or not you need full-time hours.</td><td>Scoped to the support you need, without a full-time hire.</td></tr>
+          <tr><th scope="row">Skills</th><td>Usually strong on daily bookkeeping and compliance.</td><td>Adds food cost, budgeting, forecasting and profitability analysis.</td></tr>
+          <tr><th scope="row">Reporting</th><td>Depends on one person's time and system knowledge.</td><td>Structured monthly management reports with KPIs and commentary.</td></tr>
+          <tr><th scope="row">Scalability</th><td>Needs a new hire as you add outlets or brands.</td><td>Support can be extended to new outlets or cloud kitchen brands.</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
@@ -504,7 +591,7 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
       </div>
       <div class="metrics">
         <div class="metric"><small>Revenue</small><strong>AED 482k</strong><span>↗ 8.4% vs last month</span></div>
-        <div class="metric"><small>Operating costs</small><strong>AED 216k</strong><span>↗ 11.2% vs last month</span></div>
+        <div class="metric"><small>Operating costs</small><strong>AED 216k</strong><span>↗ 5.2% vs last month</span></div>
         <div class="metric"><small>Cash position</small><strong>AED 128k</strong><span>Liquidity visibility</span></div>
         <div class="metric"><small>Gross margin</small><strong>32.8%</strong><span>Outlet profitability</span></div>
       </div>
@@ -520,11 +607,11 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
           </div>
         </div>
         <div class="chart-card">
-          <div class="chart-title">Management KPI visibility (sample)</div>
-          <div class="aging-row"><span>Revenue</span><div class="bar"><i style="width:72%"></i></div><b>72%</b></div>
-          <div class="aging-row"><span>Costs</span><div class="bar"><i style="width:58%"></i></div><b>58%</b></div>
-          <div class="aging-row"><span>Cash flow</span><div class="bar"><i style="width:41%"></i></div><b>41%</b></div>
-          <div class="aging-row"><span>Margins</span><div class="bar"><i style="width:29%"></i></div><b>29%</b></div>
+          <div class="chart-title">Cost split · % of operating costs (sample)</div>
+          <div class="aging-row"><span>Food cost</span><div class="bar"><i style="width:42%"></i></div><b>42%</b></div>
+          <div class="aging-row"><span>Staff</span><div class="bar"><i style="width:31%"></i></div><b>31%</b></div>
+          <div class="aging-row"><span>Rent</span><div class="bar"><i style="width:17%"></i></div><b>17%</b></div>
+          <div class="aging-row"><span>Other</span><div class="bar"><i style="width:10%"></i></div><b>10%</b></div>
         </div>
       </div>
     </div>
@@ -577,10 +664,10 @@ h2{font-size:clamp(30px,3.1vw,60px);line-height:1.06;letter-spacing:-.045em;colo
     </div>
     <div class="faq-list reveal">
       <details open><summary>What is F&amp;B finance support in Ajman?</summary><p>F&amp;B finance support in Ajman gives restaurants, cafes, cloud kitchens and food businesses finance-team capability without a full-time hire. It covers food cost analysis, cash flow management, budgeting and forecasting, management reporting and profitability by outlet, menu category and sales channel.</p></details>
-      <details><summary>Do you support Ajman Free Zone F&amp;B businesses?</summary><p>Yes. We support free-zone and mainland food businesses in Ajman.</p></details>
-      <details><summary>Can you calculate break-even for a new Ajman outlet?</summary><p>Yes. We model costs and expected sales to show the break-even point before you commit.</p></details>
-      <details><summary>Can you track cloud kitchen profitability in Ajman?</summary><p>Yes. We show margin by brand and platform after commissions and food cost.</p></details>
-      <details><summary>Can you help with weekly cash planning?</summary><p>Yes. We build short-term cash forecasts around payroll, rent and supplier payments.</p></details>
+      <details><summary>Do you support Ajman Free Zone F&amp;B businesses?</summary><p>Yes. We support both Ajman Free Zone and mainland food businesses, including restaurants, cafes, cloud kitchens and catering operations. Whatever your licence type, we set up monthly reporting, food cost tracking and cash planning around how your business actually runs, and we flag where your legal structure may affect VAT or corporate tax so you can confirm it with the right authority.</p></details>
+      <details><summary>Can you calculate break-even for a new Ajman outlet?</summary><p>Yes. Before you commit to a new outlet, we model rent, staff, utilities, food cost and expected sales to show the monthly sales needed to break even. We also test scenarios, such as lower footfall or higher rent, so you can see how much room you have before the outlet starts losing money.</p></details>
+      <details><summary>Can you track cloud kitchen profitability in Ajman?</summary><p>Yes. For each cloud kitchen brand we calculate margin after food cost, packaging, delivery-platform commission, delivery charges and refunds, so you see which brand and which platform actually earns. We reconcile platform settlements to your accounts monthly and report net margin per brand in plain English.</p></details>
+      <details><summary>Can you help with weekly cash planning?</summary><p>Yes. We build a weekly cash forecast around your sales, payroll, rent, supplier payments and delivery-platform settlements. You see when cash is likely to run tight, which payments can be timed better and how much buffer you hold, so purchasing and payment decisions are made with numbers rather than guesswork.</p></details>
       <details><summary>Do restaurants and food businesses in Ajman need to register for VAT?</summary><p>UAE VAT registration is mandatory when taxable supplies and imports exceed AED 375,000 over the previous 12 months or are expected to in the next 30 days. Voluntary registration is possible above AED 187,500. The standard rate is 5%. Check the <a href="https://tax.gov.ae/en/taxes/vat.aspx" target="_blank" rel="noopener">Federal Tax Authority</a> for current rules.</p></details>
       <details><summary>Does UAE corporate tax apply to restaurants and cafes in Ajman?</summary><p>UAE corporate tax is 9% on taxable income above AED 375,000. Whether and how it applies to your business depends on your legal structure and free-zone status, so confirm with the <a href="https://tax.gov.ae/" target="_blank" rel="noopener">Federal Tax Authority</a> or a registered tax adviser. Good management reporting makes profit and tax planning easier to forecast.</p></details>
       <details><summary>How do I get started with F&amp;B finance support in Ajman?</summary><p>Email <a href="mailto:info@finackle.com"><strong>info@finackle.com</strong></a> to book a consultation. We review your reporting, budgeting, food cost tracking and cash flow, then recommend the right level of support.</p></details>
